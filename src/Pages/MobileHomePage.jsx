@@ -14,6 +14,7 @@ import MobileEngagementStats from "../components/MobileViews/MobileEngagementSta
 import MobileParentsFeedback from "../components/MobileViews/MobileParentsFeedback";
 import MobileNewsEventCard from "../components/MobileViews/MobileEventCards";
 import MobileNewsEvent from "../components/MobileViews/MobileNewsEvents";
+import backgroundDoodle from "../assets/backgroundImage.svg";
 import { useRef } from "react";
 
 export default function MobileHomePage() {
@@ -52,6 +53,11 @@ export default function MobileHomePage() {
         backgroundColor: "#FFF7E1",
         boxSizing: "border-box",
         overflowX: "hidden",
+        boxSizing: "border-box", // Ensures padding and borders are included in width
+        overflowX: "hidden", // Prevents horizontal overflow
+        backgroundImage: `url(${backgroundDoodle})`, // Replace with the path to your image
+        backgroundRepeat: "repeat", // Makes the image repeat
+        backgroundSize: "auto", // Ensures the original size of the image is maintained
       }}
     >
       <MobileMenuBar onMenuClick={handleMenuClick} />
@@ -76,7 +82,33 @@ export default function MobileHomePage() {
           width: "100%",
         }}
       >
-        {/* LineGroup and Thunder Image Boxes */}
+        <Box
+          sx={{
+            mt: -3,
+            ml: 1,
+            width: "70px",
+            height: "40px", // Maintain aspect ratio
+            zIndex: 1, // Ensure it's above other content if needed
+          }}
+        >
+          <img
+            src={LineGroup}
+            alt="Line Group"
+            style={{
+              width: "34px", // Scale the image to fit the container's width
+              height: "40px", // Maintain the aspect ratio of the image
+            }}
+          />
+        </Box>
+        <Box sx={{ mt: -3, mr: 2 }}>
+          <img
+            src={Thunder}
+            style={{
+              width: "80px", // Scale the image to fit the container's width
+              height: "50px", // Maintain the aspect ratio of the image
+            }}
+          />
+        </Box>
       </Box>
       <MobileScrollabeBanner ref={bannerRef} />
       <MobileWelcomeMessage ref={welcomeRef} />

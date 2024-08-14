@@ -13,6 +13,7 @@ import StudentEngagementStats from "../components/Home/StudentEngagementStats";
 import ParentsFeedback from "../components/Home/ParentsFeedback";
 import NewsFunction from "../components/Home/NewsEvents";
 import JoinCommunity from "../components/Home/JoinCommunityCard";
+import backgroundDoodle from "../assets/backgroundImage.svg";
 import { useRef } from "react";
 
 export default function HomePage() {
@@ -51,6 +52,9 @@ export default function HomePage() {
           backgroundColor: "#FFF7E1",
           boxSizing: "border-box", // Ensures padding and borders are included in width
           overflowX: "hidden", // Prevents horizontal overflow
+          backgroundImage: `url(${backgroundDoodle})`, // Replace with the path to your image
+          backgroundRepeat: "repeat", // Makes the image repeat
+          backgroundSize: "auto", // Ensures the original size of the image is maintained
         }}
       >
         <MenuBar onMenuClick={handleMenuClick} />
