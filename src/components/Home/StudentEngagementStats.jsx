@@ -73,14 +73,19 @@ export default function StudentEngagementStats() {
                     borderRadius: "20px 20px 0px 0px",
                     display: "flex",
                     flexDirection: "column",
-                    alignItems: "center",
+                    // alignItems: "center",
                     justifyContent: "flex-end",
                   }}
                 >
                   <Typography
-                    sx={{ fontSize: "50px", fontWeight: 700, color: "#FFF" }}
+                    sx={{
+                      fontSize: "50px",
+                      fontWeight: 700,
+                      color: "#FFF",
+                      ml: 2,
+                    }}
                   >
-                    35+
+                    200+
                   </Typography>
                 </Box>
 
@@ -107,14 +112,20 @@ export default function StudentEngagementStats() {
                   height: "60%",
                   backgroundColor: "#5C76B2",
                   borderRadius: "0px 20px 20px 20px",
-                  display: "grid",
-                  placeItems: "center",
+                  // display: "grid",
+                  // placeItems: "center",
                 }}
               >
                 <Typography
-                  sx={{ fontSize: "25px", fontWeight: 500, color: "#FFF" }}
+                  sx={{
+                    fontSize: "25px",
+                    fontWeight: 500,
+                    color: "#FFF",
+                    width: "60%",
+                    ml: 2,
+                  }}
                 >
-                  Years of Experience
+                  Distinctions in just last ten years
                 </Typography>
               </Box>
             </Box>
@@ -126,19 +137,25 @@ export default function StudentEngagementStats() {
                 borderRadius: "20px",
                 display: "flex",
                 flexDirection: "column",
-                alignItems: "center",
+                alignItems: "flex-start",
                 justifyContent: "center",
+                pl: 2,
               }}
             >
               <Typography
                 sx={{ fontSize: "50px", fontWeight: 700, color: "#FFF" }}
               >
-                50+
+                35+
               </Typography>
               <Typography
-                sx={{ fontSize: "25px", fontWeight: 500, color: "#FFF" }}
+                sx={{
+                  fontSize: "25px",
+                  fontWeight: 500,
+                  color: "#FFF",
+                  width: "80%",
+                }}
               >
-                Staffs
+                Years of Experience
               </Typography>
             </Box>
           </Box>
@@ -159,14 +176,15 @@ export default function StudentEngagementStats() {
                 borderRadius: "20px",
                 display: "flex",
                 flexDirection: "column",
-                alignItems: "center",
+                alignItems: "flex-start",
                 justifyContent: "center",
+                pl: 2,
               }}
             >
               <Typography
                 sx={{ fontSize: "50px", fontWeight: 700, color: "#FFF" }}
               >
-                42000+
+                5000+
               </Typography>
               <Typography
                 sx={{ fontSize: "25px", fontWeight: 700, color: "#FFF" }}

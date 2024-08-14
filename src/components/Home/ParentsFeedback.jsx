@@ -37,7 +37,7 @@ export default function ParentsFeedback() {
     >
       <Box sx={{ width: "90%", display: "flex", flexDirection: "column" }}>
         <Typography sx={{ fontSize: "50px", fontWeight: 700, width: "70%" }}>
-          What our Parent are feeling about our Institution
+          What our Parents and Volunteers feel about our Institution
         </Typography>
         <img
           src={curvyArrow}

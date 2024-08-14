@@ -44,7 +44,7 @@ export default function MobileParentsFeedback() {
             fontWeight: 700,
           }}
         >
-          What our Parent are feeling about our Institution
+          What our Parents and Volunteers feel about our Institution
         </Typography>
       </Box>
 

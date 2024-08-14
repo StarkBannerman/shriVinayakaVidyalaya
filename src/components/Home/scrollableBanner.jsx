@@ -40,7 +40,7 @@ export default function ScrollableBanner() {
               margin: "0 20px",
             }}
           >
-            Celebrating 35 years of excellence in academics and social service
+            Celebrating 35 years of excellence in academics
           </Typography>
         </Box>
       </Box>

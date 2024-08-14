@@ -34,8 +34,35 @@ export default function WelcomeMessage() {
                 mt: 2,
               }}
             >
-              विद्या ददाति विनयं विनयाद् याति पात्रताम्। पात्रत्वात् धनमाप्नोति
-              धनात् धर्मं ततः सुखम्॥
+              विद्या ददाति विनयं विनयाद् याति पात्रताम्।
+            </Typography>
+            <Typography
+              sx={{
+                fontSize: "16px",
+                fontWeight: 700,
+                textAlign: "left",
+                color: "#000",
+                mt: 1,
+              }}
+            >
+              पात्रत्वात् धनमाप्नोति धनात् धर्मं ततः सुखम्॥
+            </Typography>
+            <Typography
+              sx={{
+                fontSize: "16px",
+                fontWeight: 400, // Standard font weight for normal text
+                textAlign: "justify", // Justify text alignment
+                color: "#737373", // Text color
+                lineHeight: 1.6, // Line height for readability
+                maxWidth: "600px", // Maximum width for the paragraph
+                margin: "0 auto", // Center the paragraph if it has a maxWidth
+                mt: 2, // Margin-top for spacing above the paragraph
+                mb: 2, // Margin- Optional: horizontal padding for better spacing within the paragraph
+              }}
+            >
+              "Education bestows humility, from humility comes worthiness. With
+              worthiness, one attains wealth, and with wealth, one is able to
+              follow dharma, which ultimately leads to happiness.”
             </Typography>
             <Typography
               sx={{
@@ -50,15 +77,13 @@ export default function WelcomeMessage() {
                 mb: 2, // Margin-bottom for spacing below the paragraph
               }}
             >
-              "Education bestows humility, from humility comes worthiness. With
-              worthiness, one attains wealth, and with wealth, one is able to
-              follow dharma, which ultimately leads to happiness.” Welcome to
-              the school that celebrates children in their own uniqueness and
-              builds their future along with them. We instill a sense of pride
-              about the country, culture, traditions and most importantly, build
-              a foundation for their free thoughts, ideas, concepts,
-              philosophies, science, mathematics, art, a way of life and more.
-              We are inspired by our country that has taught the world.
+              Welcome to the school that celebrates children in their own
+              uniqueness and builds their future along with them. We instill a
+              sense of pride about the country, culture, traditions and most
+              importantly, build a foundation for their free thoughts, ideas,
+              concepts, philosophies, science, mathematics, art, a way of life
+              and more. We are inspired by our country that has taught the
+              world.
             </Typography>
             <Button
               variant="contained"

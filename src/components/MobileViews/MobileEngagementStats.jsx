@@ -81,14 +81,19 @@ export default function MobileEngagementStats() {
                     borderRadius: "10px 10px 0px 0px",
                     display: "flex",
                     flexDirection: "column",
-                    alignItems: "center",
+                    alignItems: "flex-start",
                     justifyContent: "flex-end",
                   }}
                 >
                   <Typography
-                    sx={{ fontSize: "30px", fontWeight: 700, color: "#FFF" }}
+                    sx={{
+                      fontSize: "30px",
+                      fontWeight: 700,
+                      color: "#FFF",
+                      ml: 2,
+                    }}
                   >
-                    35+
+                    200+
                   </Typography>
                 </Box>
 
@@ -120,9 +125,14 @@ export default function MobileEngagementStats() {
                 }}
               >
                 <Typography
-                  sx={{ fontSize: "20px", fontWeight: 500, color: "#FFF" }}
+                  sx={{
+                    fontSize: "16px",
+                    fontWeight: 500,
+                    color: "#FFF",
+                    ml: 2,
+                  }}
                 >
-                  Years of Experience
+                  Distinctions in just last ten years
                 </Typography>
               </Box>
             </Box>
@@ -134,19 +144,20 @@ export default function MobileEngagementStats() {
                 borderRadius: "10px",
                 display: "flex",
                 flexDirection: "column",
-                alignItems: "center",
+                alignItems: "flex-start",
+
                 justifyContent: "center",
               }}
             >
               <Typography
-                sx={{ fontSize: "30px", fontWeight: 700, color: "#FFF" }}
+                sx={{ fontSize: "30px", fontWeight: 700, color: "#FFF", ml: 1 }}
               >
-                50+
+                35+
               </Typography>
               <Typography
-                sx={{ fontSize: "20px", fontWeight: 500, color: "#FFF" }}
+                sx={{ fontSize: "16px", fontWeight: 500, color: "#FFF", ml: 1 }}
               >
-                Staffs
+                Years of Experience
               </Typography>
             </Box>
           </Box>
@@ -167,24 +178,26 @@ export default function MobileEngagementStats() {
                 borderRadius: "10px",
                 display: "flex",
                 flexDirection: "column",
-                alignItems: "center",
+                alignItems: "flex-start",
+
                 justifyContent: "center",
               }}
             >
               <Typography
-                sx={{ fontSize: "30px", fontWeight: 700, color: "#FFF" }}
+                sx={{ fontSize: "30px", fontWeight: 700, color: "#FFF", ml: 2 }}
               >
-                42000+
+                5000+
               </Typography>
               <Typography
                 sx={{
-                  fontSize: "20px",
+                  fontSize: "16px",
                   fontWeight: 700,
                   color: "#FFF",
                   textAlign: "center",
+                  ml: 2,
                 }}
               >
-                Students Successful in their career
+                students successful in their career
               </Typography>
             </Box>
           </Box>
