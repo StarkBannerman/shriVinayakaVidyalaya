@@ -1,64 +1,91 @@
 import { Grid, Typography, Box } from "@mui/material";
 import Library from "../../assets/transportFacility.png";
+import sportsLogo from "../../assets/sports.png";
+import scienceLabLogo from "../../assets/scienceLab.png";
+import extracurricularLogo from "../../assets/extracurricular.png";
+import ItLab from "../../assets/Itscience.png";
+import LibraryLogo from "../../assets/Library.png";
+
 export default function MobileFacilities() {
   const Facilities = [
     {
       name: "Library",
-      image: Library,
+      image: LibraryLogo,
     },
     {
-      name: "Library",
-      image: Library,
+      name: "Sports",
+      image: sportsLogo,
     },
     {
-      name: "Library",
-      image: Library,
+      name: "Science Lab",
+      image: scienceLabLogo,
     },
     {
-      name: "Library",
-      image: Library,
+      name: "IT Lab",
+      image: ItLab,
     },
     {
-      name: "Library",
-      image: Library,
+      name: "Extra Curriculars",
+      image: extracurricularLogo,
     },
   ];
+
   return (
-    <Box sx={{ width: "100%", display: "grid", placeItems: "center", mt: 10 }}>
-      <Grid
-        container
-        spacing={2}
+    <Box
+      sx={{
+        width: "100%",
+        display: "grid",
+        placeItems: "center",
+        backgroundColor: "#FFF",
+        mt: 5,
+        pt: 2,
+        pb: 2,
+        overflowX: "hidden", // Hide any overflow outside the container
+        whiteSpace: "nowrap", // Prevent line breaks within items
+        "&:hover": {
+          animationPlayState: "paused", // Pause scrolling on hover
+        },
+      }}
+    >
+      <Box
         sx={{
-          width: "80%",
-          p: 2,
-          backgroundColor: "#FFF",
-          borderRadius: "12px",
           display: "flex",
           flexDirection: "row",
-          justifyContent: "center",
           alignItems: "center",
+          justifyContent: "center",
+          animation: "scrolling 15s linear infinite",
         }}
       >
-        {Facilities.map((facility) => (
-          <Grid
-            item
-            xs={6}
-            sm={6}
-            md={4}
-            lg={2}
-            xl={2}
+        {Facilities.concat(Facilities).map((facility, index) => (
+          <Box
+            key={index}
             sx={{
-              display: "flex",
+              display: "inline-flex",
               flexDirection: "column",
               justifyContent: "center",
               alignItems: "center",
+              mr: 5,
+              p: 1,
             }}
           >
-            <img src={facility.image} height="50" width="50" />
+            <img
+              src={facility.image}
+              height="50"
+              width="50"
+              alt={facility.name}
+            />
             <Typography sx={{ mt: 1 }}>{facility.name}</Typography>
-          </Grid>
+          </Box>
         ))}
-      </Grid>
+      </Box>
+      <style>
+        {`
+          @keyframes scrolling {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+          }
+        `}
+      </style>
     </Box>
   );
 }

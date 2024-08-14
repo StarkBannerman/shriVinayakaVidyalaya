@@ -2,6 +2,10 @@ import { Box } from "@mui/material";
 import experienceLogo from "../../assets/Experience.png";
 import CaroselImage from "../../assets/bannerImage.jpg";
 import LineGroup from "../../assets/lineGroup.png";
+import { Carousel } from "react-responsive-carousel";
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // Import carousel CSS
+import banner1 from "../../assets/laptopBanner1.jpg";
+import banner2 from "../../assets/laptopBanner2.jpg";
 
 export default function PictureCarousel() {
   return (
@@ -44,16 +48,78 @@ export default function PictureCarousel() {
             overflow: "hidden", // Prevent overflow
           }}
         >
-          <img
-            src={CaroselImage}
-            style={{
-              height: "100%",
-              width: "100%",
-              objectFit: "cover", // Ensures the image fits inside without being stretched
-              objectPosition: "center", // Center the image inside the box
+          <Carousel
+            showArrows={false}
+            showThumbs={false}
+            showStatus={false}
+            infiniteLoop
+            autoPlay
+            interval={3000}
+            stopOnHover
+            dynamicHeight={false}
+            renderIndicator={(onClickHandler, isSelected, index, label) => {
+              const defStyle = {
+                marginLeft: 8,
+                width: 8,
+                height: 8,
+                borderRadius: "50%",
+                backgroundColor: "#FFEAC1", // Default dot color
+                cursor: "pointer",
+                display: "inline-block",
+              };
+              const style = isSelected
+                ? { ...defStyle, backgroundColor: "#FFF" } // Highlighted dot color
+                : defStyle;
+              return (
+                <li
+                  style={style}
+                  onClick={onClickHandler}
+                  onKeyDown={onClickHandler}
+                  value={index}
+                  key={index}
+                  role="button"
+                  aria-label={`${label} ${index + 1}`}
+                  tabIndex={0}
+                />
+              );
             }}
-            alt="Carousel"
-          />
+          >
+            <div
+              style={{
+                height: "100%",
+                width: "100%",
+                pointerEvents: "auto", // Allow carousel to receive pointer events
+              }}
+            >
+              <img
+                src={banner2}
+                style={{
+                  height: "100%",
+                  width: "100%",
+                  objectFit: "cover", // Adjust to cover the area without distortion
+                }}
+                alt="Carousel"
+              />
+            </div>
+            <div
+              style={{
+                height: "100%",
+                width: "100%",
+                minHeight: "600px",
+                pointerEvents: "auto", // Allow carousel to receive pointer events
+              }}
+            >
+              <img
+                src={banner1}
+                style={{
+                  height: "100%",
+                  width: "100%",
+                  objectFit: "cover", // Adjust to cover the area without distortion
+                }}
+                alt="Carousel"
+              />
+            </div>
+          </Carousel>
         </Box>
       </Box>
     </>

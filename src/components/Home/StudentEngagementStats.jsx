@@ -1,11 +1,19 @@
 import { Box, Grid, IconButton, Typography } from "@mui/material";
 import InsightsIcon from "@mui/icons-material/Insights";
-import StudentStatsImage from "../../assets/studentStatsImage.png";
+import StudentStatsImage from "../../assets/studentEnagagement.svg";
 export default function StudentEngagementStats() {
   return (
     <Grid container sx={{ width: "100vw", mb: 10 }}>
-      <Grid item xs={12} sm={12} md={6} lg={6} xl={6}>
-        <img src={StudentStatsImage} height={"650px"} width={"650px"} />
+      <Grid
+        item
+        xs={12}
+        sm={12}
+        md={6}
+        lg={6}
+        xl={6}
+        sx={{ display: "grid", placeItems: "center" }}
+      >
+        <img src={StudentStatsImage} height={"630px"} width={"630px"} />
       </Grid>
       <Grid
         item
@@ -18,10 +26,10 @@ export default function StudentEngagementStats() {
           display: "flex",
           flexDirection: "column",
           justifyContent: "flex-start",
-          alignItems: "flex-start",
+          alignItems: "center",
         }}
       >
-        <Box sx={{ width: "90%" }}>
+        <Box sx={{ width: "550px" }}>
           <Typography sx={{ fontSize: "50px", fontWeight: 700 }}>
             Student Engagement Program
           </Typography>

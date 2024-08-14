@@ -38,7 +38,6 @@ export default function MobileSchoolExpertise() {
         width: "100%", // Adjust width as needed
         height: "100vh", // Adjust height as needed
         maxHeight: "470px",
-        mt: 5,
         display: "flex",
         flexDirection: "column",
         justifyContent: "flex-end",

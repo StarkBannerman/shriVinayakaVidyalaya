@@ -1,25 +1,28 @@
 import { Box, Grid, Typography } from "@mui/material";
 import NewsEventImage from "../../assets/newsEvent.png";
 import NewsEvents from "./NewsEventCars";
+import independeceday from "../../assets/independencedaycelebration.png";
+import krishna from "../../assets/krishnaJanmashami.png";
+import kanndarotsava from "../../assets/kannadarajotsava.png";
 
 export default function NewsFunction() {
   const newsEvents = [
     {
-      image: NewsEventImage,
+      image: independeceday,
       name: "Independence Day Celebration",
       date: "15/08/2024",
       link: "#",
     },
     {
-      image: NewsEventImage,
-      name: "Independence Day Celebration",
-      date: "15/08/2024",
+      image: krishna,
+      name: "Krishna Janmashtami",
+      date: "21/09/2023",
       link: "#",
     },
     {
-      image: NewsEventImage,
-      name: "Independence Day Celebration",
-      date: "15/08/2024",
+      image: kanndarotsava,
+      name: "Kannada Rajyotsava",
+      date: "01/11/2023",
       link: "#",
     },
   ];

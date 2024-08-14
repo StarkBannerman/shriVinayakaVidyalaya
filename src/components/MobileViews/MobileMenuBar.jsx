@@ -14,28 +14,33 @@ import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
 import schoolLogo from "../../assets/schoolLogo.png";
 
-export default function MobileMenuBar() {
+export default function MobileMenuBar({ onMenuClick }) {
   const [drawerOpen, setDrawerOpen] = useState(false);
 
   const menuItems = [
     "Home",
     "About",
     "Academics",
-    "Admission",
+    "Testimonials",
     "News & Events",
-    "Infrastructure",
-    "Contact Us",
+    // "Infrastructure",
+    // "Contact Us",
   ];
 
   const toggleDrawer = (open) => (event) => {
     setDrawerOpen(open);
   };
 
+  const handleMenuClick = (section) => {
+    onMenuClick(section);
+    setDrawerOpen(false); // Close the drawer after clicking
+  };
+
   return (
     <>
       <AppBar
         sx={{
-          height: "15vh",
+          height: "10vh",
           width: "100vw",
           background: "transparent",
           boxShadow: "none",
@@ -46,11 +51,12 @@ export default function MobileMenuBar() {
         <Box
           sx={{
             width: "90vw",
-            height: "70px",
+            height: "55px",
             backgroundColor: "#FFF",
-            borderRadius: "20px",
+            borderRadius: "10px",
             pl: 1,
             pr: 2,
+            mt: 2,
             display: "flex",
             flexDirection: "row",
             justifyContent: "space-between",
@@ -67,7 +73,7 @@ export default function MobileMenuBar() {
           </Box>
 
           <IconButton sx={{ color: "#000" }} onClick={toggleDrawer(true)}>
-            <MenuIcon />
+            <MenuIcon fontSize="large" />
           </IconButton>
         </Box>
       </AppBar>
@@ -88,8 +94,8 @@ export default function MobileMenuBar() {
             <CloseIcon />
           </IconButton>
           <List>
-            {menuItems.map((text, index) => (
-              <ListItem button key={text}>
+            {menuItems.map((text) => (
+              <ListItem button key={text} onClick={() => handleMenuClick(text)}>
                 <ListItemText primary={text} />
               </ListItem>
             ))}
@@ -99,3 +105,4 @@ export default function MobileMenuBar() {
     </>
   );
 }
+

@@ -1,7 +1,10 @@
 import { AppBar, Box, Button, Toolbar, Typography } from "@mui/material";
 import schoolLogo from "../../assets/schoolLogo.png";
 
-export default function MenuBar() {
+export default function MenuBar({ onMenuClick }) {
+  const handleMenuClick = (section) => {
+    onMenuClick(section);
+  };
   return (
     <>
       <AppBar
@@ -48,12 +51,15 @@ export default function MenuBar() {
               "Home",
               "About",
               "Academics",
-              "Admission",
+              "Testimonials",
               "News & Events",
-              "Infrastructure",
-              "Contact Us",
+              // "Infrastructure",
+              // "Contact Us",
             ].map((text, index) => (
               <Typography
+                onClick={() => {
+                  handleMenuClick(text);
+                }}
                 key={index}
                 variant="body1"
                 sx={{
@@ -69,7 +75,7 @@ export default function MenuBar() {
             ))}
           </Box>
 
-          <Button
+          {/* <Button
             variant="outlined"
             sx={{
               width: "150px",
@@ -85,7 +91,7 @@ export default function MenuBar() {
             }}
           >
             Connect
-          </Button>
+          </Button> */}
         </Box>
       </AppBar>
     </>

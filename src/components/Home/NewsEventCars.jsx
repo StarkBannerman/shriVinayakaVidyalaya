@@ -12,7 +12,7 @@ export default function NewsEvents({ event }) {
     >
       <Box
         sx={{
-          height: "70%",
+          // height: "70%",
           width: "100%",
           backgroundColor: "#FFF",
           borderRadius: "20px 20px 20px 0px",

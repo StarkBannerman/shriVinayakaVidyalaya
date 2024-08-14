@@ -1,4 +1,4 @@
-import { Box, Toolbar } from "@mui/material";
+import { Box, Toolbar, Typography } from "@mui/material";
 import MenuBar from "../components/Home/MenuBar";
 import PictureCarousel from "../components/Home/PictureCarousel";
 import LineGroup from "../assets/lineGroup.png";
@@ -13,8 +13,35 @@ import StudentEngagementStats from "../components/Home/StudentEngagementStats";
 import ParentsFeedback from "../components/Home/ParentsFeedback";
 import NewsFunction from "../components/Home/NewsEvents";
 import JoinCommunity from "../components/Home/JoinCommunityCard";
+import { useRef } from "react";
 
 export default function HomePage() {
+  const carouselRef = useRef(null);
+  const bannerRef = useRef(null);
+  const welcomeRef = useRef(null);
+  const facilitiesRef = useRef(null);
+  const expertiseRef = useRef(null);
+  const achievementsRef = useRef(null);
+  const statsRef = useRef(null);
+  const feedbackRef = useRef(null);
+  const eventsRef = useRef(null);
+
+  const handleMenuClick = (section) => {
+    const refMap = {
+      Home: carouselRef,
+      "News & Events": eventsRef,
+      About: bannerRef,
+      Academics: facilitiesRef,
+      Admission: expertiseRef,
+      Testimonials: feedbackRef,
+    };
+
+    const sectionRef = refMap[section];
+
+    if (sectionRef && sectionRef.current) {
+      sectionRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  };
   return (
     <>
       <Box
@@ -26,7 +53,7 @@ export default function HomePage() {
           overflowX: "hidden", // Prevents horizontal overflow
         }}
       >
-        <MenuBar />
+        <MenuBar onMenuClick={handleMenuClick} />
         <Toolbar />
         <Box
           sx={{
@@ -37,6 +64,7 @@ export default function HomePage() {
             placeItems: "center",
             mt: 5,
           }}
+          ref={carouselRef}
         >
           <PictureCarousel />
         </Box>
@@ -74,15 +102,17 @@ export default function HomePage() {
                 width: "100px", // Scale the image to fit the container's width
                 height: "80px", // Maintain the aspect ratio of the image
               }}
+              ref={bannerRef}
             />
           </Box>
         </Box>
 
         <ScrollableBanner />
-        <WelcomeMessage />
+        <WelcomeMessage ref={welcomeRef} />
 
-        <Facilities />
-
+        <Box ref={facilitiesRef}>
+          <Facilities />
+        </Box>
         <SchoolExpertise />
         <Box
           sx={{
@@ -96,9 +126,41 @@ export default function HomePage() {
           <img src={waveRing} height={"180px"} width={"180px"} />
         </Box>
         <StudentEngagementStats />
-        <ParentsFeedback />
-        <NewsFunction />
-        <JoinCommunity />
+        <Box ref={feedbackRef}>
+          <ParentsFeedback />
+        </Box>
+        <Box ref={eventsRef}>
+          <NewsFunction />
+        </Box>
+        {/* <JoinCommunity /> */}
+        <Box
+          sx={{
+            height: "50px",
+            width: "100%",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            backgroundColor: "#F68820", // Optional: Customize the background color
+          }}
+        >
+          <Typography
+            variant="body2"
+            component="a"
+            href="https://convobox.in"
+            target="_blank"
+            rel="noopener noreferrer"
+            sx={{
+              color: "#FFF",
+              textDecoration: "none",
+              "&:hover": {
+                textDecoration: "underline", // Optional: Add an underline on hover
+              },
+            }}
+          >
+            Designed and Developed by{" "}
+            <span style={{ fontWeight: 700 }}>ConvoBox</span>
+          </Typography>
+        </Box>
       </Box>
     </>
   );

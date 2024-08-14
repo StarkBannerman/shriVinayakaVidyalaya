@@ -1,5 +1,5 @@
 import { Box, Grid, Typography, Button } from "@mui/material";
-import GroupStudentImage from "../../assets/groupStudentImage.png";
+import GroupStudentImage from "../../assets/welcomeBanner.png";
 export default function WelcomeMessage() {
   return (
     <Box sx={{ display: "grid", placeItems: "center", width: "100vw" }}>
@@ -28,22 +28,37 @@ export default function WelcomeMessage() {
             <Typography
               sx={{
                 fontSize: "16px",
-                fontWeight: 500,
-                color: "#737373",
-                width: "90%",
+                fontWeight: 700,
+                textAlign: "left",
+                color: "#000",
                 mt: 2,
               }}
             >
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
-              ever since the 1500s, when an unknown printer took a galley of
-              type and scrambled it to make a type specimen book. It has
-              survived not only five centuries, but also the leap into
-              electronic typesetting, remaining essentially unchanged. It was
-              popularised in the 1960s with the release of Letraset sheets
-              containing Lorem Ipsum passages, and more recently with desktop
-              publishing software like Aldus PageMaker including versions of
-              Lorem Ipsum
+              विद्या ददाति विनयं विनयाद् याति पात्रताम्। पात्रत्वात् धनमाप्नोति
+              धनात् धर्मं ततः सुखम्॥
+            </Typography>
+            <Typography
+              sx={{
+                fontSize: "16px",
+                fontWeight: 400, // Standard font weight for normal text
+                textAlign: "justify", // Justify text alignment
+                color: "#737373", // Text color
+                lineHeight: 1.6, // Line height for readability
+                maxWidth: "600px", // Maximum width for the paragraph
+                margin: "0 auto", // Center the paragraph if it has a maxWidth
+                mt: 2, // Margin-top for spacing above the paragraph
+                mb: 2, // Margin-bottom for spacing below the paragraph
+              }}
+            >
+              "Education bestows humility, from humility comes worthiness. With
+              worthiness, one attains wealth, and with wealth, one is able to
+              follow dharma, which ultimately leads to happiness.” Welcome to
+              the school that celebrates children in their own uniqueness and
+              builds their future along with them. We instill a sense of pride
+              about the country, culture, traditions and most importantly, build
+              a foundation for their free thoughts, ideas, concepts,
+              philosophies, science, mathematics, art, a way of life and more.
+              We are inspired by our country that has taught the world.
             </Typography>
             <Button
               variant="contained"
@@ -61,8 +76,16 @@ export default function WelcomeMessage() {
             </Button>
           </Box>
         </Grid>
-        <Grid item xs={12} sm={12} md={6.5} lg={6.5} xl={6.5}>
-          <img src={GroupStudentImage} />
+        <Grid
+          item
+          xs={12}
+          sm={12}
+          md={6.5}
+          lg={6.5}
+          xl={6.5}
+          sx={{ display: "grid", placeItems: "center" }}
+        >
+          <img src={GroupStudentImage} height="620px" width="620px" />
         </Grid>
       </Grid>
     </Box>

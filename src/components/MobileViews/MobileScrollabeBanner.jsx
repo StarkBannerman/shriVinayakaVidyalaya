@@ -40,9 +40,7 @@ export default function MobileScrollabeBanner() {
               margin: "0 20px",
             }}
           >
-            Registrations Now Open for 11th Standard - CBSE - At all our
-            branches!   Academic Year 2024-25. Streams: Science | Commerce |
-            Humanities
+            Celebrating 35 years of excellence in academics and social service
           </Typography>
         </Box>
       </Box>
