@@ -41,7 +41,7 @@ export default function ({ review }) {
                 textAlign: "left",
                 color: "#323231",
                 fontSize: "20px",
-                fontWeight: 500,
+                fontWeight: 700,
               }}
             >
               {review.name}
@@ -50,7 +50,7 @@ export default function ({ review }) {
               sx={{
                 // textAlign: "justify", // Justify text alignment
                 fontSize: "12px", // Font size
-                fontWeight: 400, // Font weight
+                fontWeight: 500, // Font weight
                 color: "#414040", // Text color
                 lineHeight: 1.6, // Line height for readability
                 maxWidth: "600px", // Maximum width for the paragraph
@@ -59,6 +59,20 @@ export default function ({ review }) {
               }}
             >
               {review.profession}
+            </Typography>
+            <Typography
+              sx={{
+                // textAlign: "justify", // Justify text alignment
+                fontSize: "12px", // Font size
+                fontWeight: 500, // Font weight
+                color: "#414040", // Text color
+                lineHeight: 1.6, // Line height for readability
+                maxWidth: "600px", // Maximum width for the paragraph
+                mt: 3,
+                margin: "0 auto", // Center the paragraph if it has a maxWidth
+              }}
+            >
+              {review.voluterringDetails}
             </Typography>
           </Box>
         </Box>

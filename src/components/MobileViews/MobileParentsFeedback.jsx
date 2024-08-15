@@ -15,15 +15,16 @@ export default function MobileParentsFeedback() {
     {
       profilePicture: ProfileImage,
       name: "Mridula",
-      profession:
-        "Ed.M, Harvard Graduate School of Education Volunteered from 2023-2024",
+      profession: "Ed.M, Harvard Graduate School of Education,USA ",
+      voluterringDetails: "Volunteered from 2023-2024",
       reviewDesc: `Volunteering with SVV was an incredibly enriching experience. I had the freedom to choose the subject I wanted to teach and the method that best suited my approach. I truly appreciated the trust the management placed in me to lead and teach. The students' eagerness and enthusiasm made it a breeze to facilitate activities and achieve the learning outcomes we aimed for!`,
     },
     {
       profilePicture: ProfileImage,
       name: "Alekhya",
       profession:
-        "MSc EnvironmentScience, Wageningen University & Research, the Netherlands Volunteered from 2019-2020",
+        "MSc EnvironmentScience, Wageningen University & Research, the Netherlands ",
+      voluterringDetails: "Volunteered from 2019-2020",
       reviewDesc: `Working in SVV was never that, work. It was an experience in growth, confidence & sheer happiness. Impacting young minds, curating the library selection, guiding communication & environmental driven changes - these are just some of the many fond memories of my time there. It is my biggest pleasure to call myself a part of the SVV family, shape talented students & contribute to the STEM future of our country.`,
     },
   ];
