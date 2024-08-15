@@ -16,7 +16,7 @@ export default function NewsFunction() {
     {
       image: krishna,
       name: "Krishna Janmashtami",
-      date: "26/08/2023",
+      date: "26/08/2024",
       link: "#",
     },
     {
