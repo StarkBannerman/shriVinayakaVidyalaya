@@ -9,7 +9,7 @@ export default function MobileParentsFeedback() {
     {
       profilePicture: ProfileImage,
       name: "Amreen",
-      profession: "Naweaz Hussain’s parent 7th grade",
+      profession: "7th std Nawaez Hussein's parent",
       reviewDesc: `As a parent of Naweaz Hussain, who has been attending Shri Vinayaka Vidyalaya since nursery and is now in 7th grade, I’m highly impressed with the school's balanced approach to education. The teachers are dedicated and supportive, helping Naweaz excel academically while also encouraging involvement in extracurricular activities that have boosted his confidence and social skills. The school's infrastructure is well-maintained, and they keep parents well-informed about their child's progress. Overall, Shri Vinayaka Vidyalaya offers a nurturing environment that has greatly contributed to my child's development.`,
     },
     {
