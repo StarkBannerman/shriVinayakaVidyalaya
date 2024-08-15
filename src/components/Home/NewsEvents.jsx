@@ -16,13 +16,13 @@ export default function NewsFunction() {
     {
       image: krishna,
       name: "Krishna Janmashtami",
-      date: "21/09/2023",
+      date: "26/08/2023",
       link: "#",
     },
     {
       image: kanndarotsava,
       name: "Kannada Rajyotsava",
-      date: "01/11/2023",
+      date: "01/11/2024",
       link: "#",
     },
   ];
@@ -38,7 +38,7 @@ export default function NewsFunction() {
       >
         <Box sx={{ width: "90%", display: "flex", flexDirection: "column" }}>
           <Typography sx={{ fontSize: "50px", fontWeight: 700, width: "70%" }}>
-            News & Events
+            News & Upcoming Events
           </Typography>
         </Box>
       </Box>

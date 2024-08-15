@@ -16,13 +16,13 @@ export default function MobileNewsEvent() {
     {
       image: krishna,
       name: "Krishna Janmashtami",
-      date: "21/09/2023",
+      date: "26/08/2023",
       link: "#",
     },
     {
       image: kanndarotsava,
       name: "Kannada Rajyotsava",
-      date: "01/11/2023",
+      date: "01/11/2024",
       link: "#",
     },
   ];
@@ -45,7 +45,7 @@ export default function MobileNewsEvent() {
               textAlign: "center",
             }}
           >
-            News & Events
+            News & Upcoming Events
           </Typography>
         </Box>
       </Box>
