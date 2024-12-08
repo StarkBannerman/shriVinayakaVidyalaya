@@ -1,0 +1,98 @@
+import { Box, Grid, Typography, Button } from "@mui/material";
+import { motion } from "framer-motion";
+import { useRef } from "react";
+import { useInViewOnce } from "../../Hooks /useInView";
+import LeaderShipImage from "../../assets/LeadershipImage.png";
+import GroupStudentImage from "../../assets/LeadershipImage.png";
+
+export default function MobileLeaderShip() {
+  const welcomeRef = useRef(null);
+  const { isInView, hasAnimated } = useInViewOnce(welcomeRef); // Use the updated hook
+
+  return (
+    <Box
+      ref={welcomeRef} // Attach the ref to the Box
+      sx={{ display: "grid", placeItems: "center", width: "100vw", mb: 10 }}
+      component={motion.div}
+      initial={{ opacity: 0, y: 50 }}
+      animate={hasAnimated ? { opacity: 1, y: 0 } : {}} // Only animate once
+      transition={{ duration: 1.5 }}
+    >
+      <Grid
+        container
+        sx={{
+          width: "90vw",
+        }}
+      >
+        <Grid
+          item
+          xs={12}
+          sm={12}
+          md={6.5}
+          lg={6.5}
+          xl={6.5}
+          sx={{ display: "grid", placeItems: "center" }}
+          component={motion.div}
+          initial={{ opacity: 0 }}
+          animate={hasAnimated ? { opacity: 1 } : {}} // Only animate once
+          transition={{ duration: 1.5 }}
+        >
+          <Typography
+            sx={{
+              fontSize: "30px",
+              fontWeight: 700,
+              width: "100%",
+              mb: 2,
+              textAlign: "center",
+            }}
+          >
+            Leadership & Faculty
+          </Typography>
+
+          <img src={LeaderShipImage} height="300px" width="310px" />
+        </Grid>
+
+        <Grid
+          item
+          xs={12}
+          sm={12}
+          md={5.5}
+          lg={5.5}
+          xl={5.5}
+          sx={{ display: "grid", placeItems: "center" }}
+          component={motion.div}
+          initial={{ x: "-100vw" }}
+          animate={hasAnimated ? { x: 0 } : {}} // Only animate once
+          transition={{ type: "spring", stiffness: 30 }}
+        >
+          <Box>
+            <Typography
+              sx={{
+                fontSize: "16px",
+                fontWeight: 400,
+                textAlign: "justify",
+                color: "#737373",
+                lineHeight: 1.6,
+                maxWidth: "600px",
+                mt: 2,
+                mb: 2,
+              }}
+            >
+              Welcome to the school that celebrates children in their own
+              uniqueness and builds their future along with them. We instill a
+              sense of pride about the country, culture, traditions and most
+              importantly, build a foundation for their free thoughts, ideas,
+              concepts, philosophies, science, mathematics, art, a way of life
+              and more. We are inspired by our country that has taught the
+              world.to the school that celebrates children in their own
+              uniqueness and builds their future along with them. We instill a
+              sense of pride about the country, culture, traditions and most
+              importantly, build a foundation for their free thoughts, ideas,
+              concepts, philosophies, science, mathematics,
+            </Typography>
+          </Box>
+        </Grid>
+      </Grid>
+    </Box>
+  );
+}

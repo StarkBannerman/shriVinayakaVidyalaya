@@ -15,6 +15,8 @@ import NewsFunction from "../components/Home/NewsEvents";
 import JoinCommunity from "../components/Home/JoinCommunityCard";
 import backgroundDoodle from "../assets/backgroundImage.svg";
 import { useRef } from "react";
+import Footer from "../components/Common/Footer";
+import Menu from "../components/Common/Menu";
 
 export default function HomePage() {
   const carouselRef = useRef(null);
@@ -57,7 +59,8 @@ export default function HomePage() {
           backgroundSize: "auto", // Ensures the original size of the image is maintained
         }}
       >
-        <MenuBar onMenuClick={handleMenuClick} />
+        {/* <MenuBar onMenuClick={handleMenuClick} /> */}
+        <Menu />
         <Toolbar />
         <Box
           sx={{
@@ -137,7 +140,9 @@ export default function HomePage() {
           <NewsFunction />
         </Box>
         {/* <JoinCommunity /> */}
-        <Box
+
+        <Footer />
+        {/* <Box
           sx={{
             height: "50px",
             width: "100%",
@@ -164,7 +169,7 @@ export default function HomePage() {
             Designed and Developed by{" "}
             <span style={{ fontWeight: 700 }}>ConvoBox</span>
           </Typography>
-        </Box>
+        </Box> */}
       </Box>
     </>
   );

@@ -1,6 +1,6 @@
 import React from "react";
 import { Box, Grid, Typography } from "@mui/material";
-import SchoolBackground from "../../assets/schollBackground.png";
+import SchoolBackground from "../../assets/schoolBanner.JPG";
 // import Facilities from "./Facilities";
 // import ExpertiseLinkCard from "./ExpertiseLinkCard";
 import OwlIcon from "../../assets/owlIcon.png";

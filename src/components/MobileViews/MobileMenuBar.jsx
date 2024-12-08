@@ -3,7 +3,6 @@ import {
   AppBar,
   Box,
   IconButton,
-  Toolbar,
   Typography,
   Drawer,
   List,
@@ -12,29 +11,36 @@ import {
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
+import { useLocation, useNavigate } from "react-router-dom";
 import schoolLogo from "../../assets/schoolLogo.png";
+import { title } from "framer-motion/client";
 
-export default function MobileMenuBar({ onMenuClick }) {
+export default function MobileMenuBar() {
   const [drawerOpen, setDrawerOpen] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
 
   const menuItems = [
-    "Home",
-    "About",
-    "Academics",
-    "Testimonials",
-    "News & Events",
-    // "Infrastructure",
-    // "Contact Us",
+    { title: "Home", link: "/home" },
+    { title: "About", link: "/about" },
+    { title: "Infrastructure", link: "/infrastructure" },
+    { title: "Admissions", link: "/admissions" },
+    // { title: "Academics", link: "/academics" },
+    // { title: "Testimonials", link: "/testimonials" },
+    // { title: "News & Events", link: "/news" },
+    // Add additional items as needed
   ];
 
-  const toggleDrawer = (open) => (event) => {
+  const toggleDrawer = (open) => () => {
     setDrawerOpen(open);
   };
 
-  const handleMenuClick = (section) => {
-    onMenuClick(section);
+  const handleMenuClick = (page) => {
+    navigate(page.link);
     setDrawerOpen(false); // Close the drawer after clicking
   };
+
+  const currentPath = location.pathname;
 
   return (
     <>
@@ -94,9 +100,31 @@ export default function MobileMenuBar({ onMenuClick }) {
             <CloseIcon />
           </IconButton>
           <List>
-            {menuItems.map((text) => (
-              <ListItem button key={text} onClick={() => handleMenuClick(text)}>
-                <ListItemText primary={text} />
+            {menuItems.map((page) => (
+              <ListItem
+                button
+                key={page.title}
+                onClick={() => handleMenuClick(page)}
+                sx={{
+                  "&:hover": {
+                    color: "#F68820",
+                  },
+                }}
+              >
+                <ListItemText
+                  primary={
+                    <Typography
+                      sx={{
+                        fontWeight:
+                          currentPath === page.link ? "bold" : "normal",
+                        cursor: "pointer",
+                        color: "#000",
+                      }}
+                    >
+                      {page.title}
+                    </Typography>
+                  }
+                />
               </ListItem>
             ))}
           </List>
@@ -105,4 +133,3 @@ export default function MobileMenuBar({ onMenuClick }) {
     </>
   );
 }
-

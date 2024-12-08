@@ -1,6 +1,6 @@
 import { Box, Grid, IconButton, Typography } from "@mui/material";
 import InsightsIcon from "@mui/icons-material/Insights";
-import StudentStatsImage from "../../assets/studentEnagagement.svg";
+import StudentStatsImage from "../../assets/welcomeBanner.png";
 export default function MobileEngagementStats() {
   return (
     <Grid container sx={{ width: "100vw", mb: 10 }}>

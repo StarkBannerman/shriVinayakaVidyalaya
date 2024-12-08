@@ -113,8 +113,10 @@ export default function MobileExpertiseCard({ cardDetails }) {
               placeItems: "center",
             }}
           >
-            <Box
+            <IconButton
               sx={{
+                color: "#FF9D01",
+                transition: "color 0.3s ease",
                 height: "80px",
                 width: "80px",
                 borderRadius: "50%",
@@ -123,17 +125,21 @@ export default function MobileExpertiseCard({ cardDetails }) {
                 placeItems: "center",
                 ml: 1,
                 mt: 1,
+                cursor: "pointer",
+                transition:
+                  "transform 0.3s ease, backgroundColor 0.3s ease, color 0.3s ease",
+                "&:hover": {
+                  transform: "scale(1.1)",
+                  backgroundColor: "#FF9D01",
+                  color: "#FFF",
+                },
+              }}
+              onClick={() => {
+                window.open(cardDetails.link, "_blank");
               }}
             >
-              <IconButton
-                sx={{ color: "#FF9D01" }}
-                onClick={() => {
-                  window.open(cardDetails.link, "_blank");
-                }}
-              >
-                <ArrowOutwardOutlinedIcon fontSize="large" />
-              </IconButton>
-            </Box>
+              <ArrowOutwardOutlinedIcon fontSize="large" />
+            </IconButton>
           </Box>
         </Box>
       </Box>

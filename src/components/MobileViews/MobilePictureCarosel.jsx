@@ -1,8 +1,11 @@
-import { Box } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import { Carousel } from "react-responsive-carousel";
-import CaroselImage from "../../assets/mobileBanner.jpg";
-import banner2 from "../../assets/mobileBanner2.jpg";
-import banner3 from "../../assets/mobileBanner3.jpg";
+// import CaroselImage from "../../assets/mobileBanner.jpg";
+// import banner2 from "../../assets/mobileBanner2.jpg";
+// import banner3 from "../../assets/mobileBanner3.jpg";
+import banner2 from "../../assets/MobileBanner5.jpg";
+import CaroselImage from "../../assets/Banner4.JPG";
+import banner3 from "../../assets/MobileBanner6.jpg";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // Import carousel CSS
 
 export default function MobilePictureCarousel() {
@@ -58,27 +61,27 @@ export default function MobilePictureCarousel() {
           style={{
             height: "100%",
             width: "100%",
-            pointerEvents: "auto", // Allow carousel to receive pointer events
-          }}
-        >
-          <img
-            src={banner2}
-            style={{
-              height: "100%",
-              width: "100%",
-              objectFit: "cover", // Adjust to cover the area without distortion
-            }}
-            alt="Carousel"
-          />
-        </div>
-        <div
-          style={{
-            height: "100%",
-            width: "100%",
             minHeight: "600px",
             pointerEvents: "auto", // Allow carousel to receive pointer events
           }}
         >
+          <Typography
+            sx={{
+              color: "#FFFFFF",
+              fontSize: "30px",
+              fontWeight: 700,
+              position: "absolute",
+              top: "70%",
+              left: "50%",
+              transform: "translate(-50%, -50%)",
+              zIndex: 2,
+              width: "90%",
+              textAlign: "center",
+              textShadow: "2px 2px 4px rgba(0,0,0,0.5)",
+            }}
+          >
+            Your Future Begins Here ...
+          </Typography>
           <img
             src={CaroselImage}
             style={{
@@ -89,7 +92,6 @@ export default function MobilePictureCarousel() {
             alt="Carousel"
           />
         </div>
-
         <div
           style={{
             height: "100%",
@@ -100,6 +102,23 @@ export default function MobilePictureCarousel() {
         >
           <img
             src={banner3}
+            style={{
+              height: "100%",
+              width: "100%",
+              objectFit: "cover", // Adjust to cover the area without distortion
+            }}
+            alt="Carousel"
+          />
+        </div>
+        <div
+          style={{
+            height: "100%",
+            width: "100%",
+            pointerEvents: "auto", // Allow carousel to receive pointer events
+          }}
+        >
+          <img
+            src={banner2}
             style={{
               height: "100%",
               width: "100%",

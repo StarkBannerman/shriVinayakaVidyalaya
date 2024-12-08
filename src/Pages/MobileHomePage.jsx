@@ -16,6 +16,7 @@ import MobileNewsEventCard from "../components/MobileViews/MobileEventCards";
 import MobileNewsEvent from "../components/MobileViews/MobileNewsEvents";
 import backgroundDoodle from "../assets/backgroundImage.svg";
 import { useRef } from "react";
+import Footer from "../components/Common/Footer";
 
 export default function MobileHomePage() {
   const carouselRef = useRef(null);
@@ -137,7 +138,7 @@ export default function MobileHomePage() {
       <Box ref={eventsRef}>
         <MobileNewsEvent />
       </Box>
-      <Box
+      {/* <Box
         sx={{
           height: "50px",
           width: "100%",
@@ -164,7 +165,8 @@ export default function MobileHomePage() {
           Designed and Developed by{" "}
           <span style={{ fontWeight: 700 }}>ConvoBox</span>
         </Typography>
-      </Box>
+      </Box> */}
+      <Footer />
     </Box>
   );
 }

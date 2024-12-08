@@ -1,5 +1,5 @@
 import { Box, Grid, Typography, Button } from "@mui/material";
-import GroupStudentImage from "../../assets/welcomeImage.png";
+import GroupStudentImage from "../../assets/studentEngagement.png";
 export default function MobileWelcomeMessage() {
   return (
     <Box sx={{ display: "grid", placeItems: "center", width: "100vw" }}>
@@ -27,9 +27,10 @@ export default function MobileWelcomeMessage() {
                 textAlign: "center",
               }}
             >
-              Welcome to Shri Vinayaka Vidyalaya
+              Welcome to Shri Vinayaka Vidyalaya – One of the Best Schools in
+              Bangalore
             </Typography>
-            <Typography
+            {/* <Typography
               sx={{
                 fontSize: "14px",
                 fontWeight: 700,
@@ -39,7 +40,7 @@ export default function MobileWelcomeMessage() {
               }}
             >
               विद्या ददाति विनयं विनयाद् याति पात्रताम्।
-            </Typography>
+            </Typography> */}
             <Typography
               sx={{
                 fontSize: "14px",
@@ -49,9 +50,11 @@ export default function MobileWelcomeMessage() {
                 mt: 1,
               }}
             >
-              पात्रत्वात् धनमाप्नोति धनात् धर्मं ततः सुखम्॥
+              {/* पात्रत्वात् धनमाप्नोति धनात् धर्मं ततः सुखम्॥ */}
+              "Celebrating Diversity, Inspiring Excellence, and Building the
+              Future.”
             </Typography>
-            <Typography
+            {/* <Typography
               sx={{
                 fontSize: "14px",
                 fontWeight: 400, // Standard font weight for normal text
@@ -65,10 +68,9 @@ export default function MobileWelcomeMessage() {
                 paddingX: 2, // Optional: horizontal padding for better spacing within the paragraph
               }}
             >
-              "Education bestows humility, from humility comes worthiness. With
-              worthiness, one attains wealth, and with wealth, one is able to
-              follow dharma, which ultimately leads to happiness.”
-            </Typography>
+              "Celebrating Diversity, Inspiring Excellence, and Building the
+              Future.”
+            </Typography> */}
 
             <Typography
               sx={{
@@ -84,13 +86,16 @@ export default function MobileWelcomeMessage() {
                 paddingX: 2, // Optional: horizontal padding for better spacing within the paragraph
               }}
             >
-              Welcome to the school that celebrates children in their own
-              uniqueness and builds their future along with them. We instill a
-              sense of pride about the country, culture, traditions and most
-              importantly, build a foundation for their free thoughts, ideas,
-              concepts, philosophies, science, mathematics, art, a way of life
-              and more. We are inspired by our country that has taught the
-              world.
+              Shri Vinayaka Vidyalaya, one of the leading co-educational schools
+              in Bangalore, has been a trusted name in education for over 35
+              years. Located in the heart of JP Nagar, Bangalore, our school
+              offers a balanced approach to academics, sports, and
+              extracurricular activities. We are dedicated to providing
+              high-quality education that nurtures every child's potential,
+              equipping them with skills for the future. Whether you're looking
+              for the best school for girls in Bangalore or the best school for
+              boys in Bangalore, Shri Vinayaka Vidyalaya offers an inclusive,
+              student-centered environment where every child can thrive.
             </Typography>
             <Button
               variant="contained"

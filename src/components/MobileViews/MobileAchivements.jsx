@@ -36,12 +36,12 @@ export default function MobileAcheivements() {
         {
           subHeading: "Confluenze",
           paragraph:
-            "Every hidden ability and talent of every single child reveals itself and blossoms out at this unique and fun-filled platform.",
+            "Every year, Confluenze brings out the hidden talents of our students, making it a unique opportunity for self-expression.",
         },
         {
           subHeading: "Utopia",
           paragraph:
-            "This is our interschool cultural extravaganza. This flagship event has been conducted by us since 2002.",
+            "Our annual interschool cultural event, Utopia, celebrates creativity and fosters camaraderie among students from different schools in Bangalore.",
         },
       ],
       heading: "Annual Flagship Events ",

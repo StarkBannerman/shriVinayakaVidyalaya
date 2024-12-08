@@ -1,11 +1,13 @@
-import { Box } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import experienceLogo from "../../assets/Experience.png";
 import CaroselImage from "../../assets/bannerImage.jpg";
 import LineGroup from "../../assets/lineGroup.png";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // Import carousel CSS
-import banner1 from "../../assets/laptopBanner1.jpg";
-import banner2 from "../../assets/laptopBanner2.jpg";
+// import banner1 from "../../assets/laptopBanner1.jpg";
+import banner2 from "../../assets/Banner2.JPG";
+import banner1 from "../../assets/Banner4.JPG";
+import banner3 from "../../assets/Banner3.JPG";
 
 export default function PictureCarousel() {
   return (
@@ -88,6 +90,41 @@ export default function PictureCarousel() {
               style={{
                 height: "100%",
                 width: "100%",
+                minHeight: "600px",
+                pointerEvents: "auto", // Allow carousel to receive pointer events
+              }}
+            >
+              <Typography
+                sx={{
+                  color: "#FFFFFF",
+                  fontSize: "70px",
+                  fontWeight: 700,
+                  position: "absolute",
+                  top: "10%",
+                  left: "50%",
+                  transform: "translate(-50%, -50%)",
+                  zIndex: 2,
+                  width: "100%",
+                  textAlign: "center",
+                  textShadow: "2px 2px 4px rgba(0,0,0,0.5)",
+                }}
+              >
+                Your Future Begins Here ...
+              </Typography>
+              <img
+                src={banner1}
+                style={{
+                  height: "100%",
+                  width: "100%",
+                  objectFit: "cover", // Adjust to cover the area without distortion
+                }}
+                alt="Carousel"
+              />
+            </div>
+            <div
+              style={{
+                height: "100%",
+                width: "100%",
                 pointerEvents: "auto", // Allow carousel to receive pointer events
               }}
             >
@@ -105,12 +142,11 @@ export default function PictureCarousel() {
               style={{
                 height: "100%",
                 width: "100%",
-                minHeight: "600px",
                 pointerEvents: "auto", // Allow carousel to receive pointer events
               }}
             >
               <img
-                src={banner1}
+                src={banner3}
                 style={{
                   height: "100%",
                   width: "100%",
