@@ -28,7 +28,7 @@ export default function ResponsiveMenuBar() {
     { title: "Home", link: "/home" },
     { title: "About", link: "/about" },
     { title: "Infrastructure", link: "/infrastructure" },
-    // { title: "Academics", link: "/academics" },
+    { title: "Academics", link: "/academics" },
     { title: "Admissions", link: "/admissions" },
     // { title: "Testimonials", link: "/testimonials" },
     // { title: "News & Events", link: "/news" },

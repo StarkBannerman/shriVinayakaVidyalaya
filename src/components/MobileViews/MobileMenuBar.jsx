@@ -25,7 +25,7 @@ export default function MobileMenuBar() {
     { title: "About", link: "/about" },
     { title: "Infrastructure", link: "/infrastructure" },
     { title: "Admissions", link: "/admissions" },
-    // { title: "Academics", link: "/academics" },
+    { title: "Academics", link: "/academics" },
     // { title: "Testimonials", link: "/testimonials" },
     // { title: "News & Events", link: "/news" },
     // Add additional items as needed
