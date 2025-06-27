@@ -14,6 +14,8 @@ import MobileInfrastructure from "./Pages/MobileInfrastructure";
 import AcademicsPage from "./Pages/AcademicsPage";
 import Admissions from "./Pages/Admissions";
 import ContactUsPage from "./Pages/ContactUs";
+// import NewsPage from "./Pages/News&EventsPage";
+import NewsPage from './Pages/NewsEventsPage';
 
 function App() {
   const { isLargeDesktop, isDesktop, isTablet, isMobile } = useMediaQueries();
@@ -46,10 +48,10 @@ function App() {
             path="/infrastructure"
             element={isMobile ? <MobileInfrastructure /> : <Infrastructure />}
           ></Route>
-          {/* <Route path="/academics" element={<AcademicsPage />}></Route> */}
+          <Route path="/academics" element={<AcademicsPage />}></Route>
           <Route path="/admissions" element={<Admissions />} />
-          {/* <Route path="/contactus" element={<ContactUsPage />}></Route> */}
-
+          <Route path="/contactus" element={<ContactUsPage />}></Route>
+          <Route path="/news" element={<NewsPage />}></Route>
           <Route
             path="/*"
             element={isMobile ? <MobileHomePage /> : <HomePage />}

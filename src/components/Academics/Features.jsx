@@ -1,49 +1,51 @@
 import { Box, Grid, IconButton, Typography } from "@mui/material";
 import teacherImage from "../../assets/teacherImage.jpeg";
-import AutoStoriesIcon from "@mui/icons-material/AutoStories";
-import BrushIcon from "@mui/icons-material/Brush";
-import SignalCellularAltIcon from "@mui/icons-material/SignalCellularAlt";
-import LightModeIcon from "@mui/icons-material/LightMode";
-import ExtensionIcon from "@mui/icons-material/Extension";
-import StarRateIcon from "@mui/icons-material/StarRate";
+import SchoolIcon from "@mui/icons-material/School";
+import EmojiEventsIcon from "@mui/icons-material/EmojiEvents";
+import IntegrationInstructionsIcon from "@mui/icons-material/IntegrationInstructions";
+import HistoryEduIcon from "@mui/icons-material/HistoryEdu";
+import FlareIcon from "@mui/icons-material/Flare";
+import FavoriteIcon from "@mui/icons-material/Favorite";
 
 export default function Features() {
   const gridOne = [
     {
-      icon: <AutoStoriesIcon sx={{ width: "35px", height: "35px" }} />,
-      title: "Thematic Learning",
-      desc: "Our curriculum is centered around engaging themes that capture children's imaginations. Each theme integrates multiple subjects, making learning enjoyable and relevant.",
+      icon: <SchoolIcon sx={{ width: "35px", height: "35px" }} />,
+      title: "Student-led Choice",
+      desc: "Students pick their electives each term, empowering them to take ownership of their learning journey and explore their passions.",
     },
     {
-      icon: <BrushIcon sx={{ width: "35px", height: "35px" }} />,
-      title: "Art and Creativity",
-      desc: "Art is celebrated at Little Learners Academy. Our art-focused activities encourage self-expression, creativity, and the appreciation of various art forms.",
+      icon: <EmojiEventsIcon sx={{ width: "35px", height: "35px" }} />,
+      title: "Skill Meets Expression",
+      desc: "Clubs culminate in intra- and inter-school competitions, exhibitions, and performances, showcasing student talents and achievements.",
     },
   ];
 
   const gridTwo = [
     {
-      icon: <SignalCellularAltIcon sx={{ width: "35px", height: "35px" }} />,
-      title: "STEAM Education",
-      desc: "We offer innovative STEAM (Science, Technology, Engineering, Arts, and Mathematics) programs that promote hands-on exploration, critical thinking, and problem-solving skills.",
+      icon: (
+        <IntegrationInstructionsIcon sx={{ width: "35px", height: "35px" }} />
+      ),
+      title: "Holistic by Design",
+      desc: "These experiences are embedded into the academic calendar — not added as extra, ensuring a well-rounded educational approach.",
     },
     {
-      icon: <LightModeIcon sx={{ width: "35px", height: "35px" }} />,
-      title: "Outdoor Education",
-      desc: "Our expansive outdoor learning spaces provide a stimulating environment for children to explore nature, fostering a connection with the environment.",
+      icon: <HistoryEduIcon sx={{ width: "35px", height: "35px" }} />,
+      title: "Rooted and Futuristic",
+      desc: "Sanskrit and Konnakkol sit proudly alongside Design & Tech and Public Speaking, bridging traditional wisdom with modern skills.",
     },
   ];
 
   const gridThree = [
     {
-      icon: <ExtensionIcon sx={{ width: "35px", height: "35px" }} />,
-      title: "Language Immersion",
-      desc: "Through language immersion programs, children have the opportunity to learn a second language, enhancing cognitive development and global awareness.",
+      icon: <FlareIcon sx={{ width: "35px", height: "35px" }} />,
+      title: "Ignite Talents",
+      desc: "At SVV, we don't just find talents — we ignite them, nurture them, and watch them grow into extraordinary achievements.",
     },
     {
-      icon: <StarRateIcon sx={{ width: "35px", height: "35px" }} />,
-      title: "Play-Based Learning",
-      desc: "Play is an integral part of early childhood education. Our play-based approach enhances social skills, emotional development, and imaginative thinking.",
+      icon: <FavoriteIcon sx={{ width: "35px", height: "35px" }} />,
+      title: "Nurture Growth",
+      desc: "Our comprehensive approach ensures every student receives the support and guidance needed to reach their full potential.",
     },
   ];
 
@@ -87,7 +89,7 @@ export default function Features() {
                   textAlign: "center",
                 }}
               >
-                Our Features
+                Our Approach
               </Typography>
               <Typography
                 sx={{
@@ -97,7 +99,7 @@ export default function Features() {
                   color: "#F68820",
                 }}
               >
-                What We Provide
+                Why It's Special at SVV
               </Typography>
               <Typography
                 sx={{
@@ -108,12 +110,12 @@ export default function Features() {
                   lineHeight: 1.6,
                   mt: 2,
                   mb: 2,
-                  px: { xs: 2, sm: 5, md: 10 }, // Responsive padding for text width
+                  px: { xs: 2, sm: 5, md: 10 },
                 }}
               >
-                Our school provides a nurturing and stimulating environment,
-                fostering a love for learning that lasts a lifetime. Join us as
-                we embark on an exciting educational journey together!
+                At SVV, we believe in empowering students through choice,
+                celebrating their unique talents, and creating a learning
+                environment that seamlessly blends tradition with innovation.
               </Typography>
             </Box>
           </Grid>
@@ -189,7 +191,6 @@ export default function Features() {
                     backgroundColor: "#FFF",
                     borderRadius: "10px",
                     minHeight: "250px",
-                    // width: "100%",
                     display: "flex",
                     flexDirection: "column",
                     justifyContent: "center",

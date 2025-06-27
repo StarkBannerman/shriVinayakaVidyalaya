@@ -20,11 +20,10 @@ export default function AcademicsIntroBox() {
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
-          flexDirection: { xs: "column", md: "row" }, // Column for mobile, row for tablet and above
+          flexDirection: { xs: "column", md: "row" },
         }}
       >
-        {/* Text Section */}
-        <Grid item xs={12} sm={8} md={6}>
+        <Grid item xs={12} sm={8} md={8}>
           <Box
             sx={{
               textAlign: "center",
@@ -36,7 +35,7 @@ export default function AcademicsIntroBox() {
           >
             <Typography
               sx={{
-                fontSize: { xs: "28px", sm: "36px", md: "50px" }, // Smaller font size on tablet
+                fontSize: { xs: "28px", sm: "36px", md: "50px" },
                 fontWeight: 700,
                 textAlign: "center",
               }}
@@ -46,7 +45,7 @@ export default function AcademicsIntroBox() {
 
             <Typography
               sx={{
-                fontSize: { xs: "16px", sm: "20px", md: "24px" }, // Smaller font size on tablet
+                fontSize: { xs: "16px", sm: "20px", md: "24px" },
                 fontWeight: 500,
                 textAlign: "center",
               }}
@@ -56,23 +55,40 @@ export default function AcademicsIntroBox() {
 
             <Typography
               sx={{
-                fontSize: { xs: "14px", sm: "16px" }, // Adjust font size for smaller screens
+                fontSize: { xs: "14px", sm: "16px" },
                 fontWeight: 400,
-                textAlign: { xs: "justify", sm: "justify", md: "center" },
-                // width: "90%",
+                textAlign: { xs: "justify", sm: "justify", md: "justify" },
                 color: "#737373",
                 lineHeight: 1.6,
                 mt: 2,
                 mb: 2,
+                width: { xs: "90%", sm: "80%", md: "100%" },
               }}
             >
-              Welcome to our Academics page, where we take pride in providing a
-              comprehensive and stimulating educational experience for your
-              child. Our school's academic program is thoughtfully designed to
-              foster a love for learning while building a strong foundation of
-              essential skills and knowledge. From language arts and mathematics
-              to science and social studies, our curriculum is carefully crafted
-              to spark curiosity and encourage active exploration.
+              At{" "}
+              <strong style={{ color: "black" }}>
+                Shri Vinayaka Vidyalaya
+              </strong>
+              , we believe academics should do more than inform — they should{" "}
+              <strong style={{ color: "black" }}>transform</strong>. For over 35
+              years, we’ve blended rigorous academics with deep-rooted values,
+              nurturing students who think critically, care deeply, and grow
+              intentionally. Our classrooms are not bound by four walls or
+              textbook pages. They are{" "}
+              <strong style={{ color: "black" }}>
+                alive with dialogue, discovery, and reflection
+              </strong>
+              . Every lesson — whether in Math, Science, or Language — is
+              designed to spark curiosity, build resilience, and connect
+              knowledge to real life. What makes SVV different is the{" "}
+              <strong style={{ color: "black" }}>
+                balance we create between intellect and integrity
+              </strong>
+              . We don’t just teach students to top exams; we guide them to{" "}
+              <strong style={{ color: "black" }}>
+                lead with empathy, question boldly, and learn for life
+              </strong>
+              .
             </Typography>
           </Box>
         </Grid>

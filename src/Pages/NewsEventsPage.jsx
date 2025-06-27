@@ -1,16 +1,17 @@
 import { Box, Toolbar } from "@mui/material";
 import ResponsiveMenuBar from "../components/Common/Menu";
-import ContactUsIntro from "../components/ContactUs/ContactUsIntro";
-import ContactForm from "../components/ContactUs/ContactUsForm";
-import Footer from "../components/Common/Footer";
 
-export default function ContactUsPage() {
+import Footer from "../components/Common/Footer";
+import NewsIntro from "../components/News/NewsPageIntro";
+import NewsList from "../components/News/newsList";
+
+export default function NewsPage() {
   return (
     <Box>
       <ResponsiveMenuBar />
       <Toolbar />
-      <ContactUsIntro />
-      <ContactForm />
+      <NewsIntro />
+      <NewsList />
       <Footer />
     </Box>
   );
