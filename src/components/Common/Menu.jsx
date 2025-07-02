@@ -32,7 +32,7 @@ export default function ResponsiveMenuBar() {
     { title: "Admissions", link: "/admissions" },
     // { title: "Testimonials", link: "/testimonials" },
     // { title: "News & Events", link: "/news" },
-    // { title: "Contact Us", link: "/contactus" },
+    { title: "Contact Us", link: "/contactus" },
   ];
 
   const handleMenuClick = (page, index) => {

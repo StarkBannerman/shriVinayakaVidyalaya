@@ -1,3 +1,4 @@
+"use client";
 
 import { useState } from "react";
 import {
@@ -14,11 +15,14 @@ import {
   FormHelperText,
   useTheme,
   useMediaQuery,
+  Alert,
+  CircularProgress,
 } from "@mui/material";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
+import emailjs from "@emailjs/browser";
 
 export default function ContactForm() {
   const theme = useTheme();
@@ -35,6 +39,8 @@ export default function ContactForm() {
   });
 
   const [errors, setErrors] = useState({});
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState(null); // 'success' or 'error'
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -42,6 +48,14 @@ export default function ContactForm() {
       ...formData,
       [name]: value,
     });
+
+    // Clear error when user starts typing
+    if (errors[name]) {
+      setErrors({
+        ...errors,
+        [name]: "",
+      });
+    }
   };
 
   const validateForm = () => {
@@ -60,21 +74,77 @@ export default function ContactForm() {
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    if (validateForm()) {
-      // Submit form data
-      console.log("Form submitted:", formData);
-      // Reset form after submission
-      setFormData({
-        parentName: "",
-        email: "",
-        phone: "",
-        studentName: "",
-        studentAge: "",
-        program: "",
-        message: "",
-      });
+
+    if (!validateForm()) {
+      return;
+    }
+
+    setIsSubmitting(true);
+    setSubmitStatus(null);
+
+    try {
+      // EmailJS configuration - Replace these with your actual values
+      const serviceId = "service_mc45f2o"; // Add your EmailJS service ID here
+      const templateId = "template_5qi0dpo"; // Your template ID
+      const publicKey = "wppd0ET9DmNagPg6u"; // Add your EmailJS public key here
+
+      // Template parameters that will be sent to EmailJS
+      const templateParams = {
+        to_email: "shrivinayakavidyalaya@gmail.com",
+        parent_name: formData.parentName,
+        parent_email: formData.email,
+        parent_phone: formData.phone,
+        student_name: formData.studentName,
+        student_age: formData.studentAge,
+        program: formData.program,
+        message: formData.message || "No additional message provided",
+        submission_date: new Date().toLocaleDateString("en-IN", {
+          weekday: "long",
+          year: "numeric",
+          month: "long",
+          day: "numeric",
+        }),
+        submission_time: new Date().toLocaleTimeString("en-IN", {
+          hour: "2-digit",
+          minute: "2-digit",
+          hour12: true,
+        }),
+      };
+
+      console.log("Sending email with params:", templateParams);
+
+      // Send email using EmailJS
+      const result = await emailjs.send(
+        serviceId,
+        templateId,
+        templateParams,
+        publicKey
+      );
+
+      if (result.status === 200) {
+        setSubmitStatus("success");
+        // Reset form after successful submission
+        setFormData({
+          parentName: "",
+          email: "",
+          phone: "",
+          studentName: "",
+          studentAge: "",
+          program: "",
+          message: "",
+        });
+        console.log("Email sent successfully:", result);
+      } else {
+        setSubmitStatus("error");
+        console.error("Email sending failed:", result);
+      }
+    } catch (error) {
+      console.error("Form submission error:", error);
+      setSubmitStatus("error");
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -187,6 +257,28 @@ export default function ContactForm() {
           </IconButton>
         </Box>
 
+        {/* Status Messages */}
+        {submitStatus === "success" && (
+          <Alert
+            severity="success"
+            sx={{ mb: 3, width: "100%", maxWidth: "600px" }}
+          >
+            🎉 Thank you! Your inquiry has been sent successfully to Shri
+            Vinayaka Vidyalaya. Our team will contact you within 24 hours.
+          </Alert>
+        )}
+
+        {submitStatus === "error" && (
+          <Alert
+            severity="error"
+            sx={{ mb: 3, width: "100%", maxWidth: "600px" }}
+          >
+            ❌ Sorry, there was an error sending your message. Please try again
+            or contact us directly at shrivinayakavidyalaya@gmail.com or +91
+            9916372340.
+          </Alert>
+        )}
+
         <Paper
           elevation={0}
           sx={{
@@ -225,6 +317,7 @@ export default function ContactForm() {
                   error={!!errors.parentName}
                   helperText={errors.parentName}
                   variant="outlined"
+                  disabled={isSubmitting}
                   InputProps={{
                     style: {
                       fontSize: "16px",
@@ -239,6 +332,7 @@ export default function ContactForm() {
                   }}
                 />
               </Grid>
+
               <Grid item xs={12} md={6}>
                 <Typography sx={{ mb: 1, fontWeight: 500, color: "#333333" }}>
                   Email Address
@@ -246,12 +340,14 @@ export default function ContactForm() {
                 <TextField
                   fullWidth
                   name="email"
+                  type="email"
                   placeholder="Enter Email Address"
                   value={formData.email}
                   onChange={handleChange}
                   error={!!errors.email}
                   helperText={errors.email}
                   variant="outlined"
+                  disabled={isSubmitting}
                   InputProps={{
                     style: {
                       fontSize: "16px",
@@ -266,6 +362,7 @@ export default function ContactForm() {
                   }}
                 />
               </Grid>
+
               <Grid item xs={12} md={6}>
                 <Typography sx={{ mb: 1, fontWeight: 500, color: "#333333" }}>
                   Phone Number
@@ -279,6 +376,7 @@ export default function ContactForm() {
                   error={!!errors.phone}
                   helperText={errors.phone}
                   variant="outlined"
+                  disabled={isSubmitting}
                   InputProps={{
                     style: {
                       fontSize: "16px",
@@ -293,6 +391,7 @@ export default function ContactForm() {
                   }}
                 />
               </Grid>
+
               <Grid item xs={12} md={6}>
                 <Typography sx={{ mb: 1, fontWeight: 500, color: "#333333" }}>
                   Student Name
@@ -306,6 +405,7 @@ export default function ContactForm() {
                   error={!!errors.studentName}
                   helperText={errors.studentName}
                   variant="outlined"
+                  disabled={isSubmitting}
                   InputProps={{
                     style: {
                       fontSize: "16px",
@@ -320,6 +420,7 @@ export default function ContactForm() {
                   }}
                 />
               </Grid>
+
               <Grid item xs={12} md={6}>
                 <Typography sx={{ mb: 1, fontWeight: 500, color: "#333333" }}>
                   Student Age
@@ -333,6 +434,7 @@ export default function ContactForm() {
                   error={!!errors.studentAge}
                   helperText={errors.studentAge}
                   variant="outlined"
+                  disabled={isSubmitting}
                   InputProps={{
                     style: {
                       fontSize: "16px",
@@ -347,13 +449,15 @@ export default function ContactForm() {
                   }}
                 />
               </Grid>
+
               <Grid item xs={12} md={6}>
                 <Typography sx={{ mb: 1, fontWeight: 500, color: "#333333" }}>
-                  Program of Intrest
+                  Program of Interest
                 </Typography>
                 <FormControl
                   fullWidth
                   error={!!errors.program}
+                  disabled={isSubmitting}
                   sx={{
                     "& .MuiOutlinedInput-root": {
                       borderRadius: "8px",
@@ -391,6 +495,7 @@ export default function ContactForm() {
                   )}
                 </FormControl>
               </Grid>
+
               <Grid item xs={12}>
                 <Typography sx={{ mb: 1, fontWeight: 500, color: "#333333" }}>
                   Message
@@ -404,6 +509,7 @@ export default function ContactForm() {
                   value={formData.message}
                   onChange={handleChange}
                   variant="outlined"
+                  disabled={isSubmitting}
                   InputProps={{
                     style: { fontSize: "16px", padding: "12px 14px" },
                   }}
@@ -415,10 +521,12 @@ export default function ContactForm() {
                   }}
                 />
               </Grid>
+
               <Grid item xs={12}>
                 <Button
                   type="submit"
                   fullWidth
+                  disabled={isSubmitting}
                   sx={{
                     mt: 2,
                     py: 2,
@@ -431,9 +539,22 @@ export default function ContactForm() {
                     "&:hover": {
                       backgroundColor: "#E67810",
                     },
+                    "&:disabled": {
+                      backgroundColor: "#ccc",
+                    },
                   }}
                 >
-                  Submit
+                  {isSubmitting ? (
+                    <>
+                      <CircularProgress
+                        size={24}
+                        sx={{ mr: 2, color: "white" }}
+                      />
+                      Sending to School...
+                    </>
+                  ) : (
+                    "Submit Inquiry"
+                  )}
                 </Button>
               </Grid>
             </Grid>
