@@ -1,3 +1,4 @@
+import { INFRASTRUCTURE } from "../../content/infrastructure";
 import { Box, Grid, Typography } from "@mui/material";
 
 export default function InfraTitle() {
@@ -41,7 +42,7 @@ export default function InfraTitle() {
                 textAlign: "center",
               }}
             >
-              A Campus Built for Excellence
+              {INFRASTRUCTURE.introHeading}
             </Typography>
 
             <Typography
@@ -56,10 +57,7 @@ export default function InfraTitle() {
                 mb: 2,
               }}
             >
-              Our infrastructure supports every aspect of learning, making Shri
-              Vinayaka Vidyalaya one of the top schools in JP Nagar Bangalore.
-              From academics to extracurricular activities, our facilities cater
-              to students' all-round development.
+              {INFRASTRUCTURE.introBody}
             </Typography>
           </Box>
         </Grid>

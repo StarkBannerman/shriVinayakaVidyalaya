@@ -1,3 +1,4 @@
+import { HOME } from "../../content/home";
 import { Box, Grid, Typography, Button } from "@mui/material";
 import GroupStudentImage from "../../assets/studentEngagement.webp";
 export default function MobileWelcomeMessage() {
@@ -27,8 +28,7 @@ export default function MobileWelcomeMessage() {
                 textAlign: "center",
               }}
             >
-              Welcome to Shri Vinayaka Vidyalaya – One of the Best Schools in
-              Bangalore
+              {HOME.welcomeHeading}
             </Typography>
             {/* <Typography
               sx={{
@@ -50,9 +50,7 @@ export default function MobileWelcomeMessage() {
                 mt: 1,
               }}
             >
-              {/* पात्रत्वात् धनमाप्नोति धनात् धर्मं ततः सुखम्॥ */}
-              "Celebrating Diversity, Inspiring Excellence, and Building the
-              Future.”
+              {HOME.welcomeTagline}
             </Typography>
             {/* <Typography
               sx={{
@@ -86,16 +84,7 @@ export default function MobileWelcomeMessage() {
                 paddingX: 2, // Optional: horizontal padding for better spacing within the paragraph
               }}
             >
-              Shri Vinayaka Vidyalaya, one of the leading co-educational schools
-              in Bangalore, has been a trusted name in education for over 35
-              years. Located in the heart of JP Nagar, Bangalore, our school
-              offers a balanced approach to academics, sports, and
-              extracurricular activities. We are dedicated to providing
-              high-quality education that nurtures every child's potential,
-              equipping them with skills for the future. Whether you're looking
-              for the best school for girls in Bangalore or the best school for
-              boys in Bangalore, Shri Vinayaka Vidyalaya offers an inclusive,
-              student-centered environment where every child can thrive.
+              {HOME.welcomeBody}
             </Typography>
             <Button
               variant="contained"

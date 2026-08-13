@@ -1,0 +1,119 @@
+{
+  "page": {
+    "bannerText": "Celebrating 35 years of excellence in academics DAMMMMM",
+    "expertise": [
+      {
+        "heading": "35 Years of Experience ",
+        "link": "/about",
+        "listItems": [],
+        "paragraph": "The school was established in 1990 by the late Sri Doddamani Dasarath and his wife Smt. Sumathi Doddamani with a clear vision: to offer high-quality English medium education to children in the community at an affordable cost. Our mission is to nurture the intellectual, moral, physical, and social growth of our students. Committed to continuous improvement, we regularly evaluate and refine our practices to ensure we provide the best possible education as we move forward.",
+        "subItems": []
+      },
+      {
+        "heading": "Extra curricular activities",
+        "link": "#",
+        "listItems": [
+          "Swimming",
+          "Taek-won-do",
+          " Vedic Math",
+          "Abacus",
+          "Konakkol",
+          "Bhajans",
+          "Free style Dancing"
+        ],
+        "paragraph": "",
+        "subItems": []
+      },
+      {
+        "heading": "Annual Flagship Events ",
+        "link": "/academics",
+        "listItems": [],
+        "paragraph": "",
+        "subItems": [
+          {
+            "paragraph": "Every year, Confluenze brings out the hidden talents of our students, making it a unique opportunity for self-expression.",
+            "subHeading": "Confluenze"
+          },
+          {
+            "paragraph": "Our annual interschool cultural event, Utopia, celebrates creativity and fosters camaraderie among students from different schools in Bangalore.",
+            "subHeading": "Utopia"
+          }
+        ]
+      }
+    ],
+    "expertiseHeading": "Our Expertise in Education",
+    "facilities": [
+      {
+        "name": "Library"
+      },
+      {
+        "name": "Sports"
+      },
+      {
+        "name": "Science Lab"
+      },
+      {
+        "name": "IT Lab"
+      },
+      {
+        "name": "Extra Curriculars"
+      }
+    ],
+    "feedbackHeading": "What our Parents and Volunteers feel about our Institution",
+    "heroSlides": [
+      {
+        "alt": "Students at Shri Vinayaka Vidyalaya",
+        "caption": "",
+        "image": "78d5863d6b49b6ab003e730b352fd46d7f84cb00-1800x1200-1800",
+        "mobileImage": "0429bced5dd7b16a98616ab3b80b1604542cb418-1053x1800-900"
+      },
+      {
+        "alt": "Students at Shri Vinayaka Vidyalaya",
+        "caption": "Your Future Begins Here ...",
+        "image": "877d60710ffda9b6ba29166663da902bd353464d-1800x1200-1800",
+        "mobileImage": "877d60710ffda9b6ba29166663da902bd353464d-1800x1200-900"
+      },
+      {
+        "alt": "Students at Shri Vinayaka Vidyalaya",
+        "caption": "",
+        "image": "cddb6458efb66b5ef4c7d0117f3234fa3c2f06a5-1800x1200-1800",
+        "mobileImage": "54e96f110489c325b1d7b940522f3398eb2b66fd-1053x1800-900"
+      }
+    ],
+    "reviews": [
+      {
+        "name": "Amreen",
+        "profession": "7th std Nawaez Hussein's parent",
+        "reviewDesc": "As a parent of Naweaz Hussain, who has been attending Shri Vinayaka Vidyalaya since nursery and is now in 7th grade, I’m highly impressed with the school's balanced approach to education. The teachers are dedicated and supportive, helping Naweaz excel academically while also encouraging involvement in extracurricular activities that have boosted his confidence and social skills. The school's infrastructure is well-maintained, and they keep parents well-informed about their child's progress. Overall, Shri Vinayaka Vidyalaya offers a nurturing environment that has greatly contributed to my child's development."
+      },
+      {
+        "name": "Mridula",
+        "profession": "Ed.M, Harvard Graduate School of Education, USA",
+        "reviewDesc": "Volunteering with SVV was an incredibly enriching experience. I had the freedom to choose the subject I wanted to teach and the method that best suited my approach. I truly appreciated the trust the management placed in me to lead and teach. The students' eagerness and enthusiasm made it a breeze to facilitate activities and achieve the learning outcomes we aimed for!"
+      },
+      {
+        "name": "Alekhya",
+        "profession": "MSc Environment Science, Wageningen University & Research",
+        "reviewDesc": "Working in SVV was never that, work. It was an experience in growth, confidence & sheer happiness. Impacting young minds, curating the library selection, guiding communication & environmental driven changes - these are just some of the many fond memories of my time there. It is my biggest pleasure to call myself a part of the SVV family, shape talented students & contribute to the STEM future of our country."
+      }
+    ],
+    "stats": [
+      {
+        "label": "Distinctions in just last ten years",
+        "value": "200+"
+      },
+      {
+        "label": "Years of Experience",
+        "value": "35+"
+      },
+      {
+        "label": "Students Successful in their career",
+        "value": "5000+"
+      }
+    ],
+    "statsHeading": "Student Engagement Program",
+    "welcomeBody": "\"Shri Vinayaka Vidyalaya, one of the leading co-educational schools in Bangalore, has been a trusted name in education for over 35 years. Located in the heart of JP Nagar, Bangalore, our school offers a balanced approach to academics, sports, and extracurricular activities. We are dedicated to providing high-quality education that nurtures every child's potential, equipping them with skills for the future. Whether you're looking for the best school for girls in Bangalore or the best school for boys in Bangalore, Shri Vinayaka Vidyalaya offers an inclusive, student-centered environment where every child can thrive.\"",
+    "welcomeHeading": "Welcome to Shri Vinayaka Vidyalaya – One of the Best Schools in Bangalore",
+    "welcomeTagline": "\"Celebrating Diversity, Inspiring Excellence, and Building the Future.”"
+  }
+}

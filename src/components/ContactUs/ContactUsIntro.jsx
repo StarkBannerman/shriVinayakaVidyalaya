@@ -12,6 +12,7 @@ import CallIcon from "@mui/icons-material/Call";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import AccessTimeIcon from "@mui/icons-material/AccessTime";
 import { SITE } from "../../config/site";
+import { CONTACT } from "../../content/contact";
 
 export default function ContactUsIntro() {
   const theme = useTheme();
@@ -33,13 +34,12 @@ export default function ContactUsIntro() {
     {
       logo: LocationOnIcon,
       label: "ADDRESS",
-      value:
-        "10, 1st Main road, Guru Raghavendra Nagar, Eswara Layout, JP Nagar 7th phase, Arekere kothanur, Bengaluru Karnataka 560078",
+      value: CONTACT.address,
     },
     {
       logo: AccessTimeIcon,
       label: "OFFICE HOURS",
-      value: "9am - 6 pm",
+      value: CONTACT.officeHours,
     },
   ];
 
@@ -68,9 +68,7 @@ export default function ContactUsIntro() {
             mx: "auto",
           }}
         >
-          We value open communication and are eager to assist you with any
-          inquiries. Feel free to reach out to us through any of the following
-          contact methods
+          {CONTACT.introBody}
         </Typography>
 
         {/* Image section */}
@@ -115,7 +113,7 @@ export default function ContactUsIntro() {
                 width: "90%",
               }}
             >
-              Feel Free To Connect With Us
+              {CONTACT.imageHeading}
             </Typography>
             <Button
               variant="outlined"
@@ -130,7 +128,7 @@ export default function ContactUsIntro() {
                 py: 1,
               }}
             >
-              Contact Us
+              {CONTACT.imageCtaLabel}
             </Button>
           </Box>
         </Box>
@@ -243,9 +241,7 @@ export default function ContactUsIntro() {
             mx: "auto",
           }}
         >
-          We value open communication and are eager to assist you with any
-          inquiries. Feel free to reach out to us through any of the following
-          contact methods
+          {CONTACT.introBody}
         </Typography>
 
         {/* Main content grid */}
@@ -291,7 +287,7 @@ export default function ContactUsIntro() {
                     width: "90%",
                   }}
                 >
-                  Feel Free To Connect With Us
+                  {CONTACT.imageHeading}
                 </Typography>
                 <Button
                   variant="outlined"
@@ -311,7 +307,7 @@ export default function ContactUsIntro() {
                     },
                   }}
                 >
-                  Contact Us
+                  {CONTACT.imageCtaLabel}
                 </Button>
               </Box>
             </Box>

@@ -1,5 +1,6 @@
 "use client";
 
+import { ACADEMICS } from "../../content/academics";
 import {
   Box,
   Grid,
@@ -76,40 +77,8 @@ const TitleBox = styled(Box)(({ theme }) => ({
 }));
 
 export default function Subjects() {
+  const subjects = ACADEMICS.electives;
   const { isMobile } = useMediaQueries();
-
-  const subjects = [
-    {
-      title: "Le Choir",
-      subtitle: "Music, Bhajan, Konnakkol",
-      desc: "A space where voices rise in harmony. Whether in Carnatic rhythm or contemporary melodies, Le Choir nurtures rhythm, confidence, and stage presence.",
-    },
-    {
-      title: "Search Lamp",
-      subtitle: "Quiz (GK), Sudoku",
-      desc: "For curious minds who love the thrill of a challenge. Search Lamp is where general knowledge meets critical thinking and eloquent speaking.",
-    },
-    {
-      title: "Eureka!",
-      subtitle: "Abacus, Vedic Maths, Science, Design & Tech",
-      desc: "A club for inventors, builders, and thinkers. Eureka! turns logic into creativity and problem-solving into play.",
-    },
-    {
-      title: "Happy Feet",
-      subtitle: "Dance (Freestyle & Bharatanatyam)",
-      desc: "Movement is expression. Happy Feet celebrates India's rich classical forms and contemporary freedom — one step, beat, and gesture at a time.",
-    },
-    {
-      title: "Tree House",
-      subtitle: "Toast masters, Sanskrit, Spoken Spanish",
-      desc: "Our Literature & Communication Club where language becomes a tool for connection, creativity, and courage. With Toastmasters-style public speaking, storytelling, and a chance to explore global languages.",
-    },
-    {
-      title: "Physical Education",
-      subtitle: "Sports & Fitness",
-      desc: "Promoting physical fitness, coordination, and teamwork through various sports and physical activities.",
-    },
-  ];
 
   return (
     <Container maxWidth="xl" sx={{ py: 8 }}>
@@ -154,7 +123,7 @@ export default function Subjects() {
                 letterSpacing: "-0.02em",
               }}
             >
-              Electives & Clubs at SVV
+              {ACADEMICS.electivesHeading}
             </Typography>
           </TitleBox>
         </Box>
@@ -174,7 +143,7 @@ export default function Subjects() {
             WebkitTextFillColor: "transparent",
           }}
         >
-          Where Passions Find a Platform
+          {ACADEMICS.electivesSubheading}
         </Typography>
 
         <Typography
@@ -189,7 +158,7 @@ export default function Subjects() {
             mb: 4,
           }}
         >
-          Where Choice Builds Character
+          {ACADEMICS.electivesTagline}
         </Typography>
 
         <Typography
@@ -204,16 +173,7 @@ export default function Subjects() {
             textAlign: "justify",
           }}
         >
-          At Shri Vinayaka Vidyalaya, we believe that education must celebrate
-          individuality and nurture a wide range of intelligences —
-          intellectual, artistic, cultural, and emotional. That's why our
-          Elective and Club system is not a side offering, but an integrated
-          part of the school's academic life, open to all and offered without
-          additional charges. Each term, students select from a thoughtfully
-          curated list of electives based on their interests — from Vedic Maths
-          to Dance, from Toastmasters to Konnakkol. These electives are not
-          simply "hobbies" — they are gateways to mastery, joy, and personal
-          growth.
+          {ACADEMICS.electivesIntro}
         </Typography>
       </Box>
 

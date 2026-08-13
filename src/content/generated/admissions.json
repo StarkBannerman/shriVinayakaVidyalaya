@@ -1,0 +1,37 @@
+{
+  "page": {
+    "applyBody": "We accept the Standard Application Online. When you click the link below you will be brought to a third-party site that allows you to apply to hundreds of schools with one application -- not that you need to apply to more than one -- but just in case, we try to keep it simple.",
+    "applyCtaLabel": "Apply Now",
+    "applyCtaMode": "form",
+    "applyCtaUrl": null,
+    "applyHeading": "APPLY TODAY!",
+    "introBody": "Embark on a remarkable educational journey with us! Our Admission and Enrollment process is the gateway to providing your child with an exceptional learning experience at our kindergarten school",
+    "introHeading": "Admission",
+    "timeline": [
+      {
+        "desc": "Submit an inquiry form through our website or contact our admissions office to express your interest in Shri Vinayaka Vidyalaya.",
+        "name": "Inquiry"
+      },
+      {
+        "desc": "Schedule a personalized school tour to explore our campus, meet our staff, and gain insights into our nurturing learning environment.",
+        "name": "School Tour"
+      },
+      {
+        "desc": "Complete the application form and provide the required documents, including your child's birth certificate, medical records, and any previous academic records (if applicable).",
+        "name": "Application Form"
+      },
+      {
+        "desc": "We value parent engagement, and a meeting with our admissions team allows us to understand your child's needs and ensure Shri Vinayaka Vidyalaya aligns with your family's expectations.",
+        "name": "Parent Interview"
+      },
+      {
+        "desc": "For certain age groups, a student assessment may be conducted to understand their developmental progress and ensure the best placement.",
+        "name": "Student Assessment"
+      },
+      {
+        "desc": "Once the admission process is complete, you will receive an official acceptance letter from Shri Vinayaka Vidyalaya.",
+        "name": "Acceptance"
+      }
+    ]
+  }
+}

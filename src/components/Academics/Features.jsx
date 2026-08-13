@@ -1,53 +1,13 @@
+import { ACADEMICS } from "../../content/academics";
+import { Icon } from "../../content/iconRegistry";
 import { Box, Grid, IconButton, Typography } from "@mui/material";
 import teacherImage from "../../assets/teacherImage.webp";
-import SchoolIcon from "@mui/icons-material/School";
-import EmojiEventsIcon from "@mui/icons-material/EmojiEvents";
-import IntegrationInstructionsIcon from "@mui/icons-material/IntegrationInstructions";
-import HistoryEduIcon from "@mui/icons-material/HistoryEdu";
-import FlareIcon from "@mui/icons-material/Flare";
-import FavoriteIcon from "@mui/icons-material/Favorite";
 
 export default function Features() {
-  const gridOne = [
-    {
-      icon: <SchoolIcon sx={{ width: "35px", height: "35px" }} />,
-      title: "Student-led Choice",
-      desc: "Students pick their electives each term, empowering them to take ownership of their learning journey and explore their passions.",
-    },
-    {
-      icon: <EmojiEventsIcon sx={{ width: "35px", height: "35px" }} />,
-      title: "Skill Meets Expression",
-      desc: "Clubs culminate in intra- and inter-school competitions, exhibitions, and performances, showcasing student talents and achievements.",
-    },
-  ];
-
-  const gridTwo = [
-    {
-      icon: (
-        <IntegrationInstructionsIcon sx={{ width: "35px", height: "35px" }} />
-      ),
-      title: "Holistic by Design",
-      desc: "These experiences are embedded into the academic calendar — not added as extra, ensuring a well-rounded educational approach.",
-    },
-    {
-      icon: <HistoryEduIcon sx={{ width: "35px", height: "35px" }} />,
-      title: "Rooted and Futuristic",
-      desc: "Sanskrit and Konnakkol sit proudly alongside Design & Tech and Public Speaking, bridging traditional wisdom with modern skills.",
-    },
-  ];
-
-  const gridThree = [
-    {
-      icon: <FlareIcon sx={{ width: "35px", height: "35px" }} />,
-      title: "Ignite Talents",
-      desc: "At SVV, we don't just find talents — we ignite them, nurture them, and watch them grow into extraordinary achievements.",
-    },
-    {
-      icon: <FavoriteIcon sx={{ width: "35px", height: "35px" }} />,
-      title: "Nurture Growth",
-      desc: "Our comprehensive approach ensures every student receives the support and guidance needed to reach their full potential.",
-    },
-  ];
+  const f = ACADEMICS.approachFeatures;
+  const gridOne = f.slice(0, 2);
+  const gridTwo = f.slice(2, 4);
+  const gridThree = f.slice(4, 6);
 
   return (
     <Box sx={{ mb: 10 }}>
@@ -89,7 +49,7 @@ export default function Features() {
                   textAlign: "center",
                 }}
               >
-                Our Approach
+                {ACADEMICS.approachHeading}
               </Typography>
               <Typography
                 sx={{
@@ -99,7 +59,7 @@ export default function Features() {
                   color: "#F68820",
                 }}
               >
-                Why It's Special at SVV
+                {ACADEMICS.approachSubheading}
               </Typography>
               <Typography
                 sx={{
@@ -113,9 +73,7 @@ export default function Features() {
                   px: { xs: 2, sm: 5, md: 10 },
                 }}
               >
-                At SVV, we believe in empowering students through choice,
-                celebrating their unique talents, and creating a learning
-                environment that seamlessly blends tradition with innovation.
+                {ACADEMICS.approachIntro}
               </Typography>
             </Box>
           </Grid>
@@ -183,7 +141,12 @@ export default function Features() {
                     zIndex: 2,
                   }}
                 >
-                  <IconButton sx={{ color: "#000" }}>{item?.icon}</IconButton>
+                  <IconButton sx={{ color: "#000" }}>
+                    <Icon
+                      name={item?.icon}
+                      sx={{ width: "35px", height: "35px" }}
+                    />
+                  </IconButton>
                 </Box>
 
                 <Box

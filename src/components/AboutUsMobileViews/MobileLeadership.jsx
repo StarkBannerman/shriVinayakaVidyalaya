@@ -1,3 +1,4 @@
+import { ABOUT } from "../../content/about";
 import { Box, Grid, Typography } from "@mui/material";
 import { motion } from "framer-motion";
 import { useRef } from "react";
@@ -84,17 +85,7 @@ export default function MobileLeaderShip() {
                 mb: 2,
               }}
             >
-              Welcome to the school that celebrates children in their own
-              uniqueness and builds their future along with them. We instill a
-              sense of pride about the country, culture, traditions and most
-              importantly, build a foundation for their free thoughts, ideas,
-              concepts, philosophies, science, mathematics, art, a way of life
-              and more. We are inspired by our country that has taught the
-              world.to the school that celebrates children in their own
-              uniqueness and builds their future along with them. We instill a
-              sense of pride about the country, culture, traditions and most
-              importantly, build a foundation for their free thoughts, ideas,
-              concepts, philosophies, science, mathematics,
+              {ABOUT.introBody}
             </Typography>
           </Box>
         </Grid>

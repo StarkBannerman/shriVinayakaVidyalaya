@@ -1,3 +1,4 @@
+import { ABOUT } from "../../content/about";
 import { Box, Grid, Typography } from "@mui/material";
 import { motion } from "framer-motion";
 import { useRef } from "react";
@@ -68,7 +69,7 @@ export default function MobileMission() {
                 mt: 5,
               }}
             >
-              Mission
+              {ABOUT.missionHeading}
             </Typography>
 
             <Typography
@@ -83,12 +84,7 @@ export default function MobileMission() {
                 mb: 2,
               }}
             >
-              "At Shri Vinayaka Vidyalaya, our mission is to nurture the
-              intellectual, physical, and emotional development of students,
-              preparing them for success in both life and academic pursuits. As
-              one of the best schools in JP Nagar, Bangalore, we are committed
-              to providing an educational experience that values each child’s
-              uniqueness and fosters lifelong learning. "
+              {ABOUT.missionBody}
             </Typography>
 
             <Typography
@@ -99,7 +95,7 @@ export default function MobileMission() {
                 mt: 5,
               }}
             >
-              Vision
+              {ABOUT.visionHeading}
             </Typography>
 
             <Typography
@@ -114,11 +110,7 @@ export default function MobileMission() {
                 mb: 2,
               }}
             >
-              "T o become one of the best schools for board exams in Bangalore,
-              ensuring students are academically proficient, socially
-              responsible, and culturally aware. Our vision is to produce
-              well-rounded individuals who are prepared to excel in all spheres
-              of life. "
+              {ABOUT.visionBody}
             </Typography>
             {/* <Box
               sx={{

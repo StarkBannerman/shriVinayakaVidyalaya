@@ -1,3 +1,4 @@
+import { INFRASTRUCTURE } from "../../content/infrastructure";
 import { Box, Typography } from "@mui/material";
 import DownArrow from "../../assets/DownArrow.webp";
 import sportsStudent from "../../assets/sportsStudents.webp";
@@ -31,7 +32,7 @@ export default function SportsFacilities() {
               textAlign: "center",
             }}
           >
-            Sports Facilities
+            {INFRASTRUCTURE.sportsHeading}
           </Typography>
         </Box>
         <img
@@ -109,7 +110,7 @@ export default function SportsFacilities() {
                     fontWeight: 700,
                   }}
                 >
-                  Playground
+                  {INFRASTRUCTURE.sports[0].name}
                 </Typography>
               </Box>
               <Typography
@@ -122,10 +123,7 @@ export default function SportsFacilities() {
                   mt: 2,
                 }}
               >
-                Safe and spacious outdoor areas for recreational activities and
-                games. Featuring a variety of equipment such as swings, slides,
-                climbing structures, and open areas for games, our playgrounds
-                cater to different age groups and interests.
+                {INFRASTRUCTURE.sports[0].desc}
               </Typography>
             </Box>
             <Box
@@ -187,7 +185,7 @@ export default function SportsFacilities() {
                     fontWeight: 700,
                   }}
                 >
-                  Swimming
+                  {INFRASTRUCTURE.sports[1].name}
                 </Typography>
               </Box>
               <Typography
@@ -200,10 +198,7 @@ export default function SportsFacilities() {
                   mt: 2,
                 }}
               >
-                At Shri Vinayaka Vidyalaya, our swimming pool offers a safe and
-                enjoyable space for students to learn and grow. Guided by
-                trained instructors, swimming sessions help build confidence,
-                fitness, and discipline in a fun and engaging environment.
+                {INFRASTRUCTURE.sports[1].desc}
               </Typography>
             </Box>
             <Box

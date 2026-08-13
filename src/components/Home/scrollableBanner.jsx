@@ -1,3 +1,4 @@
+import { HOME } from "../../content/home";
 import { Box, IconButton, Typography } from "@mui/material";
 import FiberNewIcon from "@mui/icons-material/FiberNew";
 
@@ -40,7 +41,7 @@ export default function ScrollableBanner() {
               margin: "0 20px",
             }}
           >
-            Celebrating 35 years of excellence in academics
+            {HOME.bannerText}
           </Typography>
         </Box>
       </Box>

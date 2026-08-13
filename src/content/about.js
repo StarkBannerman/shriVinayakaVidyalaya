@@ -1,0 +1,41 @@
+import generated from "./generated/about.json";
+
+// The /about page. Content comes from Sanity at BUILD time.
+// Both the desktop and Mobile* components read from here. The fallback is the
+// DESKTOP copy — mobile previously rendered a shorter, partly garbled version.
+
+const FALLBACK = {
+  introHeading: "About us",
+  introQuote:
+    '"Education bestows humility, from humility comes worthiness. With worthiness, one attains wealth, and with wealth, one is able to follow dharma, which ultimately leads to happiness.”',
+  introBody:
+    "Welcome to the school that celebrates children in their own uniqueness and builds their future along with them. We instill a sense of pride about the country, culture, traditions and most importantly, build a foundation for their free thoughts, ideas, concepts, philosophies, science, mathematics, art, a way of life and more. We are inspired by our country that has taught the world.",
+  historyHeading: "Our Story",
+  historyBody:
+    "Shri Vinayaka Vidyalaya, established in 1990, has earned its place as one of the top schools in Bangalore. Founded by the visionary Sri Doddamani Dasarath and his wife Smt. Sumathi Doddamani, our school was created to provide high-quality English medium education that is both affordable and enriching. Located in JP Nagar, Bangalore, we are committed to offering an education that integrates both modern and traditional methods. As a co-educational school serving the local and international community, we empower our students with the tools they need to succeed in a globalized world.",
+  missionHeading: "Mission",
+  missionBody:
+    '"At Shri Vinayaka Vidyalaya, our mission is to nurture the intellectual, physical, and emotional development of students, preparing them for success in both life and academic pursuits. As one of the best schools in JP Nagar, Bangalore, we are committed to providing an educational experience that values each child’s uniqueness and fosters lifelong learning. "',
+  visionHeading: "Vision",
+  visionBody:
+    '"To become one of the best schools for board exams in Bangalore, ensuring students are academically proficient, socially responsible, and culturally aware. Our vision is to produce well-rounded individuals who are prepared to excel in all spheres of life. "',
+  whyHeading: "Why Shri Vinayaka Vidyalaya?",
+  whyPoints: [
+    {
+      title: "Experienced Faculty",
+      desc: '"Our teachers are the heart of our school. Known for their passion and dedication, they ensure that each child receives personalized attention. "',
+    },
+    {
+      title: "Holistic Curriculum",
+      desc: '"We offer a robust curriculum designed for primary schools in Bangalore and secondary schools in Bangalore, along with extracurricular opportunities. "',
+    },
+    {
+      title: "State-of-the-Art Facilities",
+      desc: '"Our campus is equipped with modern infrastructure and facilities to support our students\' learning, sports, and artistic pursuits. "',
+    },
+  ],
+};
+
+export const ABOUT = generated.page
+  ? { ...FALLBACK, ...generated.page }
+  : FALLBACK;

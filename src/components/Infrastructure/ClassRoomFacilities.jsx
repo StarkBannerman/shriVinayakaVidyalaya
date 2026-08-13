@@ -1,3 +1,4 @@
+import { INFRASTRUCTURE } from "../../content/infrastructure";
 import { Box, Typography } from "@mui/material";
 import downArrow from "../../assets/leftDownArrow.webp";
 import classroomImage from "../../assets/clasroomImage.webp";
@@ -5,11 +6,7 @@ import classRoomImage1 from "../../assets/classroom1.webp";
 import classRoomImage2 from "../../assets/classroom2.webp";
 
 export default function ClassRoomFacilities() {
-  const classRoomFeatures = [
-    "Interactive whiteboards for engaging lessons",
-    "Comfortable seating arrangements to promote collaboration",
-    "Adequate storage for educational materials",
-  ];
+  const classRoomFeatures = INFRASTRUCTURE.classroomFeatures;
   return (
     <Box sx={{ mb: 10 }}>
       <Box
@@ -46,7 +43,7 @@ export default function ClassRoomFacilities() {
               textAlign: "center",
             }}
           >
-            Class Rooms
+            {INFRASTRUCTURE.classroomsHeading}
           </Typography>
         </Box>
       </Box>
@@ -120,10 +117,7 @@ export default function ClassRoomFacilities() {
                   textAlign: "justify",
                 }}
               >
-                Our classrooms are spacious, well-lit, and equipped with the
-                latest technology to enhance the learning experience. Our
-                classrooms are spacious, well-lit, and equipped with the latest
-                technology to enhance the learning experience.
+                {INFRASTRUCTURE.classroomsIntro}
               </Typography>
             </Box>
             <Box

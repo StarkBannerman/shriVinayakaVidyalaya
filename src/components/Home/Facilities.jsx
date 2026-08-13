@@ -1,3 +1,4 @@
+import { HOME } from "../../content/home";
 import { Grid, Typography, Box, keyframes } from "@mui/material";
 import { useRef, useState, useEffect } from "react";
 import { useInViewOnce } from "../../hooks/useInView";
@@ -19,13 +20,20 @@ const dropInAnimation = keyframes`
   }
 `;
 
-const facilities = [
-  { name: "Library", image: LibraryLogo },
-  { name: "Sports", image: sportsLogo },
-  { name: "Science Lab", image: scienceLabLogo },
-  { name: "IT Lab", image: ItLab },
-  { name: "Extra Curriculars", image: extracurricularLogo },
+const FACILITY_LOGOS = [
+  LibraryLogo,
+  sportsLogo,
+  scienceLabLogo,
+  ItLab,
+  extracurricularLogo,
 ];
+
+// Derived once at module scope: HOME is a constant, and keeping this out of
+// the component stops the stagger effect re-firing on every render.
+const facilities = HOME.facilities.map((f, i) => ({
+  name: f.name,
+  image: FACILITY_LOGOS[i % FACILITY_LOGOS.length],
+}));
 
 export default function Facilities() {
   const facilitiesRef = useRef(null);

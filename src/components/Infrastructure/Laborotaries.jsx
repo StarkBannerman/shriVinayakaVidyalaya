@@ -1,3 +1,4 @@
+import { INFRASTRUCTURE } from "../../content/infrastructure";
 import { Box, Typography } from "@mui/material";
 import DownArrow from "../../assets/DownArrow.webp";
 import scienceLabImage1 from "../../assets/scienceLabImage1.webp";
@@ -33,7 +34,7 @@ export default function Laborotaries() {
               textAlign: "center",
             }}
           >
-            Highlights of Our Infrastructure
+            {INFRASTRUCTURE.labsHeading}
           </Typography>
         </Box>
         <img
@@ -116,7 +117,7 @@ export default function Laborotaries() {
                   fontWeight: 700,
                 }}
               >
-                Science Lab
+                {INFRASTRUCTURE.laboratories[0].name}
               </Typography>
 
               <Typography
@@ -128,11 +129,7 @@ export default function Laborotaries() {
                   mt: 2,
                 }}
               >
-                Our state-of-the-art science lab encourages hands-on learning,
-                allowing students to explore concepts through experiments. This
-                practical approach enhances their understanding, preparing them
-                for academic excellence, especially in board exams, making us
-                one of the best schools for board exams in Bangalore.
+                {INFRASTRUCTURE.laboratories[0].desc}
               </Typography>
             </Box>
             <Box
@@ -222,7 +219,7 @@ export default function Laborotaries() {
                   textAlign: "center",
                 }}
               >
-                D&T Lab (Design & Technology)
+                {INFRASTRUCTURE.laboratories[1].name}
               </Typography>
 
               <Typography
@@ -234,10 +231,7 @@ export default function Laborotaries() {
                   mt: 2,
                 }}
               >
-                The D&T Lab is where creativity meets innovation. This space
-                empowers students to work on design thinking, prototyping, and
-                practical applications of technology. From woodworking to 3D
-                printing, students develop skills to solve real-world problems.
+                {INFRASTRUCTURE.laboratories[1].desc}
               </Typography>
             </Box>
             <Box

@@ -1,3 +1,4 @@
+import { HOME } from "../../content/home";
 import { Typography, Box } from "@mui/material";
 import sportsLogo from "../../assets/sports.webp";
 import scienceLabLogo from "../../assets/scienceLab.webp";
@@ -5,30 +6,19 @@ import extracurricularLogo from "../../assets/extracurricular.webp";
 import ItLab from "../../assets/Itscience.webp";
 import LibraryLogo from "../../assets/Library.webp";
 
-export default function MobileFacilities() {
-  const Facilities = [
-    {
-      name: "Library",
-      image: LibraryLogo,
-    },
-    {
-      name: "Sports",
-      image: sportsLogo,
-    },
-    {
-      name: "Science Lab",
-      image: scienceLabLogo,
-    },
-    {
-      name: "IT Lab",
-      image: ItLab,
-    },
-    {
-      name: "Extra Curriculars",
-      image: extracurricularLogo,
-    },
-  ];
+const FACILITY_LOGOS = [
+  LibraryLogo,
+  sportsLogo,
+  scienceLabLogo,
+  ItLab,
+  extracurricularLogo,
+];
+const Facilities = HOME.facilities.map((f, i) => ({
+  name: f.name,
+  image: FACILITY_LOGOS[i % FACILITY_LOGOS.length],
+}));
 
+export default function MobileFacilities() {
   return (
     <Box
       sx={{

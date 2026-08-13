@@ -1,3 +1,4 @@
+import { ABOUT } from "../../content/about";
 import { Box, Grid, Typography } from "@mui/material";
 import { motion } from "framer-motion";
 import { useRef } from "react";
@@ -41,13 +42,13 @@ export default function LeaderShip() {
             <Typography
               sx={{ fontSize: "50px", fontWeight: 700, width: "90%" }}
             >
-              Why Shri Vinayaka Vidyalaya?
+              {ABOUT.whyHeading}
             </Typography>
 
             <Typography
               sx={{ fontSize: "30px", fontWeight: 700, width: "90%", mt: 2 }}
             >
-              Experienced Faculty
+              {ABOUT.whyPoints[0].title}
             </Typography>
 
             <Typography
@@ -62,15 +63,13 @@ export default function LeaderShip() {
                 mb: 2,
               }}
             >
-              "Our teachers are the heart of our school. Known for their passion
-              and dedication, they ensure that each child receives personalized
-              attention. "
+              {ABOUT.whyPoints[0].desc}
             </Typography>
 
             <Typography
               sx={{ fontSize: "30px", fontWeight: 700, width: "90%", mt: 2 }}
             >
-              Holistic Curriculum
+              {ABOUT.whyPoints[1].title}
             </Typography>
 
             <Typography
@@ -85,15 +84,13 @@ export default function LeaderShip() {
                 mb: 2,
               }}
             >
-              "We offer a robust curriculum designed for primary schools in
-              Bangalore and secondary schools in Bangalore, along with
-              extracurricular opportunities. "
+              {ABOUT.whyPoints[1].desc}
             </Typography>
 
             <Typography
               sx={{ fontSize: "30px", fontWeight: 700, width: "90%", mt: 2 }}
             >
-              State-of-the-Art Facilities
+              {ABOUT.whyPoints[2].title}
             </Typography>
 
             <Typography
@@ -108,9 +105,7 @@ export default function LeaderShip() {
                 mb: 2,
               }}
             >
-              "Our campus is equipped with modern infrastructure and facilities
-              to support our students' learning, sports, and artistic pursuits.
-              "
+              {ABOUT.whyPoints[2].desc}
             </Typography>
           </Box>
         </Grid>

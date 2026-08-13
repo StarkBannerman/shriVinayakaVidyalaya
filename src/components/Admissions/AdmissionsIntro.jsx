@@ -1,4 +1,5 @@
 import { Box, Grid, Typography } from "@mui/material";
+import { ADMISSIONS } from "../../content/admissions";
 
 export default function AdmissionsIntroBox() {
   return (
@@ -41,7 +42,7 @@ export default function AdmissionsIntroBox() {
                 textAlign: "center",
               }}
             >
-              Admission
+              {ADMISSIONS.introHeading}
             </Typography>
 
             <Typography
@@ -56,9 +57,7 @@ export default function AdmissionsIntroBox() {
                 mb: 2,
               }}
             >
-              Embark on a remarkable educational journey with us! Our Admission
-              and Enrollment process is the gateway to providing your child with
-              an exceptional learning experience at our kindergarten school
+              {ADMISSIONS.introBody}
             </Typography>
           </Box>
         </Grid>

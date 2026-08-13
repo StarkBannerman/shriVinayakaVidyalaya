@@ -1,3 +1,4 @@
+import { HOME } from "../../content/home";
 import React from "react";
 import { Box, Typography } from "@mui/material";
 import SchoolBackground from "../../assets/schoolBanner.webp";
@@ -39,7 +40,7 @@ export default function MobileSchoolExpertise() {
             textAlign: "center",
           }}
         >
-          Our Expertise in Education
+          {HOME.expertiseHeading}
         </Typography>
       </Box>
     </Box>

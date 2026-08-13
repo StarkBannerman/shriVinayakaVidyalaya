@@ -1,29 +1,32 @@
+import { INFRASTRUCTURE } from "../../content/infrastructure";
 import { Box, Typography } from "@mui/material";
 import DownArrow from "../../assets/DownArrow.webp";
 import scienceLabImage1 from "../../assets/scienceLabImage1.webp";
 import scienceLabeImage2 from "../../assets/ScienceLabImage2.webp";
-import computerLab from "../../assets/computerLab.webp";
 import labImage from "../../assets/dandTlab.webp";
 import scienceLab from "../../assets/scienceLab.webp";
+// Lab photos are design, not content — index-matched to the laboratories list.
+const LAB_STYLES = [
+  {
+    image: labImage,
+    leftCornerImage: scienceLabImage1,
+    rightCornerImage: scienceLabeImage2,
+    borderColor: "#FFAF64",
+  },
+  {
+    image: scienceLab,
+    leftCornerImage: null,
+    rightCornerImage: null,
+    borderColor: "#C5C4FF",
+  },
+];
+
 export default function MobileLaborotaries() {
-  const laborotaries = [
-    {
-      name: "Science Lab",
-      image: labImage,
-      desc: "Safe and spacious outdoor areas for recreational activities and games. Featuring a variety of equipment such as swings, slides, climbing structures, and open areas for games, our playgrounds cater to different age groups and interests.",
-      leftCornerImage: scienceLabImage1,
-      rightCornerImage: scienceLabeImage2,
-      borderColor: "#FFAF64",
-    },
-    {
-      name: "Computer Lab",
-      image: scienceLab,
-      desc: "Safe and spacious outdoor areas for recreational activities and games. Featuring a variety of equipment such as swings, slides, climbing structures, and open areas for games, our playgrounds cater to different age groups and interests.",
-      leftCornerImage: null,
-      rightCornerImage: computerLab,
-      borderColor: "#C5C4FF",
-    },
-  ];
+  const laborotaries = INFRASTRUCTURE.laboratories.map((l, i) => ({
+    name: l.name,
+    desc: l.desc,
+    ...LAB_STYLES[i % LAB_STYLES.length],
+  }));
   return (
     <Box>
       <Box
@@ -51,7 +54,7 @@ export default function MobileLaborotaries() {
               textAlign: "center",
             }}
           >
-            Laborotaries
+            {INFRASTRUCTURE.labsHeading}
           </Typography>
         </Box>
         <img

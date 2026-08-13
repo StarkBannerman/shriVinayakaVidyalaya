@@ -1,3 +1,4 @@
+import { HOME } from "../../content/home";
 import React, { useRef } from "react";
 import { Box, Grid, IconButton, Typography } from "@mui/material";
 import InsightsIcon from "@mui/icons-material/Insights";
@@ -51,7 +52,7 @@ export default function StudentEngagementStats() {
         >
           <Box sx={{ width: "550px" }}>
             <Typography sx={{ fontSize: "50px", fontWeight: 700 }}>
-              Student Engagement Program
+              {HOME.statsHeading}
             </Typography>
           </Box>
 
@@ -103,7 +104,7 @@ export default function StudentEngagementStats() {
                         ml: 2,
                       }}
                     >
-                      200+
+                      {HOME.stats[0].value}
                     </Typography>
                   </Box>
 
@@ -141,7 +142,7 @@ export default function StudentEngagementStats() {
                       ml: 2,
                     }}
                   >
-                    Distinctions in just last ten years
+                    {HOME.stats[0].label}
                   </Typography>
                 </Box>
               </Box>
@@ -161,7 +162,7 @@ export default function StudentEngagementStats() {
                 <Typography
                   sx={{ fontSize: "50px", fontWeight: 700, color: "#FFF" }}
                 >
-                  35+
+                  {HOME.stats[1].value}
                 </Typography>
                 <Typography
                   sx={{
@@ -171,7 +172,7 @@ export default function StudentEngagementStats() {
                     width: "80%",
                   }}
                 >
-                  Years of Experience
+                  {HOME.stats[1].label}
                 </Typography>
               </Box>
             </Box>
@@ -200,12 +201,12 @@ export default function StudentEngagementStats() {
                 <Typography
                   sx={{ fontSize: "50px", fontWeight: 700, color: "#FFF" }}
                 >
-                  5000+
+                  {HOME.stats[2].value}
                 </Typography>
                 <Typography
                   sx={{ fontSize: "25px", fontWeight: 700, color: "#FFF" }}
                 >
-                  Students Successful in their career
+                  {HOME.stats[2].label}
                 </Typography>
               </Box>
             </Box>

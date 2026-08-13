@@ -1,70 +1,50 @@
+import { ACADEMICS } from "../../content/academics";
+import { Icon } from "../../content/iconRegistry";
 import { Box, Grid, IconButton, Typography } from "@mui/material";
 import DownArrow from "../../assets/DownArrow.webp";
-import BoltIcon from "@mui/icons-material/Bolt";
-import BrushIcon from "@mui/icons-material/Brush";
-import AudiotrackIcon from "@mui/icons-material/Audiotrack";
-import ExtensionIcon from "@mui/icons-material/Extension";
-import ScienceIcon from "@mui/icons-material/Science";
 import { useMediaQueries } from "../../utils/Breakpoints";
 
-const extracurricularActivities = [
+// Card colours are design, not content — the editor cannot reach them.
+// This preserves the exact per-position sequence the page shipped with, and
+// cycles if someone adds more activities than there are entries.
+const CARD_COLOURS = [
   {
-    icon: <BoltIcon sx={{ height: "30px", width: "30px" }} />,
-    title: "Sports and Athletics",
-    desc: "On our courts and fields, students learn more than just how to play — they learn how to fall, rise, collaborate, and persist. From team sports to yoga, every activity builds character and courage.",
     cardBgColor: "#FFEAB2",
     cardBorderColor: "#F68820",
     iconBackgroundColor: "#FBBE18",
     dropShadowColor: "#FBBE18",
   },
   {
-    icon: <BrushIcon sx={{ height: "30px", width: "30px" }} />,
-    title: "Art and Creativity",
-    desc: "In our art rooms, the messier the hands, the brighter the minds. Here, students are encouraged to imagine wildly, express freely, and explore the beauty of their inner world through visual arts.",
     cardBgColor: "#B0EBE6",
     cardBorderColor: "#307B74",
     iconBackgroundColor: "#76B7B1",
     dropShadowColor: "#307B74",
   },
   {
-    icon: <AudiotrackIcon sx={{ height: "30px", width: "30px" }} />,
-    title: "Music and Performing Arts",
-    desc: "Every note sung, every scene acted out is a step towards confidence, rhythm, and presence. Drama, music, and dance teach our students how to tell stories — and how to own theirs.",
     cardBgColor: "#F4EDFF",
     cardBorderColor: "#7214FF",
     iconBackgroundColor: "#C5C4FF",
     dropShadowColor: "#7214FF",
   },
   {
-    icon: <ExtensionIcon sx={{ height: "30px", width: "30px" }} />,
-    title: "Language Clubs",
-    desc: "Our language clubs are more than learning vocabulary — they’re about stepping into other worlds. Students explore global cultures, celebrate diversity, and communicate with confidence.",
     cardBgColor: "#F4EDFF",
     cardBorderColor: "#7214FF",
     iconBackgroundColor: "#C5C4FF",
     dropShadowColor: "#7214FF",
   },
   {
-    icon: <ScienceIcon sx={{ height: "30px", width: "30px" }} />,
-    title: "Science Club",
-    desc: "This is where “why?” meets “wow!” Through hands-on experiments and explorations, students transform questions into discoveries and curiosity into innovation.",
     cardBgColor: "#B0EBE6",
     cardBorderColor: "#307B74",
     iconBackgroundColor: "#76B7B1",
     dropShadowColor: "#307B74",
   },
-  // {
-  //   icon: <AutoAwesomeIcon sx={{ height: "30px", width: "30px" }} />,
-  //   title: "Cooking and Culinary Arts",
-  //   desc: "Cooking classes introduce students to the joys of preparing and tasting delicious and healthy meals.",
-  //   cardBgColor: "#FFEAB2",
-  //   cardBorderColor: "#F68820",
-  //   iconBackgroundColor: "#FBBE18",
-  //   dropShadowColor: "#FBBE18",
-  // },
 ];
 
 export default function ExtracurricularActivities() {
+  const extracurricularActivities = ACADEMICS.extracurriculars.map((a, i) => ({
+    ...a,
+    ...CARD_COLOURS[i % CARD_COLOURS.length],
+  }));
   const { isMobile } = useMediaQueries();
   return (
     <Box sx={{ mb: 5 }}>
@@ -98,7 +78,7 @@ export default function ExtracurricularActivities() {
               textAlign: "center",
             }}
           >
-            Extracurricular Activities
+            {ACADEMICS.extracurricularsHeading}
           </Typography>
         </Box>
         {isMobile ? (
@@ -143,7 +123,7 @@ export default function ExtracurricularActivities() {
                 textAlign: "center",
               }}
             >
-              Where Passions Find a Platform
+              {ACADEMICS.extracurricularsSubheading}
             </Typography>
 
             <Typography
@@ -158,11 +138,7 @@ export default function ExtracurricularActivities() {
                 // width: { xs: "90%", sm: "80%", md: "60%" },
               }}
             >
-              Learning doesn’t stop when the bell rings — at SVV, that’s when it
-              takes flight. Our extracurricular programs are not just “add-ons”;
-              they are essential spaces for self-discovery, leadership, and joy.
-              Whether your child shines in front of a mic, with a paintbrush, or
-              in a lab coat — we have a place for every kind of brilliance.
+              {ACADEMICS.extracurricularsIntro}
             </Typography>
           </Grid>
 
@@ -186,7 +162,10 @@ export default function ExtracurricularActivities() {
                   }}
                 >
                   <IconButton sx={{ color: "#000" }}>
-                    {activity?.icon}
+                    <Icon
+                      name={activity?.icon}
+                      sx={{ height: "30px", width: "30px" }}
+                    />
                   </IconButton>
                 </Box>
 

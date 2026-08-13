@@ -1,36 +1,11 @@
 import { Box, Grid, Typography } from "@mui/material";
 import DownArrow from "../../assets/DownArrow.webp";
 import { useMediaQueries } from "../../utils/Breakpoints";
-
-const timeline = [
-  {
-    name: "Inquiry",
-    desc: "Submit an inquiry form through our website or contact our admissions office to express your interest in Shri Vinayaka Vidyalaya.",
-  },
-  {
-    name: "School Tour",
-    desc: "Schedule a personalized school tour to explore our campus, meet our staff, and gain insights into our nurturing learning environment.",
-  },
-  {
-    name: "Application Form",
-    desc: "Complete the application form and provide the required documents, including your child's birth certificate, medical records, and any previous academic records (if applicable).",
-  },
-  {
-    name: "Parent Interview",
-    desc: "We value parent engagement, and a meeting with our admissions team allows us to understand your child's needs and ensure Shri Vinayaka Vidyalaya aligns with your family's expectations.",
-  },
-  {
-    name: "Student Assessment",
-    desc: "For certain age groups, a student assessment may be conducted to understand their developmental progress and ensure the best placement.",
-  },
-  {
-    name: "Acceptance",
-    desc: "Once the admission process is complete, you will receive an official acceptance letter from Shri Vinayaka Vidyalaya.",
-  },
-];
+import { ADMISSIONS } from "../../content/admissions";
 
 export default function AdmissionTimeline() {
   const { isMobile } = useMediaQueries();
+  const timeline = ADMISSIONS.timeline;
 
   return (
     <Box sx={{ mb: 10 }}>

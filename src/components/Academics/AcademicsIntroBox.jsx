@@ -1,4 +1,6 @@
 import { Box, Grid, Typography } from "@mui/material";
+import { ACADEMICS } from "../../content/academics";
+import RichText from "../../content/RichText";
 
 export default function AcademicsIntroBox() {
   return (
@@ -40,7 +42,7 @@ export default function AcademicsIntroBox() {
                 textAlign: "center",
               }}
             >
-              Academics
+              {ACADEMICS.introHeading}
             </Typography>
 
             <Typography
@@ -50,7 +52,7 @@ export default function AcademicsIntroBox() {
                 textAlign: "center",
               }}
             >
-              Nurturing Young Minds for Success
+              {ACADEMICS.introSubheading}
             </Typography>
 
             <Typography
@@ -65,30 +67,10 @@ export default function AcademicsIntroBox() {
                 width: { xs: "90%", sm: "80%", md: "100%" },
               }}
             >
-              At{" "}
-              <strong style={{ color: "black" }}>
-                Shri Vinayaka Vidyalaya
-              </strong>
-              , we believe academics should do more than inform — they should{" "}
-              <strong style={{ color: "black" }}>transform</strong>. For over 35
-              years, we’ve blended rigorous academics with deep-rooted values,
-              nurturing students who think critically, care deeply, and grow
-              intentionally. Our classrooms are not bound by four walls or
-              textbook pages. They are{" "}
-              <strong style={{ color: "black" }}>
-                alive with dialogue, discovery, and reflection
-              </strong>
-              . Every lesson — whether in Math, Science, or Language — is
-              designed to spark curiosity, build resilience, and connect
-              knowledge to real life. What makes SVV different is the{" "}
-              <strong style={{ color: "black" }}>
-                balance we create between intellect and integrity
-              </strong>
-              . We don’t just teach students to top exams; we guide them to{" "}
-              <strong style={{ color: "black" }}>
-                lead with empathy, question boldly, and learn for life
-              </strong>
-              .
+              <RichText
+                value={ACADEMICS.introBody}
+                strongStyle={{ color: "black" }}
+              />
             </Typography>
           </Box>
         </Grid>

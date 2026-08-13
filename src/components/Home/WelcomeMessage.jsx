@@ -1,3 +1,4 @@
+import { HOME } from "../../content/home";
 import { Box, Grid, Typography, Button } from "@mui/material";
 import { motion } from "framer-motion";
 import { useRef } from "react";
@@ -41,8 +42,7 @@ export default function WelcomeMessage() {
             <Typography
               sx={{ fontSize: "40px", fontWeight: 700, width: "90%" }}
             >
-              Welcome to Shri Vinayaka Vidyalaya – One of the Best Schools in
-              Bangalore
+              {HOME.welcomeHeading}
             </Typography>
             <Typography
               sx={{
@@ -69,16 +69,7 @@ export default function WelcomeMessage() {
                 mb: 2,
               }}
             >
-              "Shri Vinayaka Vidyalaya, one of the leading co-educational
-              schools in Bangalore, has been a trusted name in education for
-              over 35 years. Located in the heart of JP Nagar, Bangalore, our
-              school offers a balanced approach to academics, sports, and
-              extracurricular activities. We are dedicated to providing
-              high-quality education that nurtures every child's potential,
-              equipping them with skills for the future. Whether you're looking
-              for the best school for girls in Bangalore or the best school for
-              boys in Bangalore, Shri Vinayaka Vidyalaya offers an inclusive,
-              student-centered environment where every child can thrive."
+              {HOME.welcomeBody}
             </Typography>
             <Button
               variant="contained"

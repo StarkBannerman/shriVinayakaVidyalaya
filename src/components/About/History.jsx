@@ -1,3 +1,4 @@
+import { ABOUT } from "../../content/about";
 import { Box, Typography } from "@mui/material";
 import historyBackground from "../../assets/historyBackground.webp";
 import schoolBackground from "../../assets/schollBackground.webp";
@@ -59,8 +60,7 @@ export default function History() {
                 textAlign: "left",
               }}
             >
-              {/* History */}
-              Our Story
+              {ABOUT.historyHeading}
             </Typography>
             <Typography
               sx={{
@@ -73,17 +73,7 @@ export default function History() {
                 mb: 2,
               }}
             >
-              Shri Vinayaka Vidyalaya, established in 1990, has earned its place
-              as one of the top schools in Bangalore. Founded by the visionary
-              Sri Doddamani Dasarath and his wife Smt. Sumathi Doddamani, our
-              school was created to provide high-quality English medium
-              education that is both affordable and enriching. Located in JP
-              Nagar, Bangalore, we are committed to offering an education that
-              integrates both modern and traditional methods. As a
-              co-educational school serving the local and international
-              community, we empower our students with the tools they need to
-              succeed in a globalized world.
-              {/* Truncate content as needed for mobile */}
+              {ABOUT.historyBody}
             </Typography>
           </Box>
 

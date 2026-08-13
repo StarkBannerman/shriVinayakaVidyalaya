@@ -1,3 +1,4 @@
+import { HOME } from "../../content/home";
 import { Box, Grid, IconButton, Typography } from "@mui/material";
 import InsightsIcon from "@mui/icons-material/Insights";
 import StudentStatsImage from "../../assets/welcomeBanner.webp";
@@ -46,7 +47,7 @@ export default function MobileEngagementStats() {
           <Typography
             sx={{ fontSize: "30px", fontWeight: 700, textAlign: "center" }}
           >
-            Student Engagement Program
+            {HOME.statsHeading}
           </Typography>
         </Box>
 
@@ -100,7 +101,7 @@ export default function MobileEngagementStats() {
                       ml: 2,
                     }}
                   >
-                    200+
+                    {HOME.stats[0].value}
                   </Typography>
                 </Box>
 
@@ -139,7 +140,7 @@ export default function MobileEngagementStats() {
                     ml: 2,
                   }}
                 >
-                  Distinctions in just last ten years
+                  {HOME.stats[0].label}
                 </Typography>
               </Box>
             </Box>
@@ -159,12 +160,12 @@ export default function MobileEngagementStats() {
               <Typography
                 sx={{ fontSize: "30px", fontWeight: 700, color: "#FFF", ml: 1 }}
               >
-                35+
+                {HOME.stats[1].value}
               </Typography>
               <Typography
                 sx={{ fontSize: "16px", fontWeight: 500, color: "#FFF", ml: 1 }}
               >
-                Years of Experience
+                {HOME.stats[1].label}
               </Typography>
             </Box>
           </Box>
@@ -193,7 +194,7 @@ export default function MobileEngagementStats() {
               <Typography
                 sx={{ fontSize: "30px", fontWeight: 700, color: "#FFF", ml: 2 }}
               >
-                5000+
+                {HOME.stats[2].value}
               </Typography>
               <Typography
                 sx={{
@@ -204,7 +205,7 @@ export default function MobileEngagementStats() {
                   ml: 2,
                 }}
               >
-                students successful in their career
+                {HOME.stats[2].label}
               </Typography>
             </Box>
           </Box>

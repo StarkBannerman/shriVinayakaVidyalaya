@@ -1,11 +1,8 @@
 import { Box, Typography } from "@mui/material";
+import { HOME } from "../../content/home";
 import experienceLogo from "../../assets/Experience.webp";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // Import carousel CSS
-// import banner1 from "../../assets/laptopBanner1.webp";
-import banner2 from "../../assets/Banner2.webp";
-import banner1 from "../../assets/Banner4.webp";
-import banner3 from "../../assets/Banner3.webp";
 
 export default function PictureCarousel() {
   return (
@@ -89,75 +86,46 @@ export default function PictureCarousel() {
               );
             }}
           >
-            <div
-              style={{
-                height: "100%",
-                width: "100%",
-                minHeight: "600px",
-                pointerEvents: "auto", // Allow carousel to receive pointer events
-              }}
-            >
-              <Typography
-                sx={{
-                  color: "#FFFFFF",
-                  fontSize: "70px",
-                  fontWeight: 700,
-                  position: "absolute",
-                  top: "10%",
-                  left: "50%",
-                  transform: "translate(-50%, -50%)",
-                  zIndex: 2,
+            {HOME.heroSlides.map((slide, index) => (
+              <div
+                key={index}
+                style={{
+                  height: "100%",
                   width: "100%",
-                  textAlign: "center",
-                  textShadow: "2px 2px 4px rgba(0,0,0,0.5)",
+                  ...(index === 0 ? { minHeight: "600px" } : {}),
+                  pointerEvents: "auto", // Allow carousel to receive pointer events
                 }}
               >
-                Your Future Begins Here ...
-              </Typography>
-              <img
-                src={banner1}
-                style={{
-                  height: "100%",
-                  width: "100%",
-                  objectFit: "cover", // Adjust to cover the area without distortion
-                }}
-                alt="Carousel"
-              />
-            </div>
-            <div
-              style={{
-                height: "100%",
-                width: "100%",
-                pointerEvents: "auto", // Allow carousel to receive pointer events
-              }}
-            >
-              <img
-                src={banner2}
-                style={{
-                  height: "100%",
-                  width: "100%",
-                  objectFit: "cover", // Adjust to cover the area without distortion
-                }}
-                alt="Carousel"
-              />
-            </div>
-            <div
-              style={{
-                height: "100%",
-                width: "100%",
-                pointerEvents: "auto", // Allow carousel to receive pointer events
-              }}
-            >
-              <img
-                src={banner3}
-                style={{
-                  height: "100%",
-                  width: "100%",
-                  objectFit: "cover", // Adjust to cover the area without distortion
-                }}
-                alt="Carousel"
-              />
-            </div>
+                {slide.caption ? (
+                  <Typography
+                    sx={{
+                      color: "#FFFFFF",
+                      fontSize: "70px",
+                      fontWeight: 700,
+                      position: "absolute",
+                      top: "10%",
+                      left: "50%",
+                      transform: "translate(-50%, -50%)",
+                      zIndex: 2,
+                      width: "100%",
+                      textAlign: "center",
+                      textShadow: "2px 2px 4px rgba(0,0,0,0.5)",
+                    }}
+                  >
+                    {slide.caption}
+                  </Typography>
+                ) : null}
+                <img
+                  src={slide.image}
+                  style={{
+                    height: "100%",
+                    width: "100%",
+                    objectFit: "cover", // Adjust to cover the area without distortion
+                  }}
+                  alt={slide.alt || "Carousel"}
+                />
+              </div>
+            ))}
           </Carousel>
         </Box>
       </Box>

@@ -24,6 +24,7 @@ import PhoneIcon from "@mui/icons-material/Phone";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import emailjs from "@emailjs/browser";
 import { SITE } from "../../config/site";
+import { CONTACT } from "../../content/contact";
 
 export default function ContactForm() {
   const theme = useTheme();
@@ -151,15 +152,6 @@ export default function ContactForm() {
     }
   };
 
-  const programs = [
-    "Early Childhood Program",
-    "Primary School Program",
-    "Middle School Program",
-    "High School Program",
-    "Special Education Program",
-    "Summer Camp",
-  ];
-
   return (
     <Box
       sx={{
@@ -189,7 +181,7 @@ export default function ContactForm() {
             fontSize: { xs: "30px", sm: "34px", md: "40px" },
           }}
         >
-          Contact Form
+          {CONTACT.formHeading}
         </Typography>
 
         <Typography
@@ -202,7 +194,7 @@ export default function ContactForm() {
             textAlign: "center",
           }}
         >
-          Student Information
+          {CONTACT.formSubheading}
         </Typography>
 
         <Typography
@@ -215,10 +207,7 @@ export default function ContactForm() {
             lineHeight: 1.6,
           }}
         >
-          If you have specific questions or wish to request more information
-          about Shri Vinayaka Vidyalaya, please complete the contact form below.
-          Kindly provide the following details to help us better understand your
-          needs
+          {CONTACT.formIntro}
         </Typography>
 
         <Box sx={{ display: "flex", gap: 2, mb: 4 }}>
@@ -279,8 +268,7 @@ export default function ContactForm() {
             severity="success"
             sx={{ mb: 3, width: "100%", maxWidth: "600px" }}
           >
-            🎉 Thank you! Your inquiry has been sent successfully to Shri
-            Vinayaka Vidyalaya. Our team will contact you within 24 hours.
+            {CONTACT.successMessage}
           </Alert>
         )}
 
@@ -289,8 +277,7 @@ export default function ContactForm() {
             severity="error"
             sx={{ mb: 3, width: "100%", maxWidth: "600px" }}
           >
-            ❌ Sorry, there was an error sending your message. Please try again
-            or contact us directly at {SITE.email} or {SITE.phone}.
+            {CONTACT.errorMessage} {SITE.email} or {SITE.phone}.
           </Alert>
         )}
 
@@ -520,7 +507,7 @@ export default function ContactForm() {
                       height: isMobile ? "42px" : "48px",
                     }}
                   >
-                    {programs.map((program) => (
+                    {CONTACT.programs.map((program) => (
                       <MenuItem key={program} value={program}>
                         {program}
                       </MenuItem>

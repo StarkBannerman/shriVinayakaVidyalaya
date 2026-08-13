@@ -1,0 +1,19 @@
+{
+  "name": "shrivinayakavidyalaya-studio",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Sanity Studio — the admin panel school staff log into",
+  "scripts": {
+    "dev": "sanity dev",
+    "start": "sanity dev",
+    "build": "sanity build",
+    "deploy": "sanity deploy",
+    "export": "sanity dataset export production ../backups/content.tar.gz"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "sanity": "^3.68.0",
+    "styled-components": "^6.1.13"
+  }
+}

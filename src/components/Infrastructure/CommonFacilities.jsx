@@ -1,27 +1,15 @@
+import { INFRASTRUCTURE } from "../../content/infrastructure";
 import { Box, Typography } from "@mui/material";
 import downArrow from "../../assets/leftDownArrow.webp";
 import transport from "../../assets/bus.webp";
 import Library from "../../assets/Library.webp";
 import extrcurrilars from "../../assets/extrcurriculars.webp";
 
+// Photos are design, not content — index-matched to the facilities list.
+const FACILITY_IMAGES = [Library, extrcurrilars, transport];
+
 export default function CommonFacilities() {
-  const commonFacilities = [
-    {
-      title: "Library",
-      desc: "Our library is a treasure trove for book lovers and a cornerstone of learning at Shri Vinayaka Vidyalaya. Stocked with an extensive collection of books in English, Kannada, and Hindi, it includes fiction, non-fiction, encyclopedias, autobiographies, and religious texts. Students enjoy comics like Amar Chitra Katha, Tintin, and Tinkle, along with academic references and a six-decade archive of magazines like National Geographic and Readers’ Digest. This vibrant space nurtures a lifelong passion for reading, making us one of the schools in Bangalore known for inspiring young minds.",
-      imageLink: Library,
-    },
-    {
-      title: "Extracurriculars",
-      desc: "From Taekwondo and freestyle dancing to Vedic Math and Abacus, we provide diverse activities to nurture every child’s unique talents. Our cultural programs, including Konakkol and Bhajans, reflect our dedication to holistic development. These opportunities highlight why we are one of the schools with good extracurricular activities in Bangalore.With a well-rounded infrastructure, Shri Vinayaka Vidyalaya ensures a comprehensive educational experience, making it one of the best schools in JP Nagar Bangalore for academics, sports, and extracurricular growth.",
-      imageLink: extrcurrilars,
-    },
-    {
-      title: "Transport",
-      desc: "At Shri Vinayaka Vidyalaya, we ensure safe and reliable transportation for all our students. Our well-organized transport system prioritizes comfort and safety, with routes planned to make commuting easy and convenient.With a focus on providing a stress-free experience for parents and students, our transport service reflects our commitment to excellence in every aspect of school life.",
-      imageLink: transport,
-    },
-  ];
+  const commonFacilities = INFRASTRUCTURE.commonFacilities;
 
   const colorCombinations = [
     {
@@ -76,7 +64,7 @@ export default function CommonFacilities() {
               textAlign: "center",
             }}
           >
-            Common Facilities
+            {INFRASTRUCTURE.commonFacilitiesHeading}
           </Typography>
         </Box>
       </Box>
@@ -185,7 +173,7 @@ export default function CommonFacilities() {
                 }}
               >
                 <img
-                  src={facility.imageLink}
+                  src={FACILITY_IMAGES[index % FACILITY_IMAGES.length]}
                   height={"90%"}
                   width={"90%"}
                   style={{ borderRadius: "10px", objectFit: "cover" }}
