@@ -1,12 +1,11 @@
 import React, { useRef } from "react";
 import { Box, Grid, Typography } from "@mui/material";
-import SchoolBackground from "../../assets/schoolBanner.JPG";
-import Facilities from "./Facilities";
+import SchoolBackground from "../../assets/schoolBanner.webp";
 import ExpertiseLinkCard from "./ExpertiseLinkCard";
-import OwlIcon from "../../assets/owlIcon.png";
-import telescopeIcon from "../../assets/telescopeIcon.png";
-import computerIcon from "../../assets/computerIcon.png";
-import { useInViewOnce } from "../../Hooks /useInView";
+import OwlIcon from "../../assets/owlIcon.webp";
+import telescopeIcon from "../../assets/telescopeIcon.webp";
+import computerIcon from "../../assets/computerIcon.webp";
+import { useInViewOnce } from "../../hooks/useInView";
 
 export default function SchoolExpertise() {
   const cardData = [

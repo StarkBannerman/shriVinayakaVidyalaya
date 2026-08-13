@@ -1,12 +1,11 @@
 import { Grid, Typography, Box, keyframes } from "@mui/material";
 import { useRef, useState, useEffect } from "react";
-import { useInViewOnce } from "../../Hooks /useInView";
-import TransportFacility from "../../assets/transportFacility.png";
-import sportsLogo from "../../assets/sports.png";
-import scienceLabLogo from "../../assets/scienceLab.png";
-import extracurricularLogo from "../../assets/extracurricular.png";
-import ItLab from "../../assets/Itscience.png";
-import LibraryLogo from "../../assets/Library.png";
+import { useInViewOnce } from "../../hooks/useInView";
+import sportsLogo from "../../assets/sports.webp";
+import scienceLabLogo from "../../assets/scienceLab.webp";
+import extracurricularLogo from "../../assets/extracurricular.webp";
+import ItLab from "../../assets/Itscience.webp";
+import LibraryLogo from "../../assets/Library.webp";
 
 // Define keyframes for the drop-in effect
 const dropInAnimation = keyframes`
@@ -20,18 +19,18 @@ const dropInAnimation = keyframes`
   }
 `;
 
+const facilities = [
+  { name: "Library", image: LibraryLogo },
+  { name: "Sports", image: sportsLogo },
+  { name: "Science Lab", image: scienceLabLogo },
+  { name: "IT Lab", image: ItLab },
+  { name: "Extra Curriculars", image: extracurricularLogo },
+];
+
 export default function Facilities() {
   const facilitiesRef = useRef(null);
   const { isInView } = useInViewOnce(facilitiesRef);
   const [visibleFacilities, setVisibleFacilities] = useState([]);
-
-  const facilities = [
-    { name: "Library", image: LibraryLogo },
-    { name: "Sports", image: sportsLogo },
-    { name: "Science Lab", image: scienceLabLogo },
-    { name: "IT Lab", image: ItLab },
-    { name: "Extra Curriculars", image: extracurricularLogo },
-  ];
 
   // Effect to stagger the visibility of each facility one after the other
   useEffect(() => {
@@ -42,7 +41,7 @@ export default function Facilities() {
         }, index * 300); // Delay by 300ms for each facility
       });
     }
-  }, [isInView, facilities]);
+  }, [isInView]);
 
   return (
     <Box
@@ -97,6 +96,8 @@ export default function Facilities() {
               style={{
                 transition: "transform 0.3s ease", // Separate transition for hover effect
               }}
+              loading="lazy"
+              decoding="async"
             />
             <Typography sx={{ mt: 1 }}>{facility.name}</Typography>
           </Grid>

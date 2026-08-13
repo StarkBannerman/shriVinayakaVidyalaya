@@ -1,10 +1,9 @@
-import { Grid, Typography, Box } from "@mui/material";
-import Library from "../../assets/transportFacility.png";
-import sportsLogo from "../../assets/sports.png";
-import scienceLabLogo from "../../assets/scienceLab.png";
-import extracurricularLogo from "../../assets/extracurricular.png";
-import ItLab from "../../assets/Itscience.png";
-import LibraryLogo from "../../assets/Library.png";
+import { Typography, Box } from "@mui/material";
+import sportsLogo from "../../assets/sports.webp";
+import scienceLabLogo from "../../assets/scienceLab.webp";
+import extracurricularLogo from "../../assets/extracurricular.webp";
+import ItLab from "../../assets/Itscience.webp";
+import LibraryLogo from "../../assets/Library.webp";
 
 export default function MobileFacilities() {
   const Facilities = [
@@ -73,6 +72,8 @@ export default function MobileFacilities() {
               height="50"
               width="50"
               alt={facility.name}
+              loading="lazy"
+              decoding="async"
             />
             <Typography sx={{ mt: 1 }}>{facility.name}</Typography>
           </Box>

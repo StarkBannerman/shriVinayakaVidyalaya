@@ -1,9 +1,9 @@
 import React, { useRef } from "react";
 import { Box, Grid, IconButton, Typography } from "@mui/material";
 import InsightsIcon from "@mui/icons-material/Insights";
-import StudentStatsImage from "../../assets/welcomeBanner.png";
+import StudentStatsImage from "../../assets/welcomeBanner.webp";
 import { motion } from "framer-motion";
-import { useInViewOnce } from "../../Hooks /useInView";
+import { useInViewOnce } from "../../hooks/useInView";
 
 export default function StudentEngagementStats() {
   const imageRef = useRef(null);

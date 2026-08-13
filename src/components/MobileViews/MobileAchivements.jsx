@@ -1,9 +1,8 @@
 import React from "react";
-import { Box, Grid, Typography } from "@mui/material";
-import SchoolBackground from "../../assets/schollBackground.png";
-import OwlIcon from "../../assets/owlIcon.png";
-import telescopeIcon from "../../assets/telescopeIcon.png";
-import computerIcon from "../../assets/computerIcon.png";
+import { Grid } from "@mui/material";
+import OwlIcon from "../../assets/owlIcon.webp";
+import telescopeIcon from "../../assets/telescopeIcon.webp";
+import computerIcon from "../../assets/computerIcon.webp";
 import MobileExpertiseCard from "./MobileExpertiseCard";
 
 export default function MobileAcheivements() {

@@ -1,9 +1,8 @@
 import { Box, Typography } from "@mui/material";
-import downArrow from "../../assets/leftDownArrow.png";
-import labImage from "../../assets/LaboratoryImage.jpeg";
-import classroomImage from "../../assets/clasroomImage.png";
-import classRoomImage1 from "../../assets/classroom1.JPG";
-import classRoomImage2 from "../../assets/classroom2.JPG";
+import downArrow from "../../assets/leftDownArrow.webp";
+import classroomImage from "../../assets/clasroomImage.webp";
+import classRoomImage1 from "../../assets/classroom1.webp";
+import classRoomImage2 from "../../assets/classroom2.webp";
 
 export default function MobileClassRoomFacilities() {
   const classRoomFeatures = [
@@ -25,6 +24,9 @@ export default function MobileClassRoomFacilities() {
         <img
           src={downArrow}
           style={{ marginTop: "50px", height: "40px", width: "60px" }}
+          alt=""
+          loading="lazy"
+          decoding="async"
         />
 
         <Box
@@ -76,13 +78,11 @@ export default function MobileClassRoomFacilities() {
                 border: "15px solid #FFF",
                 borderRadius: "20px",
                 zIndex: 1,
-              }}
-            />
+              }} alt="Science laboratory" loading="lazy" decoding="async" />
 
             <img
               src={classroomImage}
-              style={{ height: "230px", width: "240px", marginRight: "200px" }}
-            />
+              style={{ height: "230px", width: "240px", marginRight: "200px" }} alt="Classroom at Shri Vinayaka Vidyalaya" loading="lazy" decoding="async" />
           </Box>
 
           <Box
@@ -143,8 +143,7 @@ export default function MobileClassRoomFacilities() {
                     border: "15px solid #FFF",
                     borderRadius: "20px",
                     zIndex: 1,
-                  }}
-                />
+                  }} alt="Science laboratory" loading="lazy" decoding="async" />
               </Box>
               <Box
                 sx={{
@@ -206,11 +205,17 @@ export default function MobileClassRoomFacilities() {
               objectFit: "cover",
               zIndex: 1,
             }}
+            alt="Classroom at Shri Vinayaka Vidyalaya"
+            loading="lazy"
+            decoding="async"
           />
 
           <img
             src={classroomImage}
             style={{ height: "90px", width: "90px", margin: "20px" }}
+            alt="Classroom at Shri Vinayaka Vidyalaya"
+            loading="lazy"
+            decoding="async"
           />
         </Box>
         <Box
@@ -239,6 +244,9 @@ export default function MobileClassRoomFacilities() {
                 objectFit: "cover",
                 zIndex: 1,
               }}
+              alt="Classroom at Shri Vinayaka Vidyalaya"
+              loading="lazy"
+              decoding="async"
             />
           </Box>
 

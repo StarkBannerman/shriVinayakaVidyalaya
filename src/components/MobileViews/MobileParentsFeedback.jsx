@@ -1,7 +1,6 @@
 import { Box, Grid, Typography } from "@mui/material";
-import curvyArrow from "../../assets/curvyArrow.png";
 // import ParentsReviewCard from "../ParentsReviewCard";
-import ProfileImage from "../../assets/profileImage.png";
+import ProfileImage from "../../assets/profileImage.webp";
 import MobileParentsReviewCard from "./MobileParentsReviewCard";
 
 export default function MobileParentsFeedback() {

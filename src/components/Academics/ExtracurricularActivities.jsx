@@ -1,11 +1,10 @@
 import { Box, Grid, IconButton, Typography } from "@mui/material";
-import DownArrow from "../../assets/DownArrow.png";
+import DownArrow from "../../assets/DownArrow.webp";
 import BoltIcon from "@mui/icons-material/Bolt";
 import BrushIcon from "@mui/icons-material/Brush";
 import AudiotrackIcon from "@mui/icons-material/Audiotrack";
 import ExtensionIcon from "@mui/icons-material/Extension";
 import ScienceIcon from "@mui/icons-material/Science";
-import AutoAwesomeIcon from "@mui/icons-material/AutoAwesome";
 import { useMediaQueries } from "../../utils/Breakpoints";
 
 const extracurricularActivities = [
@@ -66,7 +65,7 @@ const extracurricularActivities = [
 ];
 
 export default function ExtracurricularActivities() {
-  const { isLargeDesktop, isDesktop, isTablet, isMobile } = useMediaQueries();
+  const { isMobile } = useMediaQueries();
   return (
     <Box sx={{ mb: 5 }}>
       <Box
@@ -106,9 +105,18 @@ export default function ExtracurricularActivities() {
           <img
             src={DownArrow}
             style={{ marginTop: "50px", height: "60px", width: "60px" }}
+            alt=""
+            loading="lazy"
+            decoding="async"
           />
         ) : (
-          <img src={DownArrow} style={{ marginTop: "90px" }} />
+          <img
+            src={DownArrow}
+            style={{ marginTop: "90px" }}
+            alt=""
+            loading="lazy"
+            decoding="async"
+          />
         )}
       </Box>
 

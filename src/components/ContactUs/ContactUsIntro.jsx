@@ -6,11 +6,12 @@ import {
   useMediaQuery,
   useTheme,
 } from "@mui/material";
-import schoolImage from "../../assets/sportsPageImage.jpeg";
+import schoolImage from "../../assets/sportsPageImage.webp";
 import EmailIcon from "@mui/icons-material/Email";
 import CallIcon from "@mui/icons-material/Call";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import AccessTimeIcon from "@mui/icons-material/AccessTime";
+import { SITE } from "../../config/site";
 
 export default function ContactUsIntro() {
   const theme = useTheme();
@@ -20,12 +21,14 @@ export default function ContactUsIntro() {
     {
       logo: EmailIcon,
       label: "EMAIL",
-      value: "shrivinayakavidyalaya@gmail.com",
+      value: SITE.email,
+      href: `mailto:${SITE.email}`,
     },
     {
       logo: CallIcon,
       label: "PHONE",
-      value: "+91 9916372340",
+      value: SITE.phone,
+      href: `tel:${SITE.phoneHref}`,
     },
     {
       logo: LocationOnIcon,
@@ -190,7 +193,17 @@ export default function ContactUsIntro() {
                     hyphens: "auto",
                   }}
                 >
-                  {item.value}
+                  {item.href ? (
+                    <Box
+                      component="a"
+                      href={item.href}
+                      sx={{ color: "inherit", textDecoration: "none" }}
+                    >
+                      {item.value}
+                    </Box>
+                  ) : (
+                    item.value
+                  )}
                 </Typography>
               </Box>
             </Box>
@@ -378,7 +391,17 @@ export default function ContactUsIntro() {
                           hyphens: "auto",
                         }}
                       >
-                        {item.value}
+                        {item.href ? (
+                          <Box
+                            component="a"
+                            href={item.href}
+                            sx={{ color: "inherit", textDecoration: "none" }}
+                          >
+                            {item.value}
+                          </Box>
+                        ) : (
+                          item.value
+                        )}
                       </Typography>
                     </Box>
                   </Box>

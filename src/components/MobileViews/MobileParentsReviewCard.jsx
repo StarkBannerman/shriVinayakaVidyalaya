@@ -1,7 +1,7 @@
 import { Avatar, Box, Typography } from "@mui/material";
-import girlIcon from "../../assets/girlIcon.png";
+import girlIcon from "../../assets/girlIcon.webp";
 
-export default function ({ review }) {
+export default function MobileParentsReviewCard({ review }) {
   return (
     <Box sx={{ width: "330px", mb: 2 }}>
       <Box

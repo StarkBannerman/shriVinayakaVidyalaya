@@ -1,5 +1,5 @@
-import { AppBar, Box, Button, Toolbar, Typography } from "@mui/material";
-import schoolLogo from "../../assets/schoolLogo.png";
+import { AppBar, Box, Typography } from "@mui/material";
+import schoolLogo from "../../assets/schoolLogo.webp";
 
 export default function MenuBar({ onMenuClick }) {
   const handleMenuClick = (section) => {
@@ -36,6 +36,8 @@ export default function MenuBar({ onMenuClick }) {
               height="50px"
               width="75px"
               alt="School Logo"
+              loading="lazy"
+              decoding="async"
             />
           </Box>
 

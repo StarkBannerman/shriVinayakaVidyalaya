@@ -1,6 +1,6 @@
 import { Box, Grid, Typography } from "@mui/material";
-import studentEnagement from "../../assets/aboutPageIcon.JPG";
-import studeImage from "../../assets/aboutPageIcon2.JPG";
+import studentEnagement from "../../assets/aboutPageIcon.webp";
+import studeImage from "../../assets/aboutPageIcon2.webp";
 
 export default function MobileIntroBox() {
   return (

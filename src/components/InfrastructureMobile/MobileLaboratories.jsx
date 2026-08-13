@@ -1,12 +1,10 @@
 import { Box, Typography } from "@mui/material";
-import DownArrow from "../../assets/DownArrow.png";
-import laboratoryImage from "../../assets/LaboratoryImage.jpeg";
-import scienceLabImage1 from "../../assets/scienceLabImage1.png";
-import scienceLabeImage2 from "../../assets/ScienceLabImage2.png";
-import computerLab from "../../assets/computerLab.png";
-import labImage from "../../assets/d&Tlab.jpg";
-import scienceLab from "../../assets/scienceLab.jpg";
-import { BorderColor } from "@mui/icons-material";
+import DownArrow from "../../assets/DownArrow.webp";
+import scienceLabImage1 from "../../assets/scienceLabImage1.webp";
+import scienceLabeImage2 from "../../assets/ScienceLabImage2.webp";
+import computerLab from "../../assets/computerLab.webp";
+import labImage from "../../assets/dandTlab.webp";
+import scienceLab from "../../assets/scienceLab.webp";
 export default function MobileLaborotaries() {
   const laborotaries = [
     {
@@ -61,6 +59,9 @@ export default function MobileLaborotaries() {
           style={{ marginTop: "50px" }}
           height={"60px"}
           width={"60px"}
+          alt=""
+          loading="lazy"
+          decoding="async"
         />
       </Box>
 
@@ -100,6 +101,9 @@ export default function MobileLaborotaries() {
                   zIndex: 1,
                   objectFit: "cover",
                 }}
+                alt={lab?.name}
+                loading="lazy"
+                decoding="async"
               />
             </Box>
 
@@ -147,6 +151,9 @@ export default function MobileLaborotaries() {
                     src={lab?.leftCornerImage}
                     height={"50px"}
                     width={"50px"}
+                    alt=""
+                    loading="lazy"
+                    decoding="async"
                   />
                 )}
                 {lab?.rightCornerImage && (
@@ -154,6 +161,9 @@ export default function MobileLaborotaries() {
                     src={lab?.rightCornerImage}
                     height={"50px"}
                     width={"50px"}
+                    alt=""
+                    loading="lazy"
+                    decoding="async"
                   />
                 )}
               </Box>
@@ -244,7 +254,7 @@ export default function MobileLaborotaries() {
               }}
             >
               <Box sx={{ ml: -5, mb: -5 }}>
-                <img src={computerLab} height={"120px"} width={"120px"} />
+                <img src={computerLab} height={"120px"} width={"120px"} alt="Computer laboratory" loading="lazy" decoding="async" />
               </Box>
             </Box>
           </Box>
@@ -263,8 +273,7 @@ export default function MobileLaborotaries() {
               src={laboratoryImage}
               height={"100%"}
               width={"100%"}
-              style={{ borderRadius: "8px" }}
-            />
+              style={{ borderRadius: "8px" }} alt="Science laboratory" loading="lazy" decoding="async" />
           </Box>
         </Box>
       </Box> */}

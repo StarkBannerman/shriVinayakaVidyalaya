@@ -1,6 +1,6 @@
 import { Box, Typography } from "@mui/material";
-import historyBackground from "../../assets/historyBackground.jpeg";
-import schoolBackground from "../../assets/schollBackground.png";
+import historyBackground from "../../assets/historyBackground.webp";
+import schoolBackground from "../../assets/schollBackground.webp";
 
 export default function History() {
   return (

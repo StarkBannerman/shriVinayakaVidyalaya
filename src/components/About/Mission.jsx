@@ -1,12 +1,12 @@
-import { Box, Grid, Typography, Button } from "@mui/material";
+import { Box, Grid, Typography } from "@mui/material";
 import { motion } from "framer-motion";
 import { useRef } from "react";
-import { useInViewOnce } from "../../Hooks /useInView";
-import GroupStudentImage from "../../assets/aboutPageImage.png";
+import { useInViewOnce } from "../../hooks/useInView";
+import GroupStudentImage from "../../assets/aboutPageImage.webp";
 
 export default function Mission() {
   const welcomeRef = useRef(null);
-  const { isInView, hasAnimated } = useInViewOnce(welcomeRef); // Use the updated hook
+  const { hasAnimated } = useInViewOnce(welcomeRef); // Use the updated hook
 
   return (
     <Box
@@ -37,7 +37,14 @@ export default function Mission() {
           animate={hasAnimated ? { x: 0 } : {}} // Only animate once
           transition={{ type: "spring", stiffness: 30 }}
         >
-          <img src={GroupStudentImage} height="450px" width="450px" />
+          <img
+            src={GroupStudentImage}
+            height="450px"
+            width="450px"
+            alt="Students of Shri Vinayaka Vidyalaya"
+            loading="lazy"
+            decoding="async"
+          />
         </Grid>
         <Grid
           item

@@ -1,11 +1,10 @@
 import { Box, Typography } from "@mui/material";
-import DownArrow from "../../assets/DownArrow.png";
-import laboratoryImage from "../../assets/LaboratoryImage.jpeg";
-import scienceLabImage1 from "../../assets/scienceLabImage1.png";
-import scienceLabeImage2 from "../../assets/ScienceLabImage2.png";
-import computerLab from "../../assets/computerLab.png";
-import labImage from "../../assets/d&Tlab.jpg";
-import scienceLab from "../../assets/scienceLab.jpg";
+import DownArrow from "../../assets/DownArrow.webp";
+import scienceLabImage1 from "../../assets/scienceLabImage1.webp";
+import scienceLabeImage2 from "../../assets/ScienceLabImage2.webp";
+import computerLab from "../../assets/computerLab.webp";
+import labImage from "../../assets/dandTlab.webp";
+import scienceLab from "../../assets/scienceLab.webp";
 export default function Laborotaries() {
   return (
     <Box>
@@ -37,7 +36,13 @@ export default function Laborotaries() {
             Highlights of Our Infrastructure
           </Typography>
         </Box>
-        <img src={DownArrow} style={{ marginTop: "90px" }} />
+        <img
+          src={DownArrow}
+          style={{ marginTop: "90px" }}
+          alt=""
+          loading="lazy"
+          decoding="async"
+        />
       </Box>
 
       <Box
@@ -75,6 +80,9 @@ export default function Laborotaries() {
               height={"100%"}
               width={"100%"}
               style={{ borderRadius: "8px", objectFit: "cover  " }}
+              alt="Science laboratory"
+              loading="lazy"
+              decoding="async"
             />
           </Box>
 
@@ -138,12 +146,22 @@ export default function Laborotaries() {
               }}
             >
               <Box sx={{ mr: -5 }}>
-                <img src={scienceLabeImage2} height={"100px"} width={"100px"} />
+                <img
+                  src={scienceLabeImage2}
+                  height={"100px"}
+                  width={"100px"}
+                  alt="Science laboratory"
+                  loading="lazy"
+                  decoding="async"
+                />
                 <img
                   src={scienceLabImage1}
                   height={"100px"}
                   width={"100px"}
                   style={{ marginLeft: -5 }}
+                  alt="Science laboratory"
+                  loading="lazy"
+                  decoding="async"
                 />
               </Box>
             </Box>
@@ -233,7 +251,14 @@ export default function Laborotaries() {
               }}
             >
               <Box sx={{ ml: -5, mb: -5 }}>
-                <img src={computerLab} height={"120px"} width={"120px"} />
+                <img
+                  src={computerLab}
+                  height={"120px"}
+                  width={"120px"}
+                  alt="Computer laboratory"
+                  loading="lazy"
+                  decoding="async"
+                />
               </Box>
             </Box>
           </Box>
@@ -253,6 +278,9 @@ export default function Laborotaries() {
               height={"100%"}
               width={"100%"}
               style={{ borderRadius: "8px", objectFit: "cover" }}
+              alt="Science laboratory"
+              loading="lazy"
+              decoding="async"
             />
           </Box>
         </Box>

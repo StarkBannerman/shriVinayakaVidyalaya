@@ -7,12 +7,10 @@ import {
   Card,
   CardContent,
   Container,
-  useTheme,
-  useMediaQuery,
 } from "@mui/material";
 import { styled } from "@mui/material/styles";
-import downArrow from "../../assets/leftDownArrow.png";
-import checkedBackground from "../../assets/checkedBackground.png";
+import downArrow from "../../assets/leftDownArrow.webp";
+import checkedBackground from "../../assets/checkedBackground.webp";
 import { useMediaQueries } from "../../utils/Breakpoints";
 
 // Styled components for better design
@@ -78,9 +76,7 @@ const TitleBox = styled(Box)(({ theme }) => ({
 }));
 
 export default function Subjects() {
-  const { isLargeDesktop, isDesktop, isTablet, isMobile } = useMediaQueries();
-  const theme = useTheme();
-  const isMdUp = useMediaQuery(theme.breakpoints.up("md"));
+  const { isMobile } = useMediaQueries();
 
   const subjects = [
     {

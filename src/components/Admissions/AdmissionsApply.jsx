@@ -1,5 +1,5 @@
 import { Box, Button, Typography } from "@mui/material";
-import schoolBackground from "../../assets/schollBackground.png";
+import schoolBackground from "../../assets/schollBackground.webp";
 
 export default function AdmissionsApply() {
   return (

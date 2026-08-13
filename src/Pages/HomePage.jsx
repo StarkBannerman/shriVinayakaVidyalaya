@@ -1,56 +1,35 @@
-import { Box, Toolbar, Typography } from "@mui/material";
-import MenuBar from "../components/Home/MenuBar";
+import { Box, Toolbar } from "@mui/material";
 import PictureCarousel from "../components/Home/PictureCarousel";
-import LineGroup from "../assets/lineGroup.png";
-import Thunder from "../assets/thunder.png";
+import LineGroup from "../assets/lineGroup.webp";
+import Thunder from "../assets/thunder.webp";
 import ScrollableBanner from "../components/Home/scrollableBanner";
 import WelcomeMessage from "../components/Home/WelcomeMessage";
-import JigsawBoxes from "../components/Home/JigsawBoxes";
 import Facilities from "../components/Home/Facilities";
 import SchoolExpertise from "../components/Home/SchoolExpertise";
-import waveRing from "../assets/waveRing.png";
+import waveRing from "../assets/waveRing.webp";
 import StudentEngagementStats from "../components/Home/StudentEngagementStats";
 import ParentsFeedback from "../components/Home/ParentsFeedback";
 import NewsFunction from "../components/Home/NewsEvents";
-import JoinCommunity from "../components/Home/JoinCommunityCard";
-import backgroundDoodle from "../assets/backgroundImage.svg";
+import backgroundDoodle from "../assets/backgroundDoodle.webp";
 import { useRef } from "react";
 import Footer from "../components/Common/Footer";
 import Menu from "../components/Common/Menu";
+import Seo from "../components/Common/Seo";
 
 export default function HomePage() {
   const carouselRef = useRef(null);
   const bannerRef = useRef(null);
   const welcomeRef = useRef(null);
   const facilitiesRef = useRef(null);
-  const expertiseRef = useRef(null);
-  const achievementsRef = useRef(null);
-  const statsRef = useRef(null);
   const feedbackRef = useRef(null);
   const eventsRef = useRef(null);
 
-  const handleMenuClick = (section) => {
-    const refMap = {
-      Home: carouselRef,
-      "News & Events": eventsRef,
-      About: bannerRef,
-      Academics: facilitiesRef,
-      Admission: expertiseRef,
-      Testimonials: feedbackRef,
-    };
-
-    const sectionRef = refMap[section];
-
-    if (sectionRef && sectionRef.current) {
-      sectionRef.current.scrollIntoView({ behavior: "smooth" });
-    }
-  };
   return (
     <>
       <Box
         sx={{
-          height: "100vh",
-          width: "100vw",
+          minHeight: "100vh",
+          width: "100%",
           backgroundColor: "#FFF7E1",
           boxSizing: "border-box", // Ensures padding and borders are included in width
           overflowX: "hidden", // Prevents horizontal overflow
@@ -59,8 +38,8 @@ export default function HomePage() {
           backgroundSize: "auto", // Ensures the original size of the image is maintained
         }}
       >
-        {/* <MenuBar onMenuClick={handleMenuClick} /> */}
         <Menu />
+        <Seo description="Shri Vinayaka Vidyalaya, established in 1990, is a school in JP Nagar 7th Phase, Bengaluru offering primary and secondary education with well-equipped labs, a library and sports facilities." />
         <Toolbar />
         <Box
           sx={{
@@ -100,6 +79,8 @@ export default function HomePage() {
                 width: "70px", // Scale the image to fit the container's width
                 height: "80px", // Maintain the aspect ratio of the image
               }}
+              loading="lazy"
+              decoding="async"
             />
           </Box>
           <Box sx={{ mt: -2, mr: 4 }}>
@@ -110,6 +91,9 @@ export default function HomePage() {
                 height: "80px", // Maintain the aspect ratio of the image
               }}
               ref={bannerRef}
+              alt=""
+              loading="lazy"
+              decoding="async"
             />
           </Box>
         </Box>
@@ -130,7 +114,14 @@ export default function HomePage() {
             mb: 5,
           }}
         >
-          <img src={waveRing} height={"180px"} width={"180px"} />
+          <img
+            src={waveRing}
+            height={"180px"}
+            width={"180px"}
+            alt=""
+            loading="lazy"
+            decoding="async"
+          />
         </Box>
         <StudentEngagementStats />
         <Box ref={feedbackRef}>
@@ -139,7 +130,6 @@ export default function HomePage() {
         <Box ref={eventsRef}>
           <NewsFunction />
         </Box>
-        {/* <JoinCommunity /> */}
 
         <Footer />
         {/* <Box

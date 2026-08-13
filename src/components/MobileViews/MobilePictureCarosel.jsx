@@ -1,11 +1,11 @@
 import { Box, Typography } from "@mui/material";
 import { Carousel } from "react-responsive-carousel";
-// import CaroselImage from "../../assets/mobileBanner.jpg";
-// import banner2 from "../../assets/mobileBanner2.jpg";
-// import banner3 from "../../assets/mobileBanner3.jpg";
-import banner2 from "../../assets/MobileBanner5.jpg";
-import CaroselImage from "../../assets/Banner4.JPG";
-import banner3 from "../../assets/MobileBanner6.jpg";
+// import CaroselImage from "../../assets/mobileBanner.webp";
+// import banner2 from "../../assets/mobileBanner2.webp";
+// import banner3 from "../../assets/mobileBanner3.webp";
+import banner2 from "../../assets/MobileBanner5.webp";
+import CaroselImage from "../../assets/Banner4.webp";
+import banner3 from "../../assets/MobileBanner6.webp";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // Import carousel CSS
 
 export default function MobilePictureCarousel() {

@@ -1,48 +1,81 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-IN">
   <head>
     <meta charset="utf-8" />
     <link rel="icon" href="%PUBLIC_URL%/favIcon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
+    <meta name="theme-color" content="#F68820" />
+
+    <title>Shri Vinayaka Vidyalaya | School in JP Nagar, Bengaluru</title>
     <meta
       name="description"
-      content="Web site created using create-react-app"
+      content="Shri Vinayaka Vidyalaya, established in 1990, is a school in JP Nagar 7th Phase, Bengaluru offering primary and secondary education with well-equipped labs, library and sports facilities."
     />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
+    <link rel="canonical" href="https://shrivinayakavidyalaya.com/" />
 
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
+    <meta property="og:site_name" content="Shri Vinayaka Vidyalaya" />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:title"
+      content="Shri Vinayaka Vidyalaya | School in JP Nagar, Bengaluru"
+    />
+    <meta
+      property="og:description"
+      content="Shri Vinayaka Vidyalaya, established in 1990, is a school in JP Nagar 7th Phase, Bengaluru offering primary and secondary education with well-equipped labs, library and sports facilities."
+    />
+    <meta property="og:url" content="https://shrivinayakavidyalaya.com/" />
+    <meta
+      property="og:image"
+      content="https://shrivinayakavidyalaya.com/og-image.jpg"
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:image"
+      content="https://shrivinayakavidyalaya.com/og-image.jpg"
+    />
+
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+
+    <!--
+      Structured data: what puts the school in Google's knowledge panel and
+      local/Maps results. Keep in sync with src/config/site.js.
     -->
-    <title>Home</title>
-    <meta property="og:title" content="Shri Vinayaka Vidyalya" />
-        <meta property="og:type" content="website" />
-        <meta property="og:image" content="%PUBLIC_URL%/favIcon.png" />
-        <meta property="og:url" content="https://shrivinayakavidyalaya.com/" />
-        <meta property="og:description" content="Shri Vinayaka Vidyalaya, established in 1990, has earned its place as one of the top schools in Bangalore." />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "School",
+        "name": "Shri Vinayaka Vidyalaya",
+        "url": "https://shrivinayakavidyalaya.com/",
+        "logo": "https://shrivinayakavidyalaya.com/logo512.png",
+        "image": "https://shrivinayakavidyalaya.com/og-image.jpg",
+        "description": "Shri Vinayaka Vidyalaya, established in 1990, is a school in JP Nagar 7th Phase, Bengaluru offering primary and secondary education.",
+        "foundingDate": "1990",
+        "email": "shrivinayakavidyalaya@gmail.com",
+        "telephone": "+91-9916372340",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Shri, 10, 1st Main Rd, Guru Raghavendra Nagar, Eswara Layout, JP Nagar 7th Phase, Arekere",
+          "addressLocality": "Bengaluru",
+          "addressRegion": "Karnataka",
+          "postalCode": "560078",
+          "addressCountry": "IN"
+        },
+        "sameAs": [
+          "https://www.facebook.com/profile.php?id=100093646530865",
+          "https://www.instagram.com/shrivinayakavidyalaya"
+        ]
+      }
+    </script>
   </head>
   <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <noscript>
+      You need to enable JavaScript to view this site. Shri Vinayaka Vidyalaya,
+      JP Nagar 7th Phase, Bengaluru 560078. Phone: +91 9916372340.
+    </noscript>
     <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
-
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
-
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
   </body>
 </html>

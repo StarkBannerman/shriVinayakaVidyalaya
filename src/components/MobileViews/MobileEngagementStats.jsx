@@ -1,6 +1,6 @@
 import { Box, Grid, IconButton, Typography } from "@mui/material";
 import InsightsIcon from "@mui/icons-material/Insights";
-import StudentStatsImage from "../../assets/welcomeBanner.png";
+import StudentStatsImage from "../../assets/welcomeBanner.webp";
 export default function MobileEngagementStats() {
   return (
     <Grid container sx={{ width: "100vw", mb: 10 }}>
@@ -17,7 +17,14 @@ export default function MobileEngagementStats() {
         }}
       >
         <Box sx={{ width: "95%", height: "320px" }}>
-          <img src={StudentStatsImage} height={"100%"} width={"100%"} />
+          <img
+            src={StudentStatsImage}
+            height={"100%"}
+            width={"100%"}
+            alt="Students at Shri Vinayaka Vidyalaya"
+            loading="lazy"
+            decoding="async"
+          />
         </Box>
       </Grid>
       <Grid

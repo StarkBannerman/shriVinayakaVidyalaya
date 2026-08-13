@@ -1,10 +1,10 @@
 import { Box, Grid, Typography } from "@mui/material";
-import curvyArrow from "../../assets/curvyArrow.png";
+import curvyArrow from "../../assets/curvyArrow.webp";
 import ParentsReviewCard from "./ParentsReviewCard";
-import ProfileImage from "../../assets/profileImage.png";
+import ProfileImage from "../../assets/profileImage.webp";
 import { motion } from "framer-motion";
 import { useRef } from "react";
-import { useInViewOnce } from "../../Hooks /useInView";
+import { useInViewOnce } from "../../hooks/useInView";
 export default function ParentsFeedback() {
   const reviews = [
     {
@@ -55,6 +55,9 @@ export default function ParentsFeedback() {
             height={"75px"}
             width={"150px"}
             style={{ marginLeft: "55%", marginTop: "-70px" }}
+            alt=""
+            loading="lazy"
+            decoding="async"
           />
         </motion.div>
       </Box>

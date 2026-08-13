@@ -102,7 +102,14 @@ export default function MobileExpertiseCard({ cardDetails }) {
             }}
           >
             <Box sx={{ mb: 2, ml: 3 }}>
-              <img src={cardDetails.icon} height={"60px"} width={"60px"} />
+              <img
+                src={cardDetails.icon}
+                height={"60px"}
+                width={"60px"}
+                alt=""
+                loading="lazy"
+                decoding="async"
+              />
             </Box>
           </Box>
           <Box
@@ -116,7 +123,6 @@ export default function MobileExpertiseCard({ cardDetails }) {
             <IconButton
               sx={{
                 color: "#FF9D01",
-                transition: "color 0.3s ease",
                 height: "80px",
                 width: "80px",
                 borderRadius: "50%",

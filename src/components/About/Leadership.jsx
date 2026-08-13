@@ -1,12 +1,12 @@
-import { Box, Grid, Typography, Button } from "@mui/material";
+import { Box, Grid, Typography } from "@mui/material";
 import { motion } from "framer-motion";
 import { useRef } from "react";
-import { useInViewOnce } from "../../Hooks /useInView";
-import LeaderShipImage from "../../assets/LeadershipImage.png";
+import { useInViewOnce } from "../../hooks/useInView";
+import LeaderShipImage from "../../assets/LeadershipImage.webp";
 
 export default function LeaderShip() {
   const welcomeRef = useRef(null);
-  const { isInView, hasAnimated } = useInViewOnce(welcomeRef); // Use the updated hook
+  const { hasAnimated } = useInViewOnce(welcomeRef); // Use the updated hook
 
   return (
     <Box
@@ -128,7 +128,14 @@ export default function LeaderShip() {
           animate={hasAnimated ? { opacity: 1 } : {}} // Only animate once
           transition={{ duration: 1.5 }}
         >
-          <img src={LeaderShipImage} height="620px" width="620px" />
+          <img
+            src={LeaderShipImage}
+            height="620px"
+            width="620px"
+            alt="School leadership at Shri Vinayaka Vidyalaya"
+            loading="lazy"
+            decoding="async"
+          />
         </Grid>
       </Grid>
     </Box>

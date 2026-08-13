@@ -1,35 +1,28 @@
 import { Box, Grid, Typography, Link, IconButton } from "@mui/material";
-import { Facebook, Twitter, Instagram } from "@mui/icons-material";
-import schoolLogo from "../../assets/schoolLogo.png";
+import { Facebook, Instagram } from "@mui/icons-material";
+import { Link as RouterLink } from "react-router-dom";
+import schoolLogo from "../../assets/schoolLogo.webp";
+import { SITE, ADDRESS_LINE } from "../../config/site";
 
 export default function Footer() {
   const useFullLinks = [
-    {
-      title: "Admission",
-      link: "https://shrivinayakavidyalaya.com/admissions",
-    },
-    {
-      title: "Infrastructure",
-      link: "https://shrivinayakavidyalaya.com/infrastructure",
-    },
-    {
-      title: "About",
-      link: "https://shrivinayakavidyalaya.com/admissions",
-    },
+    { title: "Admission", link: "/admissions" },
+    { title: "Infrastructure", link: "/infrastructure" },
+    { title: "About", link: "/about" },
   ];
 
   const updateLinks = [
-    { title: "News & Events", link: "https://shrivinayakavidyalaya.com" },
-    { title: "Contact Us", link: "https://shrivinayakavidyalaya.com" },
+    { title: "Academics", link: "/academics" },
+    { title: "Contact Us", link: "/contactus" },
   ];
 
-  const legalLinks = [
-    { title: "Terms & Conditions", link: "https://shrivinayakavidyalaya.com" },
-    { title: "Privacy Policy", link: "https://shrivinayakavidyalaya.com" },
-  ];
+  const legalLinks = [{ title: "Privacy Policy", link: "/privacy" }];
 
   return (
-    <Box sx={{ width: "100%", backgroundColor: "#FFF", p: { xs: 2, md: 4 } }}>
+    <Box
+      component="footer"
+      sx={{ width: "100%", backgroundColor: "#FFF", p: { xs: 2, md: 4 } }}
+    >
       <Grid container spacing={4} sx={{ justifyContent: "center" }}>
         {/* School Logo and Address Section */}
         <Grid
@@ -50,20 +43,23 @@ export default function Footer() {
           >
             <img
               src={schoolLogo}
-              alt="School Logo"
+              alt={`${SITE.name} logo`}
               height="70px"
               width="100px"
+              loading="lazy"
+              decoding="async"
             />
           </Box>
           <Typography
+            component="address"
             sx={{
               mt: 2,
               color: "#555",
+              fontStyle: "normal",
               fontSize: { xs: "14px", md: "16px", width: "90%" },
             }}
           >
-            Shri, 10, 1st Main Rd, Guru Raghavendra Nagar, Eswara Layout, JP
-            Nagar 7th Phase, Arekere, Bengaluru, Kothnur, Karnataka 560078
+            {ADDRESS_LINE}
           </Typography>
         </Grid>
 
@@ -80,8 +76,9 @@ export default function Footer() {
           </Typography>
           {useFullLinks.map((linkObj, index) => (
             <Link
-              key={index}
-              href={linkObj.link}
+              key={linkObj.title}
+              component={RouterLink}
+              to={linkObj.link}
               sx={{
                 display: "block",
                 mt: 2,
@@ -109,8 +106,9 @@ export default function Footer() {
           </Typography>
           {updateLinks.map((linkObj, index) => (
             <Link
-              key={index}
-              href={linkObj.link}
+              key={linkObj.title}
+              component={RouterLink}
+              to={linkObj.link}
               sx={{
                 display: "block",
                 mt: 2,
@@ -138,8 +136,9 @@ export default function Footer() {
           </Typography>
           {legalLinks.map((linkObj, index) => (
             <Link
-              key={index}
-              href={linkObj.link}
+              key={linkObj.title}
+              component={RouterLink}
+              to={linkObj.link}
               sx={{
                 display: "block",
                 mt: 2,
@@ -175,21 +174,20 @@ export default function Footer() {
           >
             <IconButton
               component="a"
-              href="https://www.facebook.com/profile.php?id=100093646530865"
+              href={SITE.social.facebook}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`${SITE.name} on Facebook`}
               sx={{ color: "#555", "&:hover": { color: "#3b5998" }, mb: 1 }}
             >
               <Facebook />
             </IconButton>
-            {/* <IconButton
-              component="a"
-              href="https://twitter.com"
-              sx={{ color: "#555", "&:hover": { color: "#00acee" }, mb: 1 }}
-            >
-              <Twitter />
-            </IconButton> */}
             <IconButton
               component="a"
-              href="https://www.instagram.com/shrivinayakavidyalaya?igsh=MXMzM3l4ZjI3YXZ5cw=="
+              href={SITE.social.instagram}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`${SITE.name} on Instagram`}
               sx={{ color: "#555", "&:hover": { color: "#E4405F" } }}
             >
               <Instagram />
@@ -210,7 +208,7 @@ export default function Footer() {
         }}
       >
         <Typography variant="body2">
-          &copy; 2024 Shri Vinayaka Vidyalaya. All Rights Reserved.
+          &copy; {new Date().getFullYear()} {SITE.name}. All Rights Reserved.
         </Typography>
       </Box>
     </Box>

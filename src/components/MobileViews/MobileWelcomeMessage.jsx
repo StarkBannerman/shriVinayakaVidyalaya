@@ -1,5 +1,5 @@
 import { Box, Grid, Typography, Button } from "@mui/material";
-import GroupStudentImage from "../../assets/studentEngagement.png";
+import GroupStudentImage from "../../assets/studentEngagement.webp";
 export default function MobileWelcomeMessage() {
   return (
     <Box sx={{ display: "grid", placeItems: "center", width: "100vw" }}>
@@ -136,6 +136,9 @@ export default function MobileWelcomeMessage() {
             maxWidth={"390px"}
             height={"100%"}
             width={"100%"}
+            alt="Students of Shri Vinayaka Vidyalaya"
+            loading="lazy"
+            decoding="async"
           />
         </Grid>
       </Grid>

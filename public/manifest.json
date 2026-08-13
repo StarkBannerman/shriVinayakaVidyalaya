@@ -1,6 +1,7 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "SVV",
+  "name": "Shri Vinayaka Vidyalaya",
+  "description": "Shri Vinayaka Vidyalaya, established in 1990, is a school in JP Nagar 7th Phase, Bengaluru.",
   "icons": [
     {
       "src": "favicon.ico",
@@ -18,8 +19,8 @@
       "sizes": "512x512"
     }
   ],
-  "start_url": ".",
+  "start_url": "/",
   "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "theme_color": "#F68820",
+  "background_color": "#FFF7E1"
 }

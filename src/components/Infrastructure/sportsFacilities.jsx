@@ -1,7 +1,7 @@
 import { Box, Typography } from "@mui/material";
-import DownArrow from "../../assets/DownArrow.png";
-import sportsStudent from "../../assets/sportsStudents.jpeg";
-import swimmingPool from "../../assets/SwimmingPool.jpg";
+import DownArrow from "../../assets/DownArrow.webp";
+import sportsStudent from "../../assets/sportsStudents.webp";
+import swimmingPool from "../../assets/SwimmingPool.webp";
 
 export default function SportsFacilities() {
   return (
@@ -34,7 +34,13 @@ export default function SportsFacilities() {
             Sports Facilities
           </Typography>
         </Box>
-        <img src={DownArrow} style={{ marginTop: "90px" }} />
+        <img
+          src={DownArrow}
+          style={{ marginTop: "90px" }}
+          alt=""
+          loading="lazy"
+          decoding="async"
+        />
       </Box>
 
       <Box
@@ -78,6 +84,9 @@ export default function SportsFacilities() {
                   height="95%"
                   width="95%"
                   style={{ borderRadius: "50%", objectFit: "cover" }}
+                  alt="Students taking part in sports"
+                  loading="lazy"
+                  decoding="async"
                 />
               </Box>
               <Box
@@ -153,6 +162,9 @@ export default function SportsFacilities() {
                   height="95%"
                   width="95%"
                   style={{ borderRadius: "50%", objectFit: "cover" }}
+                  alt="School swimming pool"
+                  loading="lazy"
+                  decoding="async"
                 />
               </Box>
               <Box

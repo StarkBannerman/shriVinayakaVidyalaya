@@ -1,17 +1,11 @@
 import { Box, Grid, Typography } from "@mui/material";
-import DownArrow from "../../assets/DownArrow.png";
-import BoltIcon from "@mui/icons-material/Bolt";
-import BrushIcon from "@mui/icons-material/Brush";
-import AudiotrackIcon from "@mui/icons-material/Audiotrack";
-import ExtensionIcon from "@mui/icons-material/Extension";
-import ScienceIcon from "@mui/icons-material/Science";
-import AutoAwesomeIcon from "@mui/icons-material/AutoAwesome";
+import DownArrow from "../../assets/DownArrow.webp";
 import { useMediaQueries } from "../../utils/Breakpoints";
 
 const timeline = [
   {
     name: "Inquiry",
-    desc: "Submit an inquiry form through our website or contact our admissions office to express your interest in Little Learners Academy.",
+    desc: "Submit an inquiry form through our website or contact our admissions office to express your interest in Shri Vinayaka Vidyalaya.",
   },
   {
     name: "School Tour",
@@ -23,7 +17,7 @@ const timeline = [
   },
   {
     name: "Parent Interview",
-    desc: "We value parent engagement, and a meeting with our admissions team allows us to understand your child's needs and ensure Little Learners Academy aligns with your family's expectations.",
+    desc: "We value parent engagement, and a meeting with our admissions team allows us to understand your child's needs and ensure Shri Vinayaka Vidyalaya aligns with your family's expectations.",
   },
   {
     name: "Student Assessment",
@@ -31,7 +25,7 @@ const timeline = [
   },
   {
     name: "Acceptance",
-    desc: "Once the admission process is complete, you will receive an official acceptance letter from Little Learners Academy.",
+    desc: "Once the admission process is complete, you will receive an official acceptance letter from Shri Vinayaka Vidyalaya.",
   },
 ];
 
@@ -77,9 +71,18 @@ export default function AdmissionTimeline() {
           <img
             src={DownArrow}
             style={{ marginTop: "50px", height: "60px", width: "60px" }}
+            alt=""
+            loading="lazy"
+            decoding="async"
           />
         ) : (
-          <img src={DownArrow} style={{ marginTop: "90px" }} />
+          <img
+            src={DownArrow}
+            style={{ marginTop: "90px" }}
+            alt=""
+            loading="lazy"
+            decoding="async"
+          />
         )}
       </Box>
 

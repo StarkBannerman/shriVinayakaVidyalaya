@@ -1,13 +1,11 @@
 import { Box, Typography } from "@mui/material";
-import experienceLogo from "../../assets/Experience.png";
-import CaroselImage from "../../assets/bannerImage.jpg";
-import LineGroup from "../../assets/lineGroup.png";
+import experienceLogo from "../../assets/Experience.webp";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // Import carousel CSS
-// import banner1 from "../../assets/laptopBanner1.jpg";
-import banner2 from "../../assets/Banner2.JPG";
-import banner1 from "../../assets/Banner4.JPG";
-import banner3 from "../../assets/Banner3.JPG";
+// import banner1 from "../../assets/laptopBanner1.webp";
+import banner2 from "../../assets/Banner2.webp";
+import banner1 from "../../assets/Banner4.webp";
+import banner3 from "../../assets/Banner3.webp";
 
 export default function PictureCarousel() {
   return (
@@ -33,7 +31,12 @@ export default function PictureCarousel() {
             zIndex: 1,
           }}
         >
-          <img src={experienceLogo} width="100%" height="100%" />
+          <img
+            src={experienceLogo}
+            width="100%"
+            height="100%"
+            alt="Years of experience badge"
+          />
         </Box>
 
         {/* Box to show the Image Carousel  */}

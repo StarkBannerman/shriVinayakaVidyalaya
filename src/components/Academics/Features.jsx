@@ -1,5 +1,5 @@
 import { Box, Grid, IconButton, Typography } from "@mui/material";
-import teacherImage from "../../assets/teacherImage.jpeg";
+import teacherImage from "../../assets/teacherImage.webp";
 import SchoolIcon from "@mui/icons-material/School";
 import EmojiEventsIcon from "@mui/icons-material/EmojiEvents";
 import IntegrationInstructionsIcon from "@mui/icons-material/IntegrationInstructions";
@@ -148,8 +148,8 @@ export default function Features() {
                 index === 0
                   ? "#F6882080"
                   : index === 1
-                  ? "#307B7480"
-                  : "#7214FF4D",
+                    ? "#307B7480"
+                    : "#7214FF4D",
               p: 2,
               display: "flex",
               flexDirection: {

@@ -1,10 +1,8 @@
 import { Box, Typography } from "@mui/material";
-import downArrow from "../../assets/leftDownArrow.png";
-import facilitiesImage from "../../assets/FacilitiesImage.png";
-import transport from "../../assets/bus.JPG";
-import Library from "../../assets/Library.jpeg";
-import extrcurrilars from "../../assets/extrcurriculars.jpg";
-import lab from "../../assets/d&Tlab.jpg";
+import downArrow from "../../assets/leftDownArrow.webp";
+import transport from "../../assets/bus.webp";
+import Library from "../../assets/Library.webp";
+import extrcurrilars from "../../assets/extrcurriculars.webp";
 
 export default function CommonFacilities() {
   const commonFacilities = [
@@ -56,6 +54,9 @@ export default function CommonFacilities() {
         <img
           src={downArrow}
           style={{ marginTop: "120px", height: "150px", width: "200px" }}
+          alt=""
+          loading="lazy"
+          decoding="async"
         />
 
         <Box
@@ -188,6 +189,9 @@ export default function CommonFacilities() {
                   height={"90%"}
                   width={"90%"}
                   style={{ borderRadius: "10px", objectFit: "cover" }}
+                  alt={facility.title}
+                  loading="lazy"
+                  decoding="async"
                 />
               </Box>
             </Box>

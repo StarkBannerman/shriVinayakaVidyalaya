@@ -11,43 +11,35 @@ import {
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
-import { useLocation, useNavigate } from "react-router-dom";
-import schoolLogo from "../../assets/schoolLogo.png";
-import { title } from "framer-motion/client";
+import { useLocation, Link as RouterLink } from "react-router-dom";
+import schoolLogo from "../../assets/schoolLogo.webp";
+import { SITE } from "../../config/site";
+
+const menuItems = [
+  { title: "Home", link: "/home" },
+  { title: "About", link: "/about" },
+  { title: "Infrastructure", link: "/infrastructure" },
+  { title: "Admissions", link: "/admissions" },
+  { title: "Academics", link: "/academics" },
+  { title: "Contact Us", link: "/contactus" },
+];
 
 export default function MobileMenuBar() {
   const [drawerOpen, setDrawerOpen] = useState(false);
-  const navigate = useNavigate();
   const location = useLocation();
-
-  const menuItems = [
-    { title: "Home", link: "/home" },
-    { title: "About", link: "/about" },
-    { title: "Infrastructure", link: "/infrastructure" },
-    { title: "Admissions", link: "/admissions" },
-    { title: "Academics", link: "/academics" },
-    // { title: "Testimonials", link: "/testimonials" },
-    // { title: "News & Events", link: "/news" },
-    // Add additional items as needed
-  ];
 
   const toggleDrawer = (open) => () => {
     setDrawerOpen(open);
   };
 
-  const handleMenuClick = (page) => {
-    navigate(page.link);
-    setDrawerOpen(false); // Close the drawer after clicking
-  };
-
-  const currentPath = location.pathname;
+  const currentPath = location.pathname === "/" ? "/home" : location.pathname;
 
   return (
     <>
       <AppBar
         sx={{
           height: "10vh",
-          width: "100vw",
+          width: "100%",
           background: "transparent",
           boxShadow: "none",
           display: "grid",
@@ -55,6 +47,8 @@ export default function MobileMenuBar() {
         }}
       >
         <Box
+          component="nav"
+          aria-label="Main navigation"
           sx={{
             width: "90vw",
             height: "55px",
@@ -70,15 +64,22 @@ export default function MobileMenuBar() {
           }}
         >
           <Box sx={{ ml: 2 }}>
-            <img
-              src={schoolLogo}
-              height="45px"
-              width="66px"
-              alt="School Logo"
-            />
+            <RouterLink to="/" aria-label={`${SITE.name} — home`}>
+              <img
+                src={schoolLogo}
+                height="45px"
+                width="66px"
+                alt={`${SITE.name} logo`}
+              />
+            </RouterLink>
           </Box>
 
-          <IconButton sx={{ color: "#000" }} onClick={toggleDrawer(true)}>
+          <IconButton
+            sx={{ color: "#000" }}
+            onClick={toggleDrawer(true)}
+            aria-label="Open navigation menu"
+            aria-expanded={drawerOpen}
+          >
             <MenuIcon fontSize="large" />
           </IconButton>
         </Box>
@@ -96,6 +97,7 @@ export default function MobileMenuBar() {
           <IconButton
             sx={{ alignSelf: "flex-end", m: 1 }}
             onClick={toggleDrawer(false)}
+            aria-label="Close navigation menu"
           >
             <CloseIcon />
           </IconButton>
@@ -104,7 +106,10 @@ export default function MobileMenuBar() {
               <ListItem
                 button
                 key={page.title}
-                onClick={() => handleMenuClick(page)}
+                component={RouterLink}
+                to={page.link}
+                onClick={toggleDrawer(false)}
+                aria-current={currentPath === page.link ? "page" : undefined}
                 sx={{
                   "&:hover": {
                     color: "#F68820",

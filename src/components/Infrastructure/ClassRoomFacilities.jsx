@@ -1,9 +1,8 @@
 import { Box, Typography } from "@mui/material";
-import downArrow from "../../assets/leftDownArrow.png";
-import labImage from "../../assets/LaboratoryImage.jpeg";
-import classroomImage from "../../assets/clasroomImage.png";
-import classRoomImage1 from "../../assets/classroom1.JPG";
-import classRoomImage2 from "../../assets/classroom2.JPG";
+import downArrow from "../../assets/leftDownArrow.webp";
+import classroomImage from "../../assets/clasroomImage.webp";
+import classRoomImage1 from "../../assets/classroom1.webp";
+import classRoomImage2 from "../../assets/classroom2.webp";
 
 export default function ClassRoomFacilities() {
   const classRoomFeatures = [
@@ -25,6 +24,9 @@ export default function ClassRoomFacilities() {
         <img
           src={downArrow}
           style={{ marginTop: "120px", height: "150px", width: "200px" }}
+          alt=""
+          loading="lazy"
+          decoding="async"
         />
 
         <Box
@@ -78,11 +80,17 @@ export default function ClassRoomFacilities() {
                 zIndex: 1,
                 objectFit: "cover",
               }}
+              alt="Classroom at Shri Vinayaka Vidyalaya"
+              loading="lazy"
+              decoding="async"
             />
 
             <img
               src={classroomImage}
               style={{ height: "230px", width: "240px", marginRight: "200px" }}
+              alt="Classroom at Shri Vinayaka Vidyalaya"
+              loading="lazy"
+              decoding="async"
             />
           </Box>
 
@@ -146,6 +154,9 @@ export default function ClassRoomFacilities() {
                     zIndex: 1,
                     objectFit: "cover",
                   }}
+                  alt="Classroom at Shri Vinayaka Vidyalaya"
+                  loading="lazy"
+                  decoding="async"
                 />
               </Box>
               <Box

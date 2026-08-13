@@ -53,7 +53,6 @@ export default function JigsawBoxes() {
             left: "75px",
             width: "75px",
             height: "70px",
-            borderRadius: "6px",
             backgroundColor: "green",
             borderRadius: "0 6px 0 0",
           }}

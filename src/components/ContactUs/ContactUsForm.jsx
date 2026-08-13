@@ -19,10 +19,11 @@ import {
   CircularProgress,
 } from "@mui/material";
 import FacebookIcon from "@mui/icons-material/Facebook";
-import TwitterIcon from "@mui/icons-material/Twitter";
-import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import InstagramIcon from "@mui/icons-material/Instagram";
+import PhoneIcon from "@mui/icons-material/Phone";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import emailjs from "@emailjs/browser";
+import { SITE } from "../../config/site";
 
 export default function ContactForm() {
   const theme = useTheme();
@@ -41,6 +42,8 @@ export default function ContactForm() {
   const [errors, setErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState(null); // 'success' or 'error'
+  // Spam trap: hidden from users, but bots fill every field they find.
+  const [honeypot, setHoneypot] = useState("");
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -77,6 +80,11 @@ export default function ContactForm() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    // Silently drop bot submissions — no error shown, so scrapers get no signal.
+    if (honeypot) {
+      return;
+    }
+
     if (!validateForm()) {
       return;
     }
@@ -92,7 +100,7 @@ export default function ContactForm() {
 
       // Template parameters that will be sent to EmailJS
       const templateParams = {
-        to_email: "shrivinayakavidyalaya@gmail.com",
+        to_email: SITE.email,
         parent_name: formData.parentName,
         parent_email: formData.email,
         parent_phone: formData.phone,
@@ -113,14 +121,12 @@ export default function ContactForm() {
         }),
       };
 
-      console.log("Sending email with params:", templateParams);
-
       // Send email using EmailJS
       const result = await emailjs.send(
         serviceId,
         templateId,
         templateParams,
-        publicKey
+        publicKey,
       );
 
       if (result.status === 200) {
@@ -135,13 +141,10 @@ export default function ContactForm() {
           program: "",
           message: "",
         });
-        console.log("Email sent successfully:", result);
       } else {
         setSubmitStatus("error");
-        console.error("Email sending failed:", result);
       }
     } catch (error) {
-      console.error("Form submission error:", error);
       setSubmitStatus("error");
     } finally {
       setIsSubmitting(false);
@@ -213,13 +216,18 @@ export default function ContactForm() {
           }}
         >
           If you have specific questions or wish to request more information
-          about Little Learners Academy, please complete the contact form below.
+          about Shri Vinayaka Vidyalaya, please complete the contact form below.
           Kindly provide the following details to help us better understand your
           needs
         </Typography>
 
         <Box sx={{ display: "flex", gap: 2, mb: 4 }}>
           <IconButton
+            component="a"
+            href={SITE.social.facebook}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={`${SITE.name} on Facebook`}
             sx={{
               border: "1px solid #F68820",
               borderRadius: "4px",
@@ -232,6 +240,11 @@ export default function ContactForm() {
             <FacebookIcon />
           </IconButton>
           <IconButton
+            component="a"
+            href={SITE.social.instagram}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={`${SITE.name} on Instagram`}
             sx={{
               border: "1px solid #F68820",
               borderRadius: "4px",
@@ -241,9 +254,12 @@ export default function ContactForm() {
               height: "40px",
             }}
           >
-            <TwitterIcon />
+            <InstagramIcon />
           </IconButton>
           <IconButton
+            component="a"
+            href={`tel:${SITE.phoneHref}`}
+            aria-label={`Call ${SITE.name} on ${SITE.phone}`}
             sx={{
               border: "1px solid #F68820",
               borderRadius: "4px",
@@ -253,7 +269,7 @@ export default function ContactForm() {
               height: "40px",
             }}
           >
-            <LinkedInIcon />
+            <PhoneIcon />
           </IconButton>
         </Box>
 
@@ -274,8 +290,7 @@ export default function ContactForm() {
             sx={{ mb: 3, width: "100%", maxWidth: "600px" }}
           >
             ❌ Sorry, there was an error sending your message. Please try again
-            or contact us directly at shrivinayakavidyalaya@gmail.com or +91
-            9916372340.
+            or contact us directly at {SITE.email} or {SITE.phone}.
           </Alert>
         )}
 
@@ -303,6 +318,27 @@ export default function ContactForm() {
           }}
         >
           <form onSubmit={handleSubmit}>
+            {/* Honeypot — visually hidden and skipped by assistive tech. */}
+            <input
+              type="text"
+              name="website"
+              value={honeypot}
+              onChange={(e) => setHoneypot(e.target.value)}
+              tabIndex={-1}
+              autoComplete="off"
+              aria-hidden="true"
+              style={{
+                position: "absolute",
+                width: "1px",
+                height: "1px",
+                padding: 0,
+                margin: "-1px",
+                overflow: "hidden",
+                clip: "rect(0 0 0 0)",
+                whiteSpace: "nowrap",
+                border: 0,
+              }}
+            />
             <Grid container spacing={3}>
               <Grid item xs={12} md={6}>
                 <Typography sx={{ mb: 1, fontWeight: 500, color: "#333333" }}>

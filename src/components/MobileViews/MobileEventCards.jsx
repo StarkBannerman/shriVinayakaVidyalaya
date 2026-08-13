@@ -27,6 +27,9 @@ export default function MobileNewsEventCard({ event }) {
             borderRadius: "20px",
             objectFit: "contain",
           }}
+          alt={event?.name}
+          loading="lazy"
+          decoding="async"
         />
       </Box>
       <Box

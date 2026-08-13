@@ -1,7 +1,7 @@
 import { Box, Typography } from "@mui/material";
-import DownArrow from "../../assets/DownArrow.png";
-import sportsStudent from "../../assets/sportsStudents.jpeg";
-import swimmingPool from "../../assets/SwimmingPool.jpg";
+import DownArrow from "../../assets/DownArrow.webp";
+import sportsStudent from "../../assets/sportsStudents.webp";
+import swimmingPool from "../../assets/SwimmingPool.webp";
 export default function MobileSportsFacilities() {
   return (
     <Box sx={{ mb: 5 }}>
@@ -36,6 +36,9 @@ export default function MobileSportsFacilities() {
         <img
           src={DownArrow}
           style={{ marginTop: "30px", height: "40px", width: "60px" }}
+          alt=""
+          loading="lazy"
+          decoding="async"
         />
       </Box>
 
@@ -90,6 +93,9 @@ export default function MobileSportsFacilities() {
                   height="95%"
                   width="95%"
                   style={{ borderRadius: "50%", objectFit: "cover" }}
+                  alt="Students taking part in sports"
+                  loading="lazy"
+                  decoding="async"
                 />
               </Box>
             </Box>
@@ -168,8 +174,7 @@ export default function MobileSportsFacilities() {
                   src={sportsStudent}
                   height="95%"
                   width="95%"
-                  style={{ borderRadius: "50%", objectFit: "cover" }}
-                />
+                  style={{ borderRadius: "50%", objectFit: "cover" }} alt="Students taking part in sports" loading="lazy" decoding="async" />
               </Box>
               <Box
                 sx={{
@@ -252,6 +257,9 @@ export default function MobileSportsFacilities() {
                   height="95%"
                   width="95%"
                   style={{ borderRadius: "50%", objectFit: "cover" }}
+                  alt="School swimming pool"
+                  loading="lazy"
+                  decoding="async"
                 />
               </Box>
             </Box>

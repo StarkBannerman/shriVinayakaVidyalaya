@@ -1,31 +1,12 @@
 import { Box, Grid, Typography } from "@mui/material";
-import NewsEventImage from "../../assets/newsEvent.png";
 import NewsEvents from "./NewsEventCars";
-import independeceday from "../../assets/independencedaycelebration.png";
-import krishna from "../../assets/krishnaJanmashami.png";
-import kanndarotsava from "../../assets/kannadarajotsava.png";
+import { NEWS_EVENTS, formatEventDate } from "../../content/news";
 
 export default function NewsFunction() {
-  const newsEvents = [
-    {
-      image: independeceday,
-      name: "Independence Day Celebration",
-      date: "15/08/2024",
-      link: "#",
-    },
-    {
-      image: krishna,
-      name: "Krishna Janmashtami",
-      date: "26/08/2024",
-      link: "#",
-    },
-    {
-      image: kanndarotsava,
-      name: "Kannada Rajyotsava",
-      date: "01/11/2024",
-      link: "#",
-    },
-  ];
+  const newsEvents = NEWS_EVENTS.map((event) => ({
+    ...event,
+    date: formatEventDate(event.date),
+  }));
   return (
     <>
       <Box
@@ -54,7 +35,7 @@ export default function NewsFunction() {
         }}
       >
         {newsEvents.map((event) => (
-          <Grid item xs={12} sm={12} md={4} lg={3} xl={3}>
+          <Grid item xs={12} sm={12} md={4} lg={3} xl={3} key={event.id}>
             <NewsEvents event={event} />
           </Grid>
         ))}

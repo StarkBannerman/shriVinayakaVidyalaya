@@ -6,15 +6,10 @@ import {
   Card,
   CardContent,
   Button,
-  useTheme,
-  useMediaQuery,
 } from "@mui/material";
-import newImage from "../../assets/newsIntroImage.jpg";
+import newImage from "../../assets/newsIntroImage.webp";
 
 export default function NewsEvents() {
-  const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down("md"));
-
   const upcomingEvents = [
     {
       month: "Nov",
@@ -28,18 +23,6 @@ export default function NewsEvents() {
       title: "Annual Sports Day",
       time: "8:00 AM - 9:00 AM",
     },
-    {
-      month: "Dec",
-      day: "2",
-      title: "Lorem Ipsum Ipsum Lorem",
-      time: "8:00 AM - 9:00 AM",
-    },
-    {
-      month: "Dec",
-      day: "20",
-      title: "Lorem Ipsum Ipsum",
-      time: "8:00 AM - 9:00 AM",
-    },
   ];
 
   return (
@@ -49,8 +32,8 @@ export default function NewsEvents() {
         minHeight: "100vh",
         py: { xs: 3, sm: 4, md: 5 },
         px: { xs: 2, sm: 3, md: 4 },
-              boxSizing: "border-box",
-        mt:5
+        boxSizing: "border-box",
+        mt: 5,
       }}
     >
       <Box

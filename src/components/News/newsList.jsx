@@ -2,104 +2,18 @@
 
 import { Box, Grid, Typography, Pagination } from "@mui/material";
 import { useState } from "react";
-import downArrow from "../../assets/leftDownArrow.png";
-import checkedBackground from "../../assets/checkedBackground.png";
+import downArrow from "../../assets/leftDownArrow.webp";
 import { useMediaQueries } from "../../utils/Breakpoints";
+import { NEWS_EVENTS } from "../../content/news";
 
 export default function NewsList() {
-  const { isLargeDesktop, isDesktop, isTablet, isMobile } = useMediaQueries();
+  const { isMobile } = useMediaQueries();
 
   // Pagination state
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 6; // Show 6 items per page (2 rows of 3)
 
-  // Sample news data - replace with your actual news data
-  const newsArticles = [
-    {
-      id: 1,
-      title: "Lorem Ipsum Lorem Ipsum 2023",
-      desc: "Lorem ipsum dolor sit amet adipiscing ipsum dolor sit amet adipiscing aqua lorem",
-      image: checkedBackground,
-      date: "2023-11-01",
-    },
-    {
-      id: 2,
-      title: "Lorem Ipsum Lorem Ipsum",
-      desc: "Lorem ipsum dolor sit amet adipiscing ipsum dolor sit amet adipiscing aqua lorem",
-      image: checkedBackground,
-      date: "2023-10-28",
-    },
-    {
-      id: 3,
-      title: "Lorem Ipsum",
-      desc: "Lorem ipsum dolor sit amet adipiscing ipsum dolor sit amet adipiscing aqua lorem",
-      image: checkedBackground,
-      date: "2023-10-25",
-    },
-    {
-      id: 4,
-      title: "Lorem Ipsum Lorem Ipsum",
-      desc: "Lorem ipsum dolor sit amet adipiscing ipsum dolor sit amet adipiscing aqua lorem",
-      image: checkedBackground,
-      date: "2023-10-22",
-    },
-    {
-      id: 5,
-      title: "Lorem Ipsum Lorem Ipsum",
-      desc: "Lorem ipsum dolor sit amet adipiscing ipsum dolor sit amet adipiscing aqua lorem",
-      image: checkedBackground,
-      date: "2023-10-20",
-    },
-    {
-      id: 6,
-      title: "Lorem Ipsum Lorem Lorem Ipsum",
-      desc: "Lorem ipsum dolor sit amet adipiscing ipsum dolor sit amet adipiscing aqua lorem",
-      image: checkedBackground,
-      date: "2023-10-18",
-    },
-    {
-      id: 7,
-      title: "Annual Sports Day Highlights",
-      desc: "Lorem ipsum dolor sit amet adipiscing ipsum dolor sit amet adipiscing aqua lorem",
-      image: checkedBackground,
-      date: "2023-10-15",
-    },
-    {
-      id: 8,
-      title: "Science Fair Winners",
-      desc: "Lorem ipsum dolor sit amet adipiscing ipsum dolor sit amet adipiscing aqua lorem",
-      image: checkedBackground,
-      date: "2023-10-12",
-    },
-    {
-      id: 9,
-      title: "New Library Opening",
-      desc: "Lorem ipsum dolor sit amet adipiscing ipsum dolor sit amet adipiscing aqua lorem",
-      image: checkedBackground,
-      date: "2023-10-10",
-    },
-    {
-      id: 10,
-      title: "Art Exhibition Success",
-      desc: "Lorem ipsum dolor sit amet adipiscing ipsum dolor sit amet adipiscing aqua lorem",
-      image: checkedBackground,
-      date: "2023-10-08",
-    },
-    {
-      id: 11,
-      title: "Music Concert Performance",
-      desc: "Lorem ipsum dolor sit amet adipiscing ipsum dolor sit amet adipiscing aqua lorem",
-      image: checkedBackground,
-      date: "2023-10-05",
-    },
-    {
-      id: 12,
-      title: "Student Achievement Awards",
-      desc: "Lorem ipsum dolor sit amet adipiscing ipsum dolor sit amet adipiscing aqua lorem",
-      image: checkedBackground,
-      date: "2023-10-02",
-    },
-  ];
+  const newsArticles = NEWS_EVENTS;
 
   // Calculate pagination
   const totalPages = Math.ceil(newsArticles.length / itemsPerPage);
@@ -129,12 +43,16 @@ export default function NewsList() {
             src={downArrow || "/placeholder.svg"}
             style={{ height: "40px", width: "60px", marginTop: "30px" }}
             alt="Arrow"
+            loading="lazy"
+            decoding="async"
           />
         ) : (
           <img
             src={downArrow || "/placeholder.svg"}
             style={{ marginTop: "120px", height: "150px", width: "200px" }}
             alt="Arrow"
+            loading="lazy"
+            decoding="async"
           />
         )}
 
@@ -216,7 +134,7 @@ export default function NewsList() {
                       fontSize: "14px",
                     }}
                   >
-                    {article.title}
+                    {article.name}
                   </Typography>
                 </Box>
               </Box>
@@ -229,7 +147,7 @@ export default function NewsList() {
                   mb: 1,
                 }}
               >
-                {article.title}
+                {article.name}
               </Typography>
 
               <Typography

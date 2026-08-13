@@ -1,5 +1,4 @@
 import { Box, Grid, Typography } from "@mui/material";
-import studentEnagement from "../../assets/schollBackground.png";
 
 export default function InfraTitle() {
   return (
