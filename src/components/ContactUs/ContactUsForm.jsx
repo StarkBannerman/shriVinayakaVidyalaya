@@ -164,7 +164,8 @@ export default function ContactForm() {
     >
       <Box
         sx={{
-          maxWidth: "1400px",
+          // A two-column form reads badly when the fields are metres wide.
+          maxWidth: "920px",
           mx: "auto",
           display: "flex",
           flexDirection: "column",

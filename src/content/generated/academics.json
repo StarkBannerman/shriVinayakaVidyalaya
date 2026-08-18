@@ -4,31 +4,37 @@
       {
         "desc": "Students pick their electives each term, empowering them to take ownership of their learning journey and explore their passions.",
         "icon": "school",
+        "image": null,
         "title": "Student-led Choice"
       },
       {
         "desc": "Clubs culminate in intra- and inter-school competitions, exhibitions, and performances, showcasing student talents and achievements.",
         "icon": "trophy",
+        "image": null,
         "title": "Skill Meets Expression"
       },
       {
         "desc": "These experiences are embedded into the academic calendar — not added as extra, ensuring a well-rounded educational approach.",
         "icon": "code",
+        "image": null,
         "title": "Holistic by Design"
       },
       {
         "desc": "Sanskrit and Konnakkol sit proudly alongside Design & Tech and Public Speaking, bridging traditional wisdom with modern skills.",
         "icon": "heritage",
+        "image": null,
         "title": "Rooted and Futuristic"
       },
       {
         "desc": "At SVV, we don't just find talents — we ignite them, nurture them, and watch them grow into extraordinary achievements.",
         "icon": "flare",
+        "image": null,
         "title": "Ignite Talents"
       },
       {
         "desc": "Our comprehensive approach ensures every student receives the support and guidance needed to reach their full potential.",
         "icon": "heart",
+        "image": null,
         "title": "Nurture Growth"
       }
     ],
@@ -38,31 +44,37 @@
     "electives": [
       {
         "desc": "A space where voices rise in harmony. Whether in Carnatic rhythm or contemporary melodies, Le Choir nurtures rhythm, confidence, and stage presence.",
+        "image": null,
         "subtitle": "Music, Bhajan, Konnakkol",
         "title": "Le Choir"
       },
       {
         "desc": "For curious minds who love the thrill of a challenge. Search Lamp is where general knowledge meets critical thinking and eloquent speaking.",
+        "image": null,
         "subtitle": "Quiz (GK), Sudoku",
         "title": "Search Lamp"
       },
       {
         "desc": "A club for inventors, builders, and thinkers. Eureka! turns logic into creativity and problem-solving into play.",
+        "image": null,
         "subtitle": "Abacus, Vedic Maths, Science, Design & Tech",
         "title": "Eureka!"
       },
       {
         "desc": "Movement is expression. Happy Feet celebrates India's rich classical forms and contemporary freedom — one step, beat, and gesture at a time.",
+        "image": null,
         "subtitle": "Dance (Freestyle & Bharatanatyam)",
         "title": "Happy Feet"
       },
       {
         "desc": "Our Literature & Communication Club where language becomes a tool for connection, creativity, and courage. With Toastmasters-style public speaking, storytelling, and a chance to explore global languages.",
+        "image": null,
         "subtitle": "Toast masters, Sanskrit, Spoken Spanish",
         "title": "Tree House"
       },
       {
         "desc": "Promoting physical fitness, coordination, and teamwork through various sports and physical activities.",
+        "image": null,
         "subtitle": "Sports & Fitness",
         "title": "Physical Education"
       }
@@ -75,26 +87,31 @@
       {
         "desc": "On our courts and fields, students learn more than just how to play — they learn how to fall, rise, collaborate, and persist. From team sports to yoga, every activity builds character and courage.",
         "icon": "sports",
+        "image": null,
         "title": "Sports and Athletics"
       },
       {
         "desc": "In our art rooms, the messier the hands, the brighter the minds. Here, students are encouraged to imagine wildly, express freely, and explore the beauty of their inner world through visual arts.",
         "icon": "art",
+        "image": null,
         "title": "Art and Creativity"
       },
       {
         "desc": "Every note sung, every scene acted out is a step towards confidence, rhythm, and presence. Drama, music, and dance teach our students how to tell stories — and how to own theirs.",
         "icon": "music",
+        "image": null,
         "title": "Music and Performing Arts"
       },
       {
         "desc": "Our language clubs are more than learning vocabulary — they’re about stepping into other worlds. Students explore global cultures, celebrate diversity, and communicate with confidence.",
         "icon": "language",
+        "image": null,
         "title": "Language Clubs"
       },
       {
         "desc": "This is where “why?” meets “wow!” Through hands-on experiments and explorations, students transform questions into discoveries and curiosity into innovation.",
         "icon": "science",
+        "image": null,
         "title": "Science Club"
       }
     ],

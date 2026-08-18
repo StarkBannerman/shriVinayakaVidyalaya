@@ -1,6 +1,7 @@
 "use client";
 
 import { ACADEMICS } from "../../content/academics";
+import { clamp } from "../../content/clamp";
 import {
   Box,
   Grid,
@@ -29,9 +30,13 @@ const StyledCard = styled(Card)(({ theme }) => ({
   },
 }));
 
-const StyledCardHeader = styled(Box)(({ theme }) => ({
+const StyledCardHeader = styled(Box, {
+  shouldForwardProp: (prop) => prop !== "photo",
+})(({ photo }) => ({
   height: "200px",
-  backgroundImage: `url(${checkedBackground})`,
+  // The school's photo when one is uploaded; the checked pattern otherwise.
+  // The gradient below keeps the text legible over either.
+  backgroundImage: `url(${photo || checkedBackground})`,
   backgroundSize: "cover",
   backgroundPosition: "center",
   display: "flex",
@@ -182,7 +187,7 @@ export default function Subjects() {
         {subjects.map((subject, index) => (
           <Grid item xs={12} sm={6} lg={4} key={subject.title}>
             <StyledCard>
-              <StyledCardHeader>
+              <StyledCardHeader photo={subject.image}>
                 <Box
                   sx={{
                     position: "relative",
@@ -199,6 +204,7 @@ export default function Subjects() {
                       fontSize: { xs: "1.2rem", md: "1.4rem" },
                       textShadow: "0 2px 4px rgba(0,0,0,0.3)",
                       mb: 1,
+                      ...clamp(2),
                     }}
                   >
                     {subject.title}
@@ -211,6 +217,7 @@ export default function Subjects() {
                       fontSize: { xs: "0.9rem", md: "1rem" },
                       opacity: 0.9,
                       textShadow: "0 1px 2px rgba(0,0,0,0.3)",
+                      ...clamp(2),
                     }}
                   >
                     {subject.subtitle}
@@ -225,6 +232,7 @@ export default function Subjects() {
                     color: "#666",
                     lineHeight: 1.6,
                     fontSize: { xs: "0.9rem", md: "1rem" },
+                    ...clamp(6),
                   }}
                 >
                   {subject.desc}

@@ -1,4 +1,5 @@
 import { ACADEMICS } from "../../content/academics";
+import { clamp } from "../../content/clamp";
 import { Icon } from "../../content/iconRegistry";
 import { Box, Grid, IconButton, Typography } from "@mui/material";
 import teacherImage from "../../assets/teacherImage.webp";
@@ -162,11 +163,28 @@ export default function Features() {
                     mt: "35px",
                   }}
                 >
+                  {item?.image && (
+                    <Box
+                      component="img"
+                      src={item.image}
+                      alt=""
+                      loading="lazy"
+                      decoding="async"
+                      sx={{
+                        width: "100%",
+                        height: "100px",
+                        objectFit: "cover",
+                        borderRadius: "8px",
+                        mb: 2,
+                      }}
+                    />
+                  )}
                   <Typography
                     sx={{
                       fontSize: { xs: "20px", sm: "24px" },
                       fontWeight: 700,
                       textAlign: "center",
+                      ...clamp(2),
                     }}
                   >
                     {item?.title}
@@ -178,6 +196,7 @@ export default function Features() {
                       textAlign: "justify",
                       width: "90%",
                       mt: 2,
+                      ...clamp(item?.image ? 4 : 7),
                     }}
                   >
                     {item?.desc}

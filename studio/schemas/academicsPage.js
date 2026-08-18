@@ -116,8 +116,24 @@ export default defineType({
               rows: 3,
               validation: (Rule) => Rule.required().max(400),
             }),
+            defineField({
+              name: "image",
+              title: "Photo (optional)",
+              type: "image",
+              options: { hotspot: true },
+              description:
+                "Leave empty to keep the icon only. Click the crop icon after uploading to choose what stays visible.",
+              fields: [
+                defineField({
+                  name: "alt",
+                  title: "Photo description",
+                  type: "string",
+                  validation: (Rule) => Rule.max(120),
+                }),
+              ],
+            }),
           ],
-          preview: { select: { title: "title", subtitle: "desc" } },
+          preview: { select: { title: "title", subtitle: "desc", media: "image" } },
         }),
       ],
       validation: (Rule) => Rule.required().min(1).max(12),
@@ -178,8 +194,24 @@ export default defineType({
               rows: 3,
               validation: (Rule) => Rule.required().max(400),
             }),
+            defineField({
+              name: "image",
+              title: "Photo (optional)",
+              type: "image",
+              options: { hotspot: true },
+              description:
+                "Leave empty to keep the icon only. Click the crop icon after uploading to choose what stays visible.",
+              fields: [
+                defineField({
+                  name: "alt",
+                  title: "Photo description",
+                  type: "string",
+                  validation: (Rule) => Rule.max(120),
+                }),
+              ],
+            }),
           ],
-          preview: { select: { title: "title", subtitle: "subtitle" } },
+          preview: { select: { title: "title", subtitle: "subtitle", media: "image" } },
         }),
       ],
       validation: (Rule) => Rule.required().min(1).max(12),
@@ -231,8 +263,24 @@ export default defineType({
               rows: 3,
               validation: (Rule) => Rule.required().max(300),
             }),
+            defineField({
+              name: "image",
+              title: "Photo (optional)",
+              type: "image",
+              options: { hotspot: true },
+              description:
+                "Leave empty to keep the icon only. Click the crop icon after uploading to choose what stays visible.",
+              fields: [
+                defineField({
+                  name: "alt",
+                  title: "Photo description",
+                  type: "string",
+                  validation: (Rule) => Rule.max(120),
+                }),
+              ],
+            }),
           ],
-          preview: { select: { title: "title", subtitle: "desc" } },
+          preview: { select: { title: "title", subtitle: "desc", media: "image" } },
         }),
       ],
       validation: (Rule) => Rule.required().length(6),
