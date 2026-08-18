@@ -34,8 +34,6 @@ const StyledCardHeader = styled(Box, {
   shouldForwardProp: (prop) => prop !== "photo",
 })(({ photo }) => ({
   height: "200px",
-  // The school's photo when one is uploaded; the checked pattern otherwise.
-  // The gradient below keeps the text legible over either.
   backgroundImage: `url(${photo || checkedBackground})`,
   backgroundSize: "cover",
   backgroundPosition: "center",
@@ -49,8 +47,13 @@ const StyledCardHeader = styled(Box, {
     left: 0,
     right: 0,
     bottom: 0,
-    background:
-      "linear-gradient(135deg, rgba(246, 136, 32, 0.8) 0%, rgba(251, 190, 24, 0.8) 100%)",
+    // With no photo the header is the school's orange. With one, the orange
+    // would tint the photo, so it is replaced by a dark scrim rising from the
+    // bottom — the photo keeps its own colours and the white title stays
+    // readable over whatever is behind it.
+    background: photo
+      ? "linear-gradient(to top, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.25) 45%, rgba(0, 0, 0, 0) 100%)"
+      : "linear-gradient(135deg, rgba(246, 136, 32, 0.8) 0%, rgba(251, 190, 24, 0.8) 100%)",
   },
 }));
 

@@ -251,11 +251,11 @@ const SOURCES = [
     query: `{"page": *[_id == "academicsPage"][0]{
       introHeading, introSubheading, introBody,
       extracurricularsHeading, extracurricularsSubheading, extracurricularsIntro,
-      extracurriculars[]{icon, title, desc, "image": image.asset->url},
+      extracurriculars[]{icon, title, desc},
       electivesHeading, electivesSubheading, electivesTagline, electivesIntro,
       electives[]{title, subtitle, desc, "image": image.asset->url},
       approachHeading, approachSubheading, approachIntro,
-      approachFeatures[]{icon, title, desc, "image": image.asset->url}
+      approachFeatures[]{icon, title, desc}
     }}`,
     empty: { page: null },
     check: (d) => {
@@ -266,12 +266,10 @@ const SOURCES = [
       if (d.page.approachFeatures.length !== 6) {
         throw new Error("academics page needs exactly 6 approach features");
       }
-      // Card photos are optional; bake the ones that exist.
-      for (const key of ["extracurriculars", "electives", "approachFeatures"]) {
-        (d.page[key] || []).forEach((c) => {
-          if (c.image) c.image = registerImage(c.image, 800);
-        });
-      }
+      // Elective card photos are optional; bake the ones that exist.
+      (d.page.electives || []).forEach((c) => {
+        if (c.image) c.image = registerImage(c.image, 800);
+      });
     },
   },
   {

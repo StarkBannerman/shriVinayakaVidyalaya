@@ -189,19 +189,17 @@ const FALLBACK = {
   ],
 };
 
-// Card photos are downloaded at build time and bundled; `image` holds a key
-// into that map. Cards without a photo keep their icon only.
+// Elective card photos are downloaded at build time and bundled; `image`
+// holds a key into that map. Cards without one keep the orange header.
 const asset = (key) => (key ? IMAGES[key] || key : null);
 
-const withPhotos = (page) => {
-  const out = { ...page };
-  for (const key of ["extracurriculars", "electives", "approachFeatures"]) {
-    if (Array.isArray(out[key])) {
-      out[key] = out[key].map((c) => ({ ...c, image: asset(c.image) }));
-    }
-  }
-  return out;
-};
+const withPhotos = (page) =>
+  Array.isArray(page.electives)
+    ? {
+        ...page,
+        electives: page.electives.map((c) => ({ ...c, image: asset(c.image) })),
+      }
+    : page;
 
 export const ACADEMICS = generated.page
   ? { ...FALLBACK, ...withPhotos(generated.page) }

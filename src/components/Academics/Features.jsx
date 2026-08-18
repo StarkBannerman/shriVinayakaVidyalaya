@@ -163,22 +163,6 @@ export default function Features() {
                     mt: "35px",
                   }}
                 >
-                  {item?.image && (
-                    <Box
-                      component="img"
-                      src={item.image}
-                      alt=""
-                      loading="lazy"
-                      decoding="async"
-                      sx={{
-                        width: "100%",
-                        height: "100px",
-                        objectFit: "cover",
-                        borderRadius: "8px",
-                        mb: 2,
-                      }}
-                    />
-                  )}
                   <Typography
                     sx={{
                       fontSize: { xs: "20px", sm: "24px" },
@@ -196,7 +180,7 @@ export default function Features() {
                       textAlign: "justify",
                       width: "90%",
                       mt: 2,
-                      ...clamp(item?.image ? 4 : 7),
+                      ...clamp(7),
                     }}
                   >
                     {item?.desc}

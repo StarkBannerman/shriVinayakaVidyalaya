@@ -186,24 +186,6 @@ export default function ExtracurricularActivities() {
                     mt: "35px", // Add margin to the main box to prevent overlap with the icon box
                   }}
                 >
-                  {activity?.image && (
-                    <Box
-                      component="img"
-                      src={activity.image}
-                      alt=""
-                      loading="lazy"
-                      decoding="async"
-                      sx={{
-                        // Fixed height so the card stays 320px whether or not
-                        // a photo has been uploaded.
-                        width: "100%",
-                        height: "110px",
-                        objectFit: "cover",
-                        borderRadius: "8px",
-                        mb: 2,
-                      }}
-                    />
-                  )}
                   <Typography
                     sx={{
                       fontSize: "28px",
@@ -222,7 +204,7 @@ export default function ExtracurricularActivities() {
                       mt: 2,
                       // The photo eats 110px of a fixed 320px card, so the
                       // description gets fewer lines when one is present.
-                      ...clamp(activity?.image ? 3 : 6),
+                      ...clamp(6),
                     }}
                   >
                     {activity?.desc}
