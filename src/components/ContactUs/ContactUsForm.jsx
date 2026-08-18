@@ -26,6 +26,23 @@ import emailjs from "@emailjs/browser";
 import { SITE } from "../../config/site";
 import { CONTACT } from "../../content/contact";
 
+/**
+ * Log why a submission failed, without logging anything the parent typed.
+ *
+ * The catch block used to swallow the error entirely, which made a failure on
+ * the live site impossible to diagnose — the visitor saw "try again" and there
+ * was nothing in the console. Only EmailJS's own status and message are
+ * logged; no name, email, phone or child's details ever reach the console.
+ */
+function reportFailure(err) {
+  const detail = {
+    status: err?.status ?? "none",
+    text: err?.text || err?.message || String(err),
+  };
+  // eslint-disable-next-line no-console
+  console.error("[contact form] send failed:", detail);
+}
+
 export default function ContactForm() {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("md"));
@@ -144,9 +161,11 @@ export default function ContactForm() {
         });
       } else {
         setSubmitStatus("error");
+        reportFailure(result);
       }
     } catch (error) {
       setSubmitStatus("error");
+      reportFailure(error);
     } finally {
       setIsSubmitting(false);
     }
