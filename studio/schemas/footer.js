@@ -58,7 +58,6 @@ export default defineType({
   name: "footer",
   title: "Footer & Contact Details",
   type: "document",
-  __experimental_actions: ["update", "publish"],
 
   groups: [
     { name: "contact", title: "Contact details", default: true },

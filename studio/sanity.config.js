@@ -2,6 +2,18 @@ import { defineConfig } from "sanity";
 import { structureTool } from "sanity/structure";
 import { schemaTypes } from "./schemas";
 
+// One document each — created once, edited forever, never deleted.
+const SINGLETONS = new Set([
+  "homePage",
+  "aboutPage",
+  "academicsPage",
+  "infrastructurePage",
+  "admissionsPage",
+  "contactPage",
+  "footer",
+  "privacyPolicy",
+]);
+
 export default defineConfig({
   name: "default",
   title: "Shri Vinayaka Vidyalaya",
@@ -111,8 +123,25 @@ export default defineConfig({
   schema: { types: schemaTypes },
 
   document: {
-    // Hide the "duplicate" action — staff duplicating a news item and
-    // forgetting to change the date is a predictable mess.
-    actions: (prev) => prev.filter(({ action }) => action !== "duplicate"),
+    /**
+     * There is exactly one of each page document, and the site reads them by a
+     * fixed id. Deleting or duplicating one would silently drop that page back
+     * to its hardcoded fallback copy, so those actions are removed.
+     *
+     * News & events are ordinary documents — they keep Delete and Unpublish.
+     * Only Duplicate is removed there, because a copied event with the old
+     * date is a predictable mess.
+     *
+     * NOTE: the v2 `__experimental_actions` field is silently ignored in
+     * Sanity 3 — this resolver is what actually enforces any of it.
+     */
+    actions: (prev, { schemaType }) => {
+      if (SINGLETONS.has(schemaType)) {
+        return prev.filter(({ action }) =>
+          ["publish", "discardChanges", "restore"].includes(action),
+        );
+      }
+      return prev.filter(({ action }) => action !== "duplicate");
+    },
   },
 });

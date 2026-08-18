@@ -4,7 +4,6 @@ export default defineType({
   name: "contactPage",
   title: "Contact Page",
   type: "document",
-  __experimental_actions: ["update", "publish"],
 
   groups: [
     { name: "intro", title: "Top of page", default: true },

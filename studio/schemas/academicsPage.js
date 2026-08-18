@@ -27,7 +27,6 @@ export default defineType({
   name: "academicsPage",
   title: "Academics Page",
   type: "document",
-  __experimental_actions: ["update", "publish"],
 
   groups: [
     { name: "intro", title: "Top of page", default: true },

@@ -6,8 +6,6 @@ export default defineType({
   name: "admissionsPage",
   title: "Admissions Page",
   type: "document",
-  // A singleton — there is only ever one Admissions page.
-  __experimental_actions: ["update", "publish"],
 
   groups: [
     { name: "intro", title: "Top of page", default: true },

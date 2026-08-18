@@ -2,7 +2,7 @@
   "name": "shrivinayakavidyalaya-studio",
   "private": true,
   "version": "1.0.0",
-  "description": "Sanity Studio — the admin panel school staff log into",
+  "description": "Sanity Studio \u2014 the admin panel school staff log into",
   "scripts": {
     "dev": "sanity dev",
     "start": "sanity dev",
@@ -13,7 +13,10 @@
   "dependencies": {
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "sanity": "^3.68.0",
-    "styled-components": "^6.1.13"
+    "sanity": "^4.22.0",
+    "styled-components": "^6.1.15"
+  },
+  "engines": {
+    "node": ">=20.19"
   }
 }

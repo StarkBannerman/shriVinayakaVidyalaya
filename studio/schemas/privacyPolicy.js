@@ -13,7 +13,6 @@ export default defineType({
   name: "privacyPolicy",
   title: "Privacy Policy",
   type: "document",
-  __experimental_actions: ["update", "publish"],
 
   fields: [
     defineField({

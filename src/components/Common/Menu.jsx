@@ -26,6 +26,22 @@ const pages = [
   { title: "Contact Us", link: "/contactus" },
 ];
 
+// The AppBar is position:fixed, so pages must reserve the same height below it.
+// Both sides read this one object — a plain <Toolbar /> is 64px and does not
+// match, which let the transparent AppBar overlap the top of the content.
+// minHeight keeps the 70px nav pill inside the bar on short (landscape) viewports.
+export const HEADER_HEIGHT = { xs: "10vh", sm: "15vh" };
+export const HEADER_MIN_HEIGHT = { xs: "72px", sm: "90px" };
+
+export function HeaderSpacer() {
+  return (
+    <Box
+      aria-hidden
+      sx={{ height: HEADER_HEIGHT, minHeight: HEADER_MIN_HEIGHT }}
+    />
+  );
+}
+
 export default function ResponsiveMenuBar() {
   const [drawerOpen, setDrawerOpen] = useState(false);
   const location = useLocation();
@@ -45,12 +61,16 @@ export default function ResponsiveMenuBar() {
   return (
     <AppBar
       sx={{
-        height: isMobile ? "10vh" : "15vh",
+        height: HEADER_HEIGHT,
+        minHeight: HEADER_MIN_HEIGHT,
         width: "100%",
         background: "transparent",
         boxShadow: "none",
         display: "grid",
         placeItems: "center",
+        // Transparent, but still fixed and above the page: without this the
+        // empty area around the nav pill swallows clicks on the content below.
+        pointerEvents: "none",
       }}
     >
       <Box
@@ -68,6 +88,7 @@ export default function ResponsiveMenuBar() {
           flexDirection: "row",
           justifyContent: "space-between",
           alignItems: "center",
+          pointerEvents: "auto",
         }}
       >
         {/* Logo */}
