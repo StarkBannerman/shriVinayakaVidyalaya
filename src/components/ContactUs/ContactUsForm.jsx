@@ -95,7 +95,7 @@ export default function ContactForm() {
 
     try {
       // EmailJS configuration - Replace these with your actual values
-      const serviceId = "service_mc45f2o"; // Add your EmailJS service ID here
+      const serviceId = "service_3a9q3i5"; // Add your EmailJS service ID here
       const templateId = "template_5qi0dpo"; // Your template ID
       const publicKey = "wppd0ET9DmNagPg6u"; // Add your EmailJS public key here
 
