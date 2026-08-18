@@ -328,6 +328,14 @@ export default function NewsList() {
                       fontSize: "16px",
                       color: "#000",
                       mb: 1,
+                      lineHeight: 1.4,
+                      // Reserve two lines whether the title needs them or not,
+                      // so the summaries below line up across a row of cards.
+                      minHeight: "2.8em",
+                      display: "-webkit-box",
+                      WebkitBoxOrient: "vertical",
+                      WebkitLineClamp: 2,
+                      overflow: "hidden",
                     }}
                   >
                     {article.name}
@@ -339,19 +347,32 @@ export default function NewsList() {
                       fontSize: "14px",
                       color: "#666",
                       lineHeight: 1.5,
+                      // The summary is free text from Sanity and can run to any
+                      // length. Clamp it to three lines so one long entry cannot
+                      // stretch its card down the page — the full text lives on
+                      // the event page behind "Read More".
+                      display: "-webkit-box",
+                      WebkitBoxOrient: "vertical",
+                      WebkitLineClamp: 3,
+                      overflow: "hidden",
                     }}
                   >
-                    {article.desc}{" "}
-                    <Typography
-                      component="span"
-                      sx={{
-                        color: "#F68820",
-                        fontWeight: 600,
-                        "&:hover": { textDecoration: "underline" },
-                      }}
-                    >
-                      Read More...
-                    </Typography>
+                    {article.desc}
+                  </Typography>
+
+                  {/* Outside the clamped box on purpose: inside it, the
+                      overflow rule above would hide it along with the text. */}
+                  <Typography
+                    sx={{
+                      display: "inline-block",
+                      mt: 0.5,
+                      color: "#F68820",
+                      fontWeight: 600,
+                      fontSize: "14px",
+                      "&:hover": { textDecoration: "underline" },
+                    }}
+                  >
+                    Read More...
                   </Typography>
                 </Box>
               </Grid>

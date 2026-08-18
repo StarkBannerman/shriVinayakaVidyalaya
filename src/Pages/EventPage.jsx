@@ -1,8 +1,8 @@
 import { useParams, Link as RouterLink, Navigate } from "react-router-dom";
-import { Box, Toolbar, Typography, Link, Chip } from "@mui/material";
+import { Box, Typography, Link, Chip } from "@mui/material";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import OpenInNewIcon from "@mui/icons-material/OpenInNew";
-import ResponsiveMenuBar from "../components/Common/Menu";
+import ResponsiveMenuBar, { HeaderSpacer } from "../components/Common/Menu";
 import Footer from "../components/Common/Footer";
 import Seo from "../components/Common/Seo";
 import RichText from "../content/RichText";
@@ -22,7 +22,7 @@ export default function EventPage() {
     <Box>
       <ResponsiveMenuBar />
       <Seo title={event.name} description={event.desc} />
-      <Toolbar />
+      <HeaderSpacer />
 
       <Box
         component="main"

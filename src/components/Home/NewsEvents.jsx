@@ -1,4 +1,6 @@
-import { Box, Grid, Typography } from "@mui/material";
+import { Link as RouterLink } from "react-router-dom";
+import { Box, Button, Grid, Typography } from "@mui/material";
+import ArrowOutwardOutlinedIcon from "@mui/icons-material/ArrowOutwardOutlined";
 import NewsEvents from "./NewsEventCars";
 import { NEWS_EVENTS, formatEventDate } from "../../content/news";
 
@@ -41,6 +43,30 @@ export default function NewsFunction() {
           </Grid>
         ))}
       </Grid>
+
+      {/* The strip is only the newest three — this is the way through to the
+          full archive. */}
+      <Box sx={{ width: "100%", display: "grid", placeItems: "center", mb: 10 }}>
+        <Button
+          component={RouterLink}
+          to="/news"
+          variant="contained"
+          endIcon={<ArrowOutwardOutlinedIcon />}
+          sx={{
+            color: "#FFF",
+            backgroundColor: "#F68820",
+            borderRadius: "8px",
+            textTransform: "none",
+            fontSize: "18px",
+            fontWeight: 600,
+            px: 4,
+            height: "48px",
+            "&:hover": { backgroundColor: "#E67810" },
+          }}
+        >
+          See more news &amp; events
+        </Button>
+      </Box>
     </>
   );
 }

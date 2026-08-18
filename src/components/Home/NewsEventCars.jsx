@@ -59,6 +59,16 @@ export default function NewsEvents({ event }) {
               fontWeight: 700,
               color: "#323231",
               width: "90%",
+              lineHeight: 1.25,
+              // Two lines, then truncate. overflowWrap matters as much as the
+              // clamp: a title with one long unbroken word has no wrap point,
+              // so without it the text runs out sideways under the arrow
+              // instead of wrapping and being cut.
+              overflowWrap: "anywhere",
+              display: "-webkit-box",
+              WebkitBoxOrient: "vertical",
+              WebkitLineClamp: 2,
+              overflow: "hidden",
             }}
           >
             {event?.name}
