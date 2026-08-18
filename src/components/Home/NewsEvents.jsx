@@ -3,7 +3,8 @@ import NewsEvents from "./NewsEventCars";
 import { NEWS_EVENTS, formatEventDate } from "../../content/news";
 
 export default function NewsFunction() {
-  const newsEvents = NEWS_EVENTS.map((event) => ({
+  // Newest 3 only — the strip is a teaser, the /news page is the archive.
+  const newsEvents = NEWS_EVENTS.slice(0, 3).map((event) => ({
     ...event,
     date: formatEventDate(event.date),
   }));

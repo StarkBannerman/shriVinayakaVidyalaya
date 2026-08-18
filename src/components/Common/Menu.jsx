@@ -22,6 +22,7 @@ const pages = [
   { title: "Infrastructure", link: "/infrastructure" },
   { title: "Academics", link: "/academics" },
   { title: "Admissions", link: "/admissions" },
+  { title: "News", link: "/news" },
   { title: "Contact Us", link: "/contactus" },
 ];
 

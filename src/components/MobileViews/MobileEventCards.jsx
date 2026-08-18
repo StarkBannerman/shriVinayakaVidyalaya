@@ -1,3 +1,4 @@
+import { Link as RouterLink } from "react-router-dom";
 import { Box, IconButton, Typography } from "@mui/material";
 import ArrowOutwardOutlinedIcon from "@mui/icons-material/ArrowOutwardOutlined";
 
@@ -6,14 +7,18 @@ export default function MobileNewsEventCard({ event }) {
     <Box
       sx={{
         width: "320px",
-        height: "290px",
+        minHeight: "290px",
         mb: 10,
       }}
     >
       <Box
         sx={{
-          //   height: "70%",
+          // Fixed, so the cover sits in the same box whatever its aspect
+          // ratio. Left to itself a square photo makes this box as tall as
+          // the card is wide and shoves the title out of the bottom.
+          height: "203px",
           width: "100%",
+          boxSizing: "border-box",
           backgroundColor: "#FFF",
           borderRadius: "20px 20px 20px 0px",
           p: 1,
@@ -23,6 +28,7 @@ export default function MobileNewsEventCard({ event }) {
           src={event?.image}
           style={{
             height: "100%",
+            display: "block",
             width: "100%",
             borderRadius: "20px",
             objectFit: "contain",
@@ -34,7 +40,6 @@ export default function MobileNewsEventCard({ event }) {
       </Box>
       <Box
         sx={{
-          //   height: "30%",
           width: "100%",
           display: "flex",
           flexDirection: "row",
@@ -42,7 +47,7 @@ export default function MobileNewsEventCard({ event }) {
       >
         <Box
           sx={{
-            // height: "100%",
+            boxSizing: "border-box",
             p: 1,
             width: "60%",
             backgroundColor: "#FFF",
@@ -89,10 +94,10 @@ export default function MobileNewsEventCard({ event }) {
             }}
           >
             <IconButton
+              component={RouterLink}
+              to={`/news/${event.id}`}
+              aria-label={`Read about ${event.name}`}
               sx={{ color: "#FF9D01" }}
-              onClick={() => {
-                window.open(event.link, "_blank");
-              }}
             >
               <ArrowOutwardOutlinedIcon fontSize="large" />
             </IconButton>

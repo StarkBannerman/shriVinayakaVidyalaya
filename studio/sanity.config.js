@@ -81,6 +81,23 @@ export default defineConfig({
             S.divider(),
 
             S.listItem()
+              .title("Footer & Contact Details")
+              .id("footer")
+              .child(
+                S.document().schemaType("footer").documentId("footer")
+                  .title("Footer & Contact Details"),
+              ),
+
+            S.listItem()
+              .title("Privacy Policy")
+              .id("privacyPolicy")
+              .child(
+                S.document().schemaType("privacyPolicy").documentId("privacyPolicy")
+                  .title("Privacy Policy"),
+              ),
+
+
+            S.listItem()
               .title("News & Events")
               .child(
                 S.documentTypeList("newsEvent")

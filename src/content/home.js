@@ -164,6 +164,19 @@ const withHero = (page) => {
   };
 };
 
+const withReviews = (page) =>
+  Array.isArray(page.reviews)
+    ? {
+        ...page,
+        // Uploaded photo when there is one; the component supplies the
+        // default illustration otherwise.
+        reviews: page.reviews.map((r) => ({
+          ...r,
+          photo: r.photo ? asset(r.photo) : null,
+        })),
+      }
+    : page;
+
 export const HOME = generated.page
-  ? { ...FALLBACK, ...withHero(generated.page) }
+  ? { ...FALLBACK, ...withReviews(withHero(generated.page)) }
   : FALLBACK;

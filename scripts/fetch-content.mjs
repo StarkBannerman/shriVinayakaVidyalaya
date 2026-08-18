@@ -51,6 +51,18 @@ function registerImage(url, width) {
   return key; // the component resolves this through the generated image map
 }
 
+/**
+ * Gallery photos are NOT baked. There can be dozens per event and hundreds
+ * overall — committing those binaries would grow the repo without bound and
+ * they cannot be removed from git history later. They sit below the fold and
+ * load lazily, so a CDN round trip is the right trade. Cover photos and hero
+ * banners stay baked because they are few, fixed, and above the fold.
+ */
+function cdnUrl(url, width) {
+  if (!url || !url.startsWith("http")) return url;
+  return `${url}?w=${width}&fm=webp&q=78&fit=max&auto=format`;
+}
+
 async function downloadImages() {
   if (downloads.size === 0) {
     await writeFile(
@@ -89,10 +101,10 @@ const SOURCES = [
     file: "news.json",
     label: "News & events",
     query: `{"news": *[_type == "newsEvent" && defined(slug.current)] | order(date desc) {
-      "id": slug.current, name, date, desc,
-      "link": coalesce(link, "#"),
+      "id": slug.current, name, subheading, date, time, desc, link, body,
       "image": image.asset->url,
-      "imageAlt": coalesce(image.alt, name)
+      "imageAlt": coalesce(image.alt, name),
+      "gallery": gallery[]{ "url": asset->url, alt, caption }
     }}`,
     empty: { news: [] },
     check: (d) => {
@@ -104,7 +116,58 @@ const SOURCES = [
         if (!/^\d{4}-\d{2}-\d{2}$/.test(n.date)) {
           throw new Error(`news[${i}].date is not YYYY-MM-DD: ${n.date}`);
         }
+        // Cover photo: baked into the build (cards + home strip, above the fold).
         n.image = registerImage(n.image, 900);
+        // Gallery: served from Sanity's CDN, at two sizes.
+        n.gallery = (n.gallery || [])
+          .filter((g) => g.url)
+          .map((g) => ({
+            full: cdnUrl(g.url, 1600),
+            thumb: cdnUrl(g.url, 400),
+            alt: g.alt || n.name,
+            caption: g.caption || "",
+          }));
+      });
+    },
+  },
+  {
+    file: "footer.json",
+    label: "Footer & contact",
+    query: `{"page": *[_id == "footer"][0]{
+      phone, email, address, copyrightName,
+      socials[]{platform, url},
+      usefulLinks[]{title, link},
+      updateLinks[]{title, link},
+      legalLinks[]{title, link}
+    }}`,
+    empty: { page: null },
+    check: (d) => {
+      if (!d.page) return;
+      for (const f of ["phone", "email", "address", "copyrightName"]) {
+        if (!d.page[f]) throw new Error(`footer is missing "${f}"`);
+      }
+      (d.page.socials || []).forEach((x, i) => {
+        if (!x.platform || !x.url) throw new Error(`socials[${i}] is incomplete`);
+      });
+    },
+  },
+  {
+    file: "privacy.json",
+    label: "Privacy policy",
+    query: `{"page": *[_id == "privacyPolicy"][0]{
+      heading, lastUpdated, sections[]{heading, body}
+    }}`,
+    empty: { page: null },
+    check: (d) => {
+      if (!d.page) return;
+      if (!d.page.heading || !d.page.lastUpdated) {
+        throw new Error("privacy policy is missing a heading or date");
+      }
+      if (!Array.isArray(d.page.sections) || d.page.sections.length === 0) {
+        throw new Error("privacy policy has no sections");
+      }
+      d.page.sections.forEach((x, i) => {
+        if (!x.heading || !x.body) throw new Error(`privacy section ${i} is incomplete`);
       });
     },
   },
@@ -121,7 +184,7 @@ const SOURCES = [
       facilities[]{name},
       expertiseHeading, expertise[]{heading, paragraph, listItems, subItems[]{subHeading, paragraph}, link},
       statsHeading, stats[]{value, label},
-      feedbackHeading, reviews[]{name, profession, reviewDesc}
+      feedbackHeading, reviews[]{name, profession, reviewDesc, "photo": photo.asset->url}
     }}`,
     empty: { page: null },
     check: (d) => {
@@ -136,6 +199,10 @@ const SOURCES = [
       for (const f of ["welcomeHeading", "welcomeBody", "facilities", "expertise", "stats", "reviews"]) {
         if (!d.page[f]) throw new Error(`home page is missing "${f}"`);
       }
+      // Testimonial photos are optional; bake the ones that exist.
+      (d.page.reviews || []).forEach((r) => {
+        if (r.photo) r.photo = registerImage(r.photo, 200);
+      });
       if (d.page.stats.length !== 3) throw new Error("home page needs exactly 3 numbers");
       if (d.page.expertise.length !== 3) throw new Error("home page needs exactly 3 expertise cards");
     },
@@ -245,8 +312,11 @@ const SOURCES = [
   },
 ];
 
+// Deliberately the UNCACHED api host, not apicdn. This runs once per build,
+// triggered by a publish webhook — a cached response would hand the build
+// pre-publish content and silently deploy stale copy.
 const endpoint = (query) =>
-  `https://${PROJECT_ID}.apicdn.sanity.io/v${API_VERSION}/data/query/${DATASET}` +
+  `https://${PROJECT_ID}.api.sanity.io/v${API_VERSION}/data/query/${DATASET}` +
   `?query=${encodeURIComponent(query)}`;
 
 async function main() {

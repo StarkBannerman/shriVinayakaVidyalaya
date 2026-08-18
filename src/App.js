@@ -18,6 +18,7 @@ const AcademicsPage = lazy(() => import("./Pages/AcademicsPage"));
 const Admissions = lazy(() => import("./Pages/Admissions"));
 const ContactUsPage = lazy(() => import("./Pages/ContactUs"));
 const NewsPage = lazy(() => import("./Pages/NewsEventsPage"));
+const EventPage = lazy(() => import("./Pages/EventPage"));
 const PrivacyPolicy = lazy(() => import("./Pages/PrivacyPolicy"));
 
 function RouteFallback() {
@@ -71,6 +72,7 @@ function App() {
               <Route path="/admissions" element={<Admissions />} />
               <Route path="/contactus" element={<ContactUsPage />} />
               <Route path="/news" element={<NewsPage />} />
+              <Route path="/news/:slug" element={<EventPage />} />
               <Route path="/privacy" element={<PrivacyPolicy />} />
               <Route path="/*" element={<Navigate to="/" replace />} />
             </Routes>

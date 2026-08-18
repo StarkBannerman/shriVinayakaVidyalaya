@@ -60,6 +60,13 @@ for (const page of PAGES) {
     data[field] = data[field].map((item, i) => ({ _key: `${prefix}${i}`, ...item }));
   }
 
+  // Reviews carry a stubbed profilePicture from the fallback module. It is a
+  // code-side placeholder, not a schema field — emitting it makes Sanity warn
+  // about an unknown field on every testimonial.
+  if (Array.isArray(data.reviews)) {
+    data.reviews = data.reviews.map(({ profilePicture, ...rest }) => rest);
+  }
+
   // heroSlides carries uploaded photos. `_sanityAsset` tells the importer to
   // upload the local file and link it, so the slideshow arrives populated with
   // the banners the site already ships.
@@ -86,6 +93,10 @@ for (const page of PAGES) {
 }
 
 console.log(`
+⚠  These are BOOTSTRAP seeds. Importing with --replace overwrites the whole
+   document, including the banner slideshow and any photos already uploaded.
+   Only import into a fresh project, or a page nobody has edited yet.
+
 Import them all with:
 
   cd studio

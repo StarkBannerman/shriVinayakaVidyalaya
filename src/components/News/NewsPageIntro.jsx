@@ -7,23 +7,20 @@ import {
   CardContent,
   Button,
 } from "@mui/material";
+import { Link as RouterLink } from "react-router-dom";
 import newImage from "../../assets/newsIntroImage.webp";
+import { upcomingEvents as getUpcoming, eventDayParts } from "../../content/news";
 
 export default function NewsEvents() {
-  const upcomingEvents = [
-    {
-      month: "Nov",
-      day: "1",
-      title: "Volleyball Match",
-      time: "8:00 AM - 9:00 AM",
-    },
-    {
-      month: "Nov",
-      day: "16",
-      title: "Annual Sports Day",
-      time: "8:00 AM - 9:00 AM",
-    },
-  ];
+  // Derived from the event dates against the visitor's clock, so a finished
+  // event drops out of here on its own without anyone editing it.
+  const upcomingEvents = getUpcoming().map((e) => ({
+    ...eventDayParts(e.date),
+    title: e.name,
+    time: e.time || "",
+    slug: e.id,
+  }));
+
 
   return (
     <Box
@@ -130,10 +127,21 @@ export default function NewsEvents() {
               </Typography>
 
               <Box sx={{ display: "flex", flexDirection: "column", gap: 2 }}>
+                {upcomingEvents.length === 0 && (
+                  <Typography sx={{ color: "#777", fontSize: "0.95rem" }}>
+                    No events scheduled just now — please check back soon.
+                  </Typography>
+                )}
                 {upcomingEvents.map((event, index) => (
                   <Card
-                    key={index}
+                    key={event.slug || index}
+                    component={RouterLink}
+                    to={`/news/${event.slug}`}
                     sx={{
+                      // An <a> is inline by default — without this the Card
+                      // collapses and the row layout breaks.
+                      display: "block",
+                      textDecoration: "none",
                       boxShadow: "0px 2px 8px rgba(0, 0, 0, 0.06)",
                       borderRadius: "8px",
                       transition: "box-shadow 0.3s ease",

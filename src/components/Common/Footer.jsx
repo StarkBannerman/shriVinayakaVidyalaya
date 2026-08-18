@@ -1,22 +1,14 @@
 import { Box, Grid, Typography, Link, IconButton } from "@mui/material";
-import { Facebook, Instagram } from "@mui/icons-material";
 import { Link as RouterLink } from "react-router-dom";
 import schoolLogo from "../../assets/schoolLogo.webp";
-import { SITE, ADDRESS_LINE } from "../../config/site";
+import { SITE } from "../../config/site";
+import { FOOTER } from "../../content/footer";
+import { SocialIcon, socialMeta } from "../../content/socialRegistry";
 
 export default function Footer() {
-  const useFullLinks = [
-    { title: "Admission", link: "/admissions" },
-    { title: "Infrastructure", link: "/infrastructure" },
-    { title: "About", link: "/about" },
-  ];
-
-  const updateLinks = [
-    { title: "Academics", link: "/academics" },
-    { title: "Contact Us", link: "/contactus" },
-  ];
-
-  const legalLinks = [{ title: "Privacy Policy", link: "/privacy" }];
+  const useFullLinks = FOOTER.usefulLinks;
+  const updateLinks = FOOTER.updateLinks;
+  const legalLinks = FOOTER.legalLinks;
 
   return (
     <Box
@@ -59,7 +51,7 @@ export default function Footer() {
               fontSize: { xs: "14px", md: "16px", width: "90%" },
             }}
           >
-            {ADDRESS_LINE}
+            {FOOTER.address}
           </Typography>
         </Grid>
 
@@ -172,26 +164,22 @@ export default function Footer() {
               alignItems: { xs: "center", sm: "flex-start" },
             }}
           >
-            <IconButton
-              component="a"
-              href={SITE.social.facebook}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label={`${SITE.name} on Facebook`}
-              sx={{ color: "#555", "&:hover": { color: "#3b5998" }, mb: 1 }}
-            >
-              <Facebook />
-            </IconButton>
-            <IconButton
-              component="a"
-              href={SITE.social.instagram}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label={`${SITE.name} on Instagram`}
-              sx={{ color: "#555", "&:hover": { color: "#E4405F" } }}
-            >
-              <Instagram />
-            </IconButton>
+            {FOOTER.socials.map((social) => {
+              const { label, hover } = socialMeta(social.platform);
+              return (
+                <IconButton
+                  key={social.platform + social.url}
+                  component="a"
+                  href={social.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`${SITE.name} on ${label}`}
+                  sx={{ color: "#555", "&:hover": { color: hover }, mb: 1 }}
+                >
+                  <SocialIcon platform={social.platform} />
+                </IconButton>
+              );
+            })}
           </Box>
         </Grid>
       </Grid>
@@ -208,7 +196,8 @@ export default function Footer() {
         }}
       >
         <Typography variant="body2">
-          &copy; {new Date().getFullYear()} {SITE.name}. All Rights Reserved.
+          &copy; {new Date().getFullYear()} {FOOTER.copyrightName}. All Rights
+          Reserved.
         </Typography>
       </Box>
     </Box>

@@ -9,7 +9,8 @@ const REVIEW_AVATARS = [ProfileImage];
 export default function MobileParentsFeedback() {
   const reviews = HOME.reviews.map((r, i) => ({
     ...r,
-    profilePicture: REVIEW_AVATARS[i % REVIEW_AVATARS.length],
+    // The school's own photo when uploaded, else the default illustration.
+    profilePicture: r.photo || REVIEW_AVATARS[i % REVIEW_AVATARS.length],
   }));
   return (
     <Box

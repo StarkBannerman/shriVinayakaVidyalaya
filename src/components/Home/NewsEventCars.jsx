@@ -1,3 +1,4 @@
+import { Link as RouterLink } from "react-router-dom";
 import { Box, IconButton, Typography } from "@mui/material";
 import ArrowOutwardOutlinedIcon from "@mui/icons-material/ArrowOutwardOutlined";
 
@@ -6,14 +7,18 @@ export default function NewsEvents({ event }) {
     <Box
       sx={{
         width: "350px",
-        height: "360px",
+        minHeight: "360px",
         mb: 10,
       }}
     >
       <Box
         sx={{
-          // height: "70%",
+          // Fixed, so the cover sits in the same box whatever its aspect
+          // ratio. Left to itself a square photo makes this box as tall as
+          // the card is wide and shoves the title out of the bottom.
+          height: "252px",
           width: "100%",
+          boxSizing: "border-box",
           backgroundColor: "#FFF",
           borderRadius: "20px 20px 20px 0px",
           p: 1,
@@ -23,6 +28,7 @@ export default function NewsEvents({ event }) {
           src={event?.image}
           style={{
             height: "100%",
+            display: "block",
             width: "100%",
             borderRadius: "20px",
             objectFit: "contain",
@@ -34,7 +40,6 @@ export default function NewsEvents({ event }) {
       </Box>
       <Box
         sx={{
-          height: "30%",
           width: "100%",
           display: "flex",
           flexDirection: "row",
@@ -42,7 +47,6 @@ export default function NewsEvents({ event }) {
       >
         <Box
           sx={{
-            height: "100%",
             width: "60%",
             backgroundColor: "#FFF",
             borderRadius: "0px 0px 20px 20px",
@@ -88,10 +92,10 @@ export default function NewsEvents({ event }) {
             }}
           >
             <IconButton
+              component={RouterLink}
+              to={`/news/${event.id}`}
+              aria-label={`Read about ${event.name}`}
               sx={{ color: "#FF9D01" }}
-              onClick={() => {
-                window.open(event.link, "_blank");
-              }}
             >
               <ArrowOutwardOutlinedIcon fontSize="large" />
             </IconButton>

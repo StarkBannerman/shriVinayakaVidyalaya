@@ -113,7 +113,23 @@ export default defineType({
       of: [obj([
         str("name", 40), str("profession", 60),
         txt("reviewDesc", 700, 6, "Quote"),
-      ], { select: { title: "name", subtitle: "profession" } })],
+        defineField({
+          name: "photo",
+          title: "Photo (optional)",
+          type: "image",
+          options: { hotspot: true },
+          description:
+            "A head-and-shoulders photo. Leave empty to use the default illustration.",
+          fields: [
+            defineField({
+              name: "alt",
+              title: "Photo description",
+              type: "string",
+              validation: (R) => R.max(120),
+            }),
+          ],
+        }),
+      ], { select: { title: "name", subtitle: "profession", media: "photo" } })],
       validation: (R) => R.required().min(1).max(8) }),
   ],
 
